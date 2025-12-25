@@ -1,0 +1,49 @@
+<article class="card h-100 shadow-sm overflow-hidden">
+
+  {% if content.field_imagen_principal %}
+    <div class="card-img-top-wrapper">
+      {{ content.field_imagen_principal }}
+    </div>
+  {% endif %}
+
+  <div class="card-body d-flex flex-column">
+
+    <h5 class="card-title mb-2">{{ label }}</h5>
+
+    {% if content.field_descripcion_corta %}
+      <p class="small text-muted mb-2">
+        {{ content.field_descripcion_corta }}
+      </p>
+    {% endif %}
+
+    {% if node.field_precio_desde.value %}
+      <p class="mb-2 small">
+        <span class="fw-bold">Desde:</span>
+        <span class="room-price">
+          {{ node.field_precio_desde.value|number_format(0, '.', ',') }}
+        </span>
+      </p>
+    {% endif %}
+
+    {% if node.field_capacidad.value %}
+      <p class="mb-2 small d-flex align-items-center gap-2">
+        <span aria-hidden="true">👥</span>
+        <span class="fw-bold">Capacidad:</span>
+        <span>{{ node.field_capacidad.value }}</span>
+      </p>
+    {% endif %}
+
+    {% if content.field_servicios %}
+      <div class="small text-muted mb-2">
+        {{ content.field_servicios }}
+      </div>
+    {% endif %}
+
+    <div class="mt-auto">
+      <a href="{{ url }}" class="btn btn-outline-primary btn-sm w-100">
+        Ver detalles
+      </a>
+    </div>
+
+  </div>
+</article>

@@ -1,0 +1,71 @@
+/* =========================
+   Section Header (reutilizable)
+   ========================= */
+
+.section-header {
+  position: relative;
+  padding-left: 1rem;
+  max-width: 72ch;
+}
+
+.section-header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .25rem;
+  width: 6px;
+  height: calc(100% - .25rem);
+  border-radius: 999px;
+  background: linear-gradient(180deg, $primary, lighten($primary, 10%), $accent);
+  opacity: .95;
+}
+
+/* Si quieres un texto pequeño arriba: “Explora” / “Reserva” (opcional) */
+.section-header .kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 800;
+  font-size: .82rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(11, 26, 42, .70);
+  margin-bottom: .35rem;
+}
+
+.section-header .kicker::before {
+  content: "";
+  width: .55rem;
+  height: .55rem;
+  border-radius: 50%;
+  background: $accent;
+  box-shadow: 0 0 0 3px rgba(255,221,87,.25);
+}
+
+.section-header h2 {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #0b1a2a;
+  margin-bottom: .35rem;
+  line-height: 1.1;
+  font-size: clamp(1.6rem, 2.2vw, 2.05rem);
+}
+
+.section-header p {
+  color: rgba(11, 26, 42, .68) !important;
+  line-height: 1.65;
+  font-size: 1.02rem;
+  margin: 0;
+}
+
+/* Subrayado elegante */
+.section-header h2::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 64px;
+  margin-top: .55rem;
+  background: linear-gradient(90deg, $primary, $accent);
+  opacity: .75;
+  border-radius: 999px;
+}

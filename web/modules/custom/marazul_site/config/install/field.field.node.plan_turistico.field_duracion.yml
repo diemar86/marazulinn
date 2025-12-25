@@ -1,0 +1,18 @@
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_duracion
+    - node.type.plan_turistico
+id: node.plan_turistico.field_duracion
+field_name: field_duracion
+entity_type: node
+bundle: plan_turistico
+label: 'Duración'
+description: ''
+required: false
+translatable: true
+default_value: {}
+default_value_callback: ''
+settings: {}
+field_type: text_long

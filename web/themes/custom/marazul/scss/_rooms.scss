@@ -1,0 +1,492 @@
+/* =========================
+   HABITACIONES (View)
+   ========================= */
+
+.view-habitaciones {
+  padding: clamp(2.5rem, 4vw, 4rem) 0;
+}
+
+/* Header de sección */
+
+
+.view-habitaciones h2,
+.view-habitaciones .views-row h2 {
+  letter-spacing: -0.02em;
+}
+
+/* Grid: más aire y coherencia */
+.view-habitaciones .view-content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.2vw, 1.75rem);
+}
+
+@media (max-width: 992px) {
+  .view-habitaciones .view-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card base */
+.view-habitaciones .card {
+  border: 1px solid rgba(11, 26, 42, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  height: 100%;
+  box-shadow: 0 10px 26px rgba(0,0,0,.06);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.view-habitaciones .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 46px rgba(0,0,0,.12);
+  border-color: rgba(11, 99, 182, 0.22);
+}
+
+/* Imagen uniforme SIEMPRE arriba */
+.view-habitaciones .card-img-top,
+.view-habitaciones img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Si usas ratio wrapper / picture */
+.view-habitaciones picture,
+.view-habitaciones .card-img-top-wrapper,
+.view-habitaciones .ratio {
+  display: block;
+  overflow: hidden;
+}
+
+/* Cuerpo con layout consistente */
+.view-habitaciones .card-body {
+  padding: 1.1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+  min-height: 210px; /* iguala alturas aunque haya textos distintos */
+}
+
+/* Título */
+.view-habitaciones .card-title {
+  font-size: 1.15rem;
+  font-weight: 750;
+  margin: 0;
+  color: #0b1a2a;
+  letter-spacing: -0.01em;
+}
+
+/* Texto / resumen */
+.view-habitaciones .card-text {
+  margin: 0;
+  color: rgba(11, 26, 42, 0.72);
+  line-height: 1.55;
+  font-size: .98rem;
+}
+
+/* Meta (capacidad, wifi, etc.) en “chips” */
+.view-habitaciones .card-body ul,
+.view-habitaciones .card-body .field--name-field-amenities,
+.view-habitaciones .card-body .hero-bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.view-habitaciones .card-body ul li,
+.view-habitaciones .card-body .field--name-field-amenities .field__item {
+  font-size: .86rem;
+  color: rgba(11, 26, 42, .78);
+  background: rgba(11, 99, 182, .06);
+  border: 1px solid rgba(11, 99, 182, .12);
+  padding: .35rem .6rem;
+  border-radius: 999px;
+}
+
+/* Precio destacado (si “Desde:” viene como label + valor) */
+.view-habitaciones .field--name-field-precio,
+.view-habitaciones .price,
+.view-habitaciones .field--name-field-price {
+  margin-top: .25rem;
+  padding: .65rem .75rem;
+  background: linear-gradient(180deg, rgba(255,221,87,.22), rgba(255,221,87,.10));
+  border: 1px solid rgba(255,221,87,.35);
+  border-radius: 14px;
+  color: #0b1a2a;
+  font-weight: 800;
+}
+
+/* Empuja el CTA abajo (botón siempre alineado) */
+.view-habitaciones .card-body .btn,
+.view-habitaciones .card-body a.btn,
+.view-habitaciones .card-body .field--name-node-link a {
+  margin-top: auto;
+}
+
+/* Botón “Ver detalles” pro */
+.view-habitaciones .btn,
+.view-habitaciones a.btn,
+.view-habitaciones .field--name-node-link a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 999px;
+  padding: .75rem 1rem;
+  font-weight: 800;
+  text-decoration: none;
+  border: 1px solid rgba(11, 99, 182, .25);
+  background: rgba(255,255,255,.85);
+  color: #0b63b6;
+  transition: background-color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+
+.view-habitaciones .btn:hover,
+.view-habitaciones a.btn:hover,
+.view-habitaciones .field--name-node-link a:hover {
+  background: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(11, 26, 42, .10);
+}
+
+/* Accesibilidad: focus visible */
+.view-habitaciones a:focus-visible,
+.view-habitaciones .btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(29,183,198,.22), 0 0 0 2px rgba(11,99,182,.28);
+  border-radius: 14px;
+}
+/* =========================
+   Cards Habitaciones
+   ========================= */
+
+.view-habitaciones article.card,
+article.card.h-100 {
+  border: 1px solid rgba(11, 26, 42, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.06) !important;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.view-habitaciones article.card:hover,
+article.card.h-100:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 46px rgba(0,0,0,.12) !important;
+  border-color: rgba(11, 99, 182, 0.22);
+}
+
+/* Imagen uniforme */
+.card-img-top-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: #eef3f8;
+}
+
+.card-img-top-wrapper img,
+.card-img-top-wrapper picture,
+.card-img-top-wrapper picture img {
+  width: 100%;
+  height: 220px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Body consistente */
+article.card .card-body {
+  padding: 1.1rem 1.15rem;
+  gap: .55rem;
+}
+
+/* Título */
+article.card .card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #0b1a2a;
+}
+
+/* Descripción */
+article.card .text-muted {
+  color: rgba(11, 26, 42, 0.70) !important;
+  line-height: 1.55;
+}
+
+/* Precio "Desde" destacado */
+article.card p.fw-bold.text-primary {
+  margin: .25rem 0 .15rem;
+  color: #0b1a2a !important;
+  font-weight: 900 !important;
+  padding: .6rem .75rem;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,221,87,.22), rgba(255,221,87,.10));
+  border: 1px solid rgba(255,221,87,.35);
+}
+
+/* Capacidad más sobria (quita el “emoji-feel” si quieres) */
+article.card p.small {
+  font-size: .92rem;
+  color: rgba(11, 26, 42, .85);
+}
+
+/* Servicios como chips:
+   OJO: esto asume que field_servicios imprime items (div/span) o una lista */
+article.card .small.text-muted > * {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 .45rem .45rem 0;
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  font-size: .86rem;
+  color: rgba(11, 26, 42, .78);
+  background: rgba(11, 99, 182, .06);
+  border: 1px solid rgba(11, 99, 182, .12);
+}
+
+/* Si field_servicios te sale como texto plano (una sola línea),
+   esta regla evita que se rompa */
+article.card .small.text-muted {
+  white-space: normal;
+}
+
+/* Botón pro */
+article.card .btn.btn-outline-primary {
+  border-radius: 999px;
+  padding: .75rem 1rem;
+  font-weight: 800;
+  border-color: rgba(11, 99, 182, .25);
+  color: #0b63b6;
+  background: rgba(255,255,255,.85);
+  transition: background-color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+
+article.card .btn.btn-outline-primary:hover {
+  background: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(11, 26, 42, .10);
+}
+
+/* Focus accesible */
+article.card a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(29,183,198,.22), 0 0 0 2px rgba(11,99,182,.28);
+  border-radius: 14px;
+}
+/* =========================
+   HOME | Sección Habitaciones
+   ========================= */
+
+.home-section--habitaciones {
+  position: relative;
+  background: #f8fafc;
+  border-top: 1px solid rgba(0,0,0,.04);
+  overflow: hidden;
+}
+
+/* Detalle sutil tipo “arena/ola” */
+.home-section--habitaciones::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 10px;
+  background: linear-gradient(90deg, $primary, lighten($primary, 12%), $accent);
+  opacity: .85;
+}
+
+.home-section--habitaciones .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.home-section--habitaciones .section-header h2 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0b1a2a;
+}
+
+.home-section--habitaciones .section-header p {
+  max-width: 70ch;
+  line-height: 1.65;
+  color: rgba(11, 26, 42, .70) !important;
+}
+
+/* =========================
+   Grid de cards (rows)
+   ========================= */
+
+/* Caso A: cuando views imprime .view-content */
+.home-section--habitaciones .view-content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.2vw, 1.75rem);
+}
+
+/* Caso B: cuando imprime .views-row sueltos (unformatted) */
+.home-section--habitaciones .views-row {
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .home-section--habitaciones .view-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   Card look hotelero
+   ========================= */
+
+.home-section--habitaciones article.card {
+  border: 1px solid rgba(11, 26, 42, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(0,0,0,.06);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  height: 100%;
+}
+
+.home-section--habitaciones article.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 46px rgba(0,0,0,.12);
+  border-color: rgba(11, 99, 182, 0.22);
+}
+
+/* Imagen uniforme arriba */
+.home-section--habitaciones .card-img-top-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: #eef3f8;
+}
+
+.home-section--habitaciones .card-img-top-wrapper img,
+.home-section--habitaciones .card-img-top-wrapper picture,
+.home-section--habitaciones .card-img-top-wrapper picture img {
+  width: 100%;
+  height: 220px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Body */
+.home-section--habitaciones .card-body {
+  padding: 1.1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+}
+
+/* Título */
+.home-section--habitaciones .card-title {
+  font-size: 1.15rem;
+  font-weight: 850;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: #0b1a2a;
+}
+
+/* Descripción */
+.home-section--habitaciones .card-body .text-muted {
+  color: rgba(11, 26, 42, .70) !important;
+  line-height: 1.55;
+}
+
+/* Precio “Desde” como highlight */
+.home-section--habitaciones .card-body p.fw-bold.text-primary {
+  margin: .25rem 0 .15rem;
+  color: #0b1a2a !important;
+  font-weight: 900 !important;
+  padding: .6rem .75rem;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,221,87,.22), rgba(255,221,87,.10));
+  border: 1px solid rgba(255,221,87,.35);
+}
+
+/* CTA */
+.home-section--habitaciones .card-body .mt-auto {
+  margin-top: auto !important;
+}
+
+.home-section--habitaciones .btn.btn-outline-primary {
+  width: 100%;
+  border-radius: 999px;
+  padding: .75rem 1rem;
+  font-weight: 850;
+  border-color: rgba(11, 99, 182, .25);
+  color: #0b63b6;
+  background: rgba(255,255,255,.9);
+  transition: background-color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+
+.home-section--habitaciones .btn.btn-outline-primary:hover {
+  background: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(11, 26, 42, .10);
+}
+
+/* Focus accesible */
+.home-section--habitaciones a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(29,183,198,.22), 0 0 0 2px rgba(11,99,182,.28);
+  border-radius: 14px;
+}
+.view-footer-cta {
+  margin-top: 3rem;
+
+  .btn {
+    border-radius: 999px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    padding: .9rem 2.5rem;
+    transition: all .2s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.15);
+  }
+}
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: $primary;
+  margin-bottom: .5rem;
+
+  &::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: $accent;
+  }
+}
+
+.view-footer-cta {
+  .btn {
+    border-radius: 999px;
+    font-weight: 700;
+    padding: .9rem 2.8rem;
+    transition: all .2s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.15);
+  }
+}

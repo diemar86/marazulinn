@@ -1,0 +1,83 @@
+/* =========================
+   Planes turísticos (teasers)
+   ========================= */
+
+.plan-card {
+  border: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(11, 26, 42, .10);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 46px rgba(11, 26, 42, .16);
+}
+
+.plan-card__media {
+  position: relative;
+  background: #e9eef5;
+}
+
+.plan-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  transition: transform .35s ease;
+}
+
+.plan-card:hover .plan-card__media img {
+  transform: scale(1.06);
+}
+
+/* Sombra/overlay suave para que el texto “no pegue” visualmente a la imagen */
+.plan-card__shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.04) 0%, rgba(0,0,0,.18) 100%);
+  pointer-events: none;
+}
+
+.plan-card .card-body {
+  padding: 1.15rem 1.15rem 1.25rem;
+}
+
+.plan-card__title {
+  color: #0b1a2a;
+  text-decoration: none;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+
+.plan-card__title:hover {
+  text-decoration: underline;
+}
+
+.plan-card__text {
+  color: rgba(11, 26, 42, .72);
+  line-height: 1.55;
+  font-size: .98rem;
+
+  /* si tu descripción llega muy larga */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.plan-card__btn {
+  border-radius: 999px;
+  padding: .5rem .95rem;
+  font-weight: 700;
+}
+
+/* Mejor foco teclado */
+.plan-card a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(29,183,198,.20);
+  border-radius: 12px;
+}

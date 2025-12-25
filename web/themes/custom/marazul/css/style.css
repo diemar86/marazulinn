@@ -1,0 +1,2090 @@
+@charset "UTF-8";
+body {
+  background-color: #f5f5f5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #212529;
+}
+
+.gallery img {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+.map-wrapper iframe {
+  border-radius: 0.75rem;
+}
+
+footer.site-footer {
+  background-color: #03045e;
+  color: #e0f4ff;
+}
+footer.site-footer a {
+  color: #ffdd57;
+  text-decoration: none;
+}
+footer.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.logo-placeholder {
+  max-height: 80px;
+}
+
+.wa-floating-btn {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 1050;
+  background-color: #25D366;
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+
+.home-section {
+  background-color: #f8f9fb;
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+}
+.home-section + .home-section {
+  border-top: none;
+}
+.home-section .section-header h2 {
+  font-weight: 600;
+}
+
+.card img {
+  object-fit: cover;
+  width: 100%;
+  height: fit-content;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.node--type-habitacion .card {
+  transition: all 0.25s ease;
+  border-radius: 1rem;
+}
+
+.node--type-habitacion .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.node--type-habitacion .ratio {
+  overflow: hidden;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+/* Imagen uniforme en cards de habitaciones */
+.node--type-habitacion .card-img-top-wrapper img {
+  width: 100%;
+  height: 220px; /* Puedes subir a 260–280 si la quieres más alta */
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.node--type-habitacion .card-img-top-wrapper picture,
+.node--type-habitacion .card-img-top-wrapper img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Forzar todas las imágenes de la vista Habitaciones a la misma altura */
+.view-habitaciones img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.view-habitaciones picture,
+.view-habitaciones img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Separación entre cards de la vista Habitaciones */
+.view-habitaciones .card {
+  margin-bottom: 1.5rem;
+}
+
+.view-habitacion .card {
+  margin-bottom: 1.5rem;
+}
+
+.view-habitaciones {
+  padding-bottom: 2.5rem;
+}
+
+.room-detail {
+  background-color: #f5f5f5;
+}
+
+.room-price {
+  font-weight: 900;
+  color: #0077b6;
+}
+
+.recuadro-habitaciones {
+  width: 32%;
+  margin: 5px;
+}
+
+.room-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  display: block;
+}
+
+.room-sidebar.card {
+  border-radius: 1rem;
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.08);
+}
+
+.room-description {
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.site-branding img {
+  max-height: 60px;
+  height: auto;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #003366;
+}
+
+.site-nav a:hover,
+.site-nav a.is-active {
+  color: #007bff;
+}
+
+/* Header global */
+.site-header {
+  background-color: #ffffff;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.site-branding img {
+  max-height: 55px;
+  height: auto;
+  display: block;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #003366;
+}
+
+.site-nav a:hover,
+.site-nav a.is-active {
+  color: #0d6efd;
+}
+
+/* Versión home: header transparente sobre el hero */
+.site-header--transparent {
+  background-color: transparent;
+  box-shadow: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* En páginas internas, un poco de margen arriba del contenido */
+.page-content {
+  padding-top: 1.5rem;
+}
+
+.recuadro-turismo {
+  width: 49%;
+  margin: 4px;
+}
+
+.c-aboutHero {
+  --ink: #0b1a2a;
+  --muted: #4a5a6a;
+  --brand: #0b63b6;
+  --aqua: #1db7c6;
+  --sand: #f6f2ea;
+  --card: rgba(255, 255, 255, .82);
+  position: relative;
+  padding: clamp(2.5rem, 4vw, 4.25rem) 0;
+  background: radial-gradient(1200px 420px at 10% 20%, rgba(29, 183, 198, 0.14), transparent 60%), radial-gradient(900px 380px at 85% 30%, rgba(11, 99, 182, 0.12), transparent 55%), linear-gradient(180deg, #ffffff 0%, var(--sand) 100%);
+  overflow: hidden;
+}
+
+.c-aboutHero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 10px;
+  background: linear-gradient(90deg, var(--brand), var(--aqua));
+  opacity: 0.85;
+}
+
+.c-aboutHero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 35%, rgba(11, 99, 182, 0.08) 0 2px, transparent 3px), radial-gradient(circle at 75% 55%, rgba(29, 183, 198, 0.08) 0 2px, transparent 3px), radial-gradient(circle at 55% 25%, rgba(11, 99, 182, 0.06) 0 2px, transparent 3px);
+  background-size: 220px 180px;
+  pointer-events: none;
+}
+
+.c-aboutHero__inner {
+  position: relative;
+  z-index: 1;
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+.c-aboutHero__title {
+  font-size: clamp(2rem, 3.2vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 clamp(1.25rem, 2vw, 2rem) 0;
+}
+
+.c-aboutHero__grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(1rem, 2.6vw, 2.5rem);
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .c-aboutHero__grid {
+    grid-template-columns: 1fr;
+  }
+}
+.c-aboutHero__lead {
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.2vw, 1.25rem);
+  line-height: 1.75;
+  margin: 0;
+  max-width: 52ch;
+}
+.c-aboutHero__lead strong {
+  color: var(--ink);
+  font-weight: 700;
+  position: relative;
+  padding: 0 0.2rem;
+  background: linear-gradient(180deg, transparent 60%, rgba(29, 183, 198, 0.18) 0);
+  border-radius: 0.3rem;
+}
+
+.c-aboutHero__proof {
+  background: var(--card);
+  border: 1px solid rgba(11, 26, 42, 0.08);
+  border-radius: 18px;
+  padding: clamp(1rem, 2.2vw, 1.6rem);
+  box-shadow: 0 10px 30px rgba(11, 26, 42, 0.1), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  backdrop-filter: blur(8px);
+}
+
+.c-aboutHero__micro {
+  margin: 0 0 1rem 0;
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+.c-aboutHero__micro strong {
+  font-weight: 750;
+}
+
+.c-aboutHero__quote {
+  margin: 0;
+  padding: 1rem 1rem 1rem 1.1rem;
+  border-left: 4px solid var(--brand);
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(11, 99, 182, 0.1), rgba(29, 183, 198, 0.06));
+  color: var(--ink);
+}
+.c-aboutHero__quote p {
+  margin: 0;
+  font-style: italic;
+  line-height: 1.55;
+  font-size: 1.05rem;
+}
+
+.c-aboutHero__quoteMark {
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 1;
+  opacity: 0.65;
+  transform: translateY(0.15rem);
+}
+
+.c-aboutHero__quoteMark--end {
+  float: right;
+  transform: translateY(-0.05rem);
+}
+
+.c-aboutHero__actions {
+  display: flex;
+  gap: 0.9rem;
+  margin-top: clamp(1.25rem, 2vw, 2rem);
+  flex-wrap: wrap;
+}
+
+.c-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 14px;
+  padding: 0.85rem 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  outline: none;
+}
+
+.c-btn:focus-visible {
+  box-shadow: 0 0 0 4px rgba(29, 183, 198, 0.25), 0 0 0 2px rgba(11, 99, 182, 0.35);
+}
+
+.c-btn:hover {
+  transform: translateY(-1px);
+}
+
+.c-btn--ghost {
+  color: var(--brand);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(11, 99, 182, 0.25);
+}
+
+.c-btn--ghost:hover {
+  box-shadow: 0 10px 22px rgba(11, 26, 42, 0.1);
+}
+
+.c-btn--wa {
+  color: #fff;
+  background: linear-gradient(90deg, #1f7a47, #2aa85e);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.c-btn--wa:hover {
+  box-shadow: 0 12px 26px rgba(31, 122, 71, 0.2);
+}
+
+/* =========================
+   Reserva Strip con iconos
+   ========================= */
+.reserva-strip {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: radial-gradient(900px 380px at 15% 20%, rgba(29, 183, 198, 0.3), transparent 60%), radial-gradient(900px 420px at 85% 30%, rgba(11, 99, 182, 0.3), transparent 55%), linear-gradient(135deg, #03045e, #0077b6);
+}
+
+.reserva-strip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent 55%);
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.reserva-strip .container {
+  position: relative;
+  z-index: 1;
+}
+
+.reserva-strip__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.4rem;
+  padding: 1.4rem 1.4rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.18);
+}
+
+.reserva-strip__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  opacity: 0.92;
+  margin-bottom: 0.35rem;
+}
+
+.reserva-strip__kicker::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #ffdd57;
+  box-shadow: 0 0 0 4px rgba(255, 221, 87, 0.22);
+}
+
+.reserva-strip__title {
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+}
+
+.reserva-strip__payments {
+  list-style: none;
+  padding: 0;
+  margin: 0.85rem 0 0.6rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.pay-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.pay-chip__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 9px;
+  background: rgba(255, 221, 87, 0.2);
+  border: 1px solid rgba(255, 221, 87, 0.28);
+  color: #fff;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.pay-chip__label {
+  font-weight: 800;
+  font-size: 0.92rem;
+}
+
+.reserva-strip__note {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+.reserva-strip__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.45rem;
+  min-width: 260px;
+}
+
+.reserva-strip__btn {
+  border-radius: 999px;
+  padding: 0.85rem 1.4rem;
+  font-weight: 900;
+  border: 0;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+}
+
+.reserva-strip__btn:hover {
+  transform: translateY(-1px);
+}
+
+.reserva-strip__micro {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 992px) {
+  .reserva-strip__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .reserva-strip__actions {
+    width: 100%;
+    align-items: stretch;
+    min-width: 0;
+  }
+  .reserva-strip__btn {
+    width: 100%;
+  }
+}
+/* =========================
+   Contact Strip – Estilo "Quiénes somos"
+   ========================= */
+.contact-strip {
+  position: relative;
+  background: radial-gradient(1200px 420px at 10% 20%, rgba(29, 183, 198, 0.1), transparent 60%), radial-gradient(900px 380px at 85% 30%, rgba(11, 99, 182, 0.08), transparent 55%), linear-gradient(180deg, #ffffff 0%, #f6f2ea 100%);
+  padding: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+/* Banda superior sutil (igual lógica que about) */
+.contact-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 6px;
+  background: linear-gradient(90deg, #0077b6, #ffdd57);
+  opacity: 0.85;
+}
+
+.contact-strip__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  background: #ffffff;
+  border-radius: 26px;
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  box-shadow: 0 18px 40px rgba(11, 26, 42, 0.1), 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+}
+
+@media (max-width: 992px) {
+  .contact-strip__grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================
+   Mapa
+   ========================= */
+.contact-strip__mapFrame {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #eef2f6;
+  border: 1px solid rgba(11, 26, 42, 0.08);
+}
+
+.contact-strip__mapFrame iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .contact-strip__mapFrame iframe {
+    min-height: 260px;
+  }
+}
+/* =========================
+   Texto y jerarquía
+   ========================= */
+.contact-strip__kicker {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: rgba(11, 26, 42, 0.55);
+  margin-bottom: 0.35rem;
+}
+
+.contact-strip__title {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #0b1a2a;
+  margin: 0 0 1.25rem 0;
+}
+
+/* =========================
+   Lista contacto (limpia)
+   ========================= */
+.contact-strip__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+
+.contact-item__icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(29, 183, 198, 0.14);
+  color: #0b1a2a;
+  font-size: 1rem;
+}
+
+.contact-item strong {
+  font-weight: 700;
+  color: #0b1a2a;
+}
+
+.contact-strip a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-strip a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   CTA
+   ========================= */
+.contact-strip__actions {
+  margin-top: 1.25rem;
+}
+
+.contact-strip__btn {
+  border-radius: 999px;
+  padding: 0.85rem 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #0077b6, rgb(0, 152.3461538462, 233));
+  color: #fff;
+  border: 0;
+  box-shadow: 0 10px 22px rgba(11, 26, 42, 0.18);
+}
+
+.contact-strip__btn:hover {
+  transform: translateY(-1px);
+}
+
+/* =========================
+   Dining Strip – Comedor
+   ========================= */
+.dining-strip {
+  position: relative;
+  background: radial-gradient(800px 320px at 10% 20%, rgba(255, 221, 87, 0.22), transparent 60%), radial-gradient(700px 300px at 85% 30%, rgba(255, 193, 7, 0.18), transparent 55%), linear-gradient(180deg, #fffaf3, #ffffff);
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.dining-strip__inner {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.dining-strip__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: rgba(11, 26, 42, 0.65);
+  margin-bottom: 0.4rem;
+}
+
+.dining-strip__kicker::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #f4b400;
+  box-shadow: 0 0 0 4px rgba(244, 180, 0, 0.25);
+}
+
+.dining-strip__title {
+  margin: 0 0 1.5rem 0;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #0b1a2a;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+}
+
+/* Grid */
+.dining-strip__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+@media (max-width: 992px) {
+  .dining-strip__grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Cards */
+.dining-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 1.4rem 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.dining-card--alt {
+  background: linear-gradient(180deg, #ffffff, #fff8ec);
+}
+
+.dining-card__title {
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.6rem;
+  color: #0b1a2a;
+}
+
+.dining-card__text {
+  color: rgba(11, 26, 42, 0.78);
+  line-height: 1.65;
+  margin-bottom: 0.6rem;
+}
+
+.dining-card__highlight {
+  margin-top: 0.75rem;
+  font-weight: 800;
+  color: #7a5b00;
+  background: rgba(255, 221, 87, 0.25);
+  padding: 0.55rem 0.75rem;
+  border-radius: 14px;
+}
+
+/* ===============================
+   Site branding (logo + nombre)
+================================ */
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  /* Logo */
+  /* Texto (nombre + slogan) */
+  /* Nombre del sitio */
+  /* Slogan */
+}
+.site-branding__logo {
+  display: inline-flex;
+  align-items: center;
+}
+.site-branding__logo img {
+  max-height: 64px;
+  width: auto;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+.site-branding__logo:hover img {
+  transform: scale(1.03);
+}
+.site-branding__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+.site-branding__name {
+  font-weight: 700;
+  font-size: 0;
+}
+.site-branding__name a {
+  color: #0077b6;
+  text-decoration: none;
+}
+.site-branding__name a:hover {
+  text-decoration: underline;
+}
+.site-branding__slogan {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.site-branding--hide-name .site-branding__name {
+  display: none;
+}
+
+/* =========================
+   HERO (Home) - Mar Azul
+   ========================= */
+.hero.hero--managed {
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(560px, 82vh, 820px);
+  display: flex;
+  align-items: center;
+  color: #fff;
+  /* Fondo (se setea por CSS var desde Drupal/JS). Fallback por si no hay imagen */
+  background-image: var(--hero-bg, linear-gradient(135deg, #003366, #001b33));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Overlays: legibilidad + acento marca */
+.hero.hero--managed::before,
+.hero.hero--managed::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero.hero--managed::before {
+  background: linear-gradient(90deg, rgba(3, 20, 45, 0.88) 0%, rgba(3, 40, 90, 0.72) 55%, rgba(3, 40, 90, 0.22) 100%);
+}
+
+.hero.hero--managed::after {
+  background: radial-gradient(900px 380px at 12% 20%, rgba(29, 183, 198, 0.16), transparent 60%), radial-gradient(700px 320px at 78% 24%, rgba(11, 99, 182, 0.16), transparent 55%);
+  opacity: 0.95;
+}
+
+.hero.hero--managed > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Badge */
+.hero.hero--managed .badge-custom {
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+/* Tipografía lado izquierdo */
+.hero.hero--managed h1 {
+  font-size: clamp(2.1rem, 3.6vw, 3.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  text-wrap: balance;
+}
+
+.hero.hero--managed p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.06rem;
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
+.hero.hero--managed .address {
+  opacity: 0.92;
+  font-size: 1rem;
+}
+
+/* Lista bullets dorados */
+.hero.hero--managed .hero-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hero.hero--managed .hero-list li {
+  position: relative;
+  padding-left: 1.35rem;
+  margin-bottom: 0.52rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+.hero.hero--managed .hero-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: #ffd966;
+  box-shadow: 0 0 0 3px rgba(255, 217, 102, 0.18);
+}
+
+/* Si algún título viene como enlace */
+.hero.hero--managed a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero.hero--managed a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   RESERVATION CARD (Webform)
+   ========================= */
+.hero.hero--managed .reservation-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 22px;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.34);
+  border: 1px solid rgba(11, 26, 42, 0.08);
+  padding: 1.05rem 1.1rem 1.15rem !important; /* compact */
+}
+
+/* Header del formulario (lo agregaste en Twig) */
+.hero.hero--managed .reservation-card__head {
+  margin-bottom: 0.6rem;
+}
+
+.hero.hero--managed .reservation-card__title {
+  margin: 0 0 0.15rem 0;
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: #0b1a2a;
+}
+
+.hero.hero--managed .reservation-card__subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgba(11, 26, 42, 0.65);
+  line-height: 1.3;
+}
+
+/* Webform spacing */
+.hero.hero--managed .reservation-card .webform-submission-form {
+  margin: 0;
+}
+
+.hero.hero--managed .reservation-card .webform-submission-form .form-item {
+  margin-bottom: 0.55rem;
+}
+
+.hero.hero--managed .reservation-card label {
+  display: inline-block;
+  margin-bottom: 0.2rem;
+  font-weight: 800;
+  font-size: 0.82rem;
+  color: rgba(11, 26, 42, 0.85);
+}
+
+/* Inputs */
+.hero.hero--managed .reservation-card input[type=text],
+.hero.hero--managed .reservation-card input[type=email],
+.hero.hero--managed .reservation-card input[type=tel],
+.hero.hero--managed .reservation-card input[type=number],
+.hero.hero--managed .reservation-card input[type=date],
+.hero.hero--managed .reservation-card select,
+.hero.hero--managed .reservation-card textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(11, 26, 42, 0.18);
+  padding: 0.58rem 0.7rem;
+  background: #fff;
+  font-size: 0.92rem;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.hero.hero--managed .reservation-card input:focus,
+.hero.hero--managed .reservation-card select:focus,
+.hero.hero--managed .reservation-card textarea:focus {
+  outline: none;
+  border-color: rgba(11, 99, 182, 0.55);
+  box-shadow: 0 0 0 4px rgba(29, 183, 198, 0.18);
+}
+
+/* Botón */
+.hero.hero--managed .reservation-card .form-actions {
+  margin-top: 0.25rem;
+}
+
+.hero.hero--managed .reservation-card .form-actions input[type=submit],
+.hero.hero--managed .reservation-card .form-actions button {
+  width: 100%;
+  border-radius: 999px;
+  padding: 0.78rem 1rem;
+  font-weight: 900;
+  border: 0;
+  background: linear-gradient(90deg, #ffd45a, #ffe48a);
+  color: #0b1a2a;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.hero.hero--managed .reservation-card .form-actions input[type=submit]:hover,
+.hero.hero--managed .reservation-card .form-actions button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(255, 212, 90, 0.28);
+}
+
+/* Focus accesible para links/botones dentro */
+.hero.hero--managed .reservation-card a:focus-visible,
+.hero.hero--managed .reservation-card button:focus-visible,
+.hero.hero--managed .reservation-card input:focus-visible,
+.hero.hero--managed .reservation-card select:focus-visible {
+  outline: none;
+}
+
+/* =========================
+   FECHAS EN 2 COLUMNAS (Desktop)
+   - usando nth-of-type porque no puedes poner classes fácilmente
+   ========================= */
+@media (min-width: 992px) {
+  /* Asume que los 2 primeros .form-item del webform son Llegada y Salida */
+  .hero.hero--managed .reservation-card .webform-submission-form .form-item:nth-of-type(1),
+  .hero.hero--managed .reservation-card .webform-submission-form .form-item:nth-of-type(2) {
+    display: inline-block;
+    width: calc(50% - 0.5rem);
+    vertical-align: top;
+  }
+  .hero.hero--managed .reservation-card .webform-submission-form .form-item:nth-of-type(1) {
+    margin-right: 1rem;
+  }
+}
+/* =========================
+   Responsive tweaks
+   ========================= */
+@media (max-width: 992px) {
+  .hero.hero--managed {
+    min-height: auto;
+  }
+}
+/* =========================
+   HABITACIONES (View)
+   ========================= */
+.view-habitaciones {
+  padding: clamp(2.5rem, 4vw, 4rem) 0;
+}
+
+/* Header de sección */
+.view-habitaciones h2,
+.view-habitaciones .views-row h2 {
+  letter-spacing: -0.02em;
+}
+
+/* Grid: más aire y coherencia */
+.view-habitaciones .view-content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.2vw, 1.75rem);
+}
+
+@media (max-width: 992px) {
+  .view-habitaciones .view-content {
+    grid-template-columns: 1fr;
+  }
+}
+/* Card base */
+.view-habitaciones .card {
+  border: 1px solid rgba(11, 26, 42, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  height: 100%;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.view-habitaciones .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.12);
+  border-color: rgba(11, 99, 182, 0.22);
+}
+
+/* Imagen uniforme SIEMPRE arriba */
+.view-habitaciones .card-img-top,
+.view-habitaciones img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Si usas ratio wrapper / picture */
+.view-habitaciones picture,
+.view-habitaciones .card-img-top-wrapper,
+.view-habitaciones .ratio {
+  display: block;
+  overflow: hidden;
+}
+
+/* Cuerpo con layout consistente */
+.view-habitaciones .card-body {
+  padding: 1.1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  min-height: 210px; /* iguala alturas aunque haya textos distintos */
+}
+
+/* Título */
+.view-habitaciones .card-title {
+  font-size: 1.15rem;
+  font-weight: 750;
+  margin: 0;
+  color: #0b1a2a;
+  letter-spacing: -0.01em;
+}
+
+/* Texto / resumen */
+.view-habitaciones .card-text {
+  margin: 0;
+  color: rgba(11, 26, 42, 0.72);
+  line-height: 1.55;
+  font-size: 0.98rem;
+}
+
+/* Meta (capacidad, wifi, etc.) en “chips” */
+.view-habitaciones .card-body ul,
+.view-habitaciones .card-body .field--name-field-amenities,
+.view-habitaciones .card-body .hero-bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.view-habitaciones .card-body ul li,
+.view-habitaciones .card-body .field--name-field-amenities .field__item {
+  font-size: 0.86rem;
+  color: rgba(11, 26, 42, 0.78);
+  background: rgba(11, 99, 182, 0.06);
+  border: 1px solid rgba(11, 99, 182, 0.12);
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* Precio destacado (si “Desde:” viene como label + valor) */
+.view-habitaciones .field--name-field-precio,
+.view-habitaciones .price,
+.view-habitaciones .field--name-field-price {
+  margin-top: 0.25rem;
+  padding: 0.65rem 0.75rem;
+  background: linear-gradient(180deg, rgba(255, 221, 87, 0.22), rgba(255, 221, 87, 0.1));
+  border: 1px solid rgba(255, 221, 87, 0.35);
+  border-radius: 14px;
+  color: #0b1a2a;
+  font-weight: 800;
+}
+
+/* Empuja el CTA abajo (botón siempre alineado) */
+.view-habitaciones .card-body .btn,
+.view-habitaciones .card-body a.btn,
+.view-habitaciones .card-body .field--name-node-link a {
+  margin-top: auto;
+}
+
+/* Botón “Ver detalles” pro */
+.view-habitaciones .btn,
+.view-habitaciones a.btn,
+.view-habitaciones .field--name-node-link a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 999px;
+  padding: 0.75rem 1rem;
+  font-weight: 800;
+  text-decoration: none;
+  border: 1px solid rgba(11, 99, 182, 0.25);
+  background: rgba(255, 255, 255, 0.85);
+  color: #0b63b6;
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.view-habitaciones .btn:hover,
+.view-habitaciones a.btn:hover,
+.view-habitaciones .field--name-node-link a:hover {
+  background: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(11, 26, 42, 0.1);
+}
+
+/* Accesibilidad: focus visible */
+.view-habitaciones a:focus-visible,
+.view-habitaciones .btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(29, 183, 198, 0.22), 0 0 0 2px rgba(11, 99, 182, 0.28);
+  border-radius: 14px;
+}
+
+/* =========================
+   Cards Habitaciones
+   ========================= */
+.view-habitaciones article.card,
+article.card.h-100 {
+  border: 1px solid rgba(11, 26, 42, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06) !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.view-habitaciones article.card:hover,
+article.card.h-100:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.12) !important;
+  border-color: rgba(11, 99, 182, 0.22);
+}
+
+/* Imagen uniforme */
+.card-img-top-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: #eef3f8;
+}
+
+.card-img-top-wrapper img,
+.card-img-top-wrapper picture,
+.card-img-top-wrapper picture img {
+  width: 100%;
+  height: 220px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Body consistente */
+article.card .card-body {
+  padding: 1.1rem 1.15rem;
+  gap: 0.55rem;
+}
+
+/* Título */
+article.card .card-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #0b1a2a;
+}
+
+/* Descripción */
+article.card .text-muted {
+  color: rgba(11, 26, 42, 0.7) !important;
+  line-height: 1.55;
+}
+
+/* Precio "Desde" destacado */
+article.card p.fw-bold.text-primary {
+  margin: 0.25rem 0 0.15rem;
+  color: #0b1a2a !important;
+  font-weight: 900 !important;
+  padding: 0.6rem 0.75rem;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 221, 87, 0.22), rgba(255, 221, 87, 0.1));
+  border: 1px solid rgba(255, 221, 87, 0.35);
+}
+
+/* Capacidad más sobria (quita el “emoji-feel” si quieres) */
+article.card p.small {
+  font-size: 0.92rem;
+  color: rgba(11, 26, 42, 0.85);
+}
+
+/* Servicios como chips:
+   OJO: esto asume que field_servicios imprime items (div/span) o una lista */
+article.card .small.text-muted > * {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0.45rem 0.45rem 0;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  color: rgba(11, 26, 42, 0.78);
+  background: rgba(11, 99, 182, 0.06);
+  border: 1px solid rgba(11, 99, 182, 0.12);
+}
+
+/* Si field_servicios te sale como texto plano (una sola línea),
+   esta regla evita que se rompa */
+article.card .small.text-muted {
+  white-space: normal;
+}
+
+/* Botón pro */
+article.card .btn.btn-outline-primary {
+  border-radius: 999px;
+  padding: 0.75rem 1rem;
+  font-weight: 800;
+  border-color: rgba(11, 99, 182, 0.25);
+  color: #0b63b6;
+  background: rgba(255, 255, 255, 0.85);
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+article.card .btn.btn-outline-primary:hover {
+  background: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(11, 26, 42, 0.1);
+}
+
+/* Focus accesible */
+article.card a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(29, 183, 198, 0.22), 0 0 0 2px rgba(11, 99, 182, 0.28);
+  border-radius: 14px;
+}
+
+/* =========================
+   HOME | Sección Habitaciones
+   ========================= */
+.home-section--habitaciones {
+  position: relative;
+  background: #f8fafc;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+/* Detalle sutil tipo “arena/ola” */
+.home-section--habitaciones::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 10px;
+  background: linear-gradient(90deg, #0077b6, rgb(0, 159.0153846154, 243.2), #ffdd57);
+  opacity: 0.85;
+}
+
+.home-section--habitaciones .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.home-section--habitaciones .section-header h2 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0b1a2a;
+}
+
+.home-section--habitaciones .section-header p {
+  max-width: 70ch;
+  line-height: 1.65;
+  color: rgba(11, 26, 42, 0.7) !important;
+}
+
+/* =========================
+   Grid de cards (rows)
+   ========================= */
+/* Caso A: cuando views imprime .view-content */
+.home-section--habitaciones .view-content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2.2vw, 1.75rem);
+}
+
+/* Caso B: cuando imprime .views-row sueltos (unformatted) */
+.home-section--habitaciones .views-row {
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .home-section--habitaciones .view-content {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================
+   Card look hotelero
+   ========================= */
+.home-section--habitaciones article.card {
+  border: 1px solid rgba(11, 26, 42, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  height: 100%;
+}
+
+.home-section--habitaciones article.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.12);
+  border-color: rgba(11, 99, 182, 0.22);
+}
+
+/* Imagen uniforme arriba */
+.home-section--habitaciones .card-img-top-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: #eef3f8;
+}
+
+.home-section--habitaciones .card-img-top-wrapper img,
+.home-section--habitaciones .card-img-top-wrapper picture,
+.home-section--habitaciones .card-img-top-wrapper picture img {
+  width: 100%;
+  height: 220px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Body */
+.home-section--habitaciones .card-body {
+  padding: 1.1rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+/* Título */
+.home-section--habitaciones .card-title {
+  font-size: 1.15rem;
+  font-weight: 850;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: #0b1a2a;
+}
+
+/* Descripción */
+.home-section--habitaciones .card-body .text-muted {
+  color: rgba(11, 26, 42, 0.7) !important;
+  line-height: 1.55;
+}
+
+/* Precio “Desde” como highlight */
+.home-section--habitaciones .card-body p.fw-bold.text-primary {
+  margin: 0.25rem 0 0.15rem;
+  color: #0b1a2a !important;
+  font-weight: 900 !important;
+  padding: 0.6rem 0.75rem;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 221, 87, 0.22), rgba(255, 221, 87, 0.1));
+  border: 1px solid rgba(255, 221, 87, 0.35);
+}
+
+/* CTA */
+.home-section--habitaciones .card-body .mt-auto {
+  margin-top: auto !important;
+}
+
+.home-section--habitaciones .btn.btn-outline-primary {
+  width: 100%;
+  border-radius: 999px;
+  padding: 0.75rem 1rem;
+  font-weight: 850;
+  border-color: rgba(11, 99, 182, 0.25);
+  color: #0b63b6;
+  background: rgba(255, 255, 255, 0.9);
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.home-section--habitaciones .btn.btn-outline-primary:hover {
+  background: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(11, 26, 42, 0.1);
+}
+
+/* Focus accesible */
+.home-section--habitaciones a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(29, 183, 198, 0.22), 0 0 0 2px rgba(11, 99, 182, 0.28);
+  border-radius: 14px;
+}
+
+.view-footer-cta {
+  margin-top: 3rem;
+}
+.view-footer-cta .btn {
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  padding: 0.9rem 2.5rem;
+  transition: all 0.2s ease;
+}
+.view-footer-cta .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0077b6;
+  margin-bottom: 0.5rem;
+}
+.section-eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffdd57;
+}
+
+.view-footer-cta .btn {
+  border-radius: 999px;
+  font-weight: 700;
+  padding: 0.9rem 2.8rem;
+  transition: all 0.2s ease;
+}
+.view-footer-cta .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   Section Header (reutilizable)
+   ========================= */
+.section-header {
+  position: relative;
+  padding-left: 1rem;
+  max-width: 72ch;
+}
+
+.section-header::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+  width: 6px;
+  height: calc(100% - 0.25rem);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #0077b6, rgb(0, 152.3461538462, 233), #ffdd57);
+  opacity: 0.95;
+}
+
+/* Si quieres un texto pequeño arriba: “Explora” / “Reserva” (opcional) */
+.section-header .kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(11, 26, 42, 0.7);
+  margin-bottom: 0.35rem;
+}
+
+.section-header .kicker::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #ffdd57;
+  box-shadow: 0 0 0 3px rgba(255, 221, 87, 0.25);
+}
+
+.section-header h2 {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #0b1a2a;
+  margin-bottom: 0.35rem;
+  line-height: 1.1;
+  font-size: clamp(1.6rem, 2.2vw, 2.05rem);
+}
+
+.section-header p {
+  color: rgba(11, 26, 42, 0.68) !important;
+  line-height: 1.65;
+  font-size: 1.02rem;
+  margin: 0;
+}
+
+/* Subrayado elegante */
+.section-header h2::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 64px;
+  margin-top: 0.55rem;
+  background: linear-gradient(90deg, #0077b6, #ffdd57);
+  opacity: 0.75;
+  border-radius: 999px;
+}
+
+/* =========================
+   Footer Pro
+   ========================= */
+.site-footer-pro {
+  position: relative;
+  color: rgba(255, 255, 255, 0.92);
+  background: radial-gradient(900px 380px at 15% 15%, rgba(29, 183, 198, 0.18), transparent 60%), radial-gradient(900px 420px at 85% 25%, rgba(11, 99, 182, 0.22), transparent 55%), linear-gradient(135deg, #03045e, #0077b6);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.site-footer-pro a {
+  color: #fff;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.35);
+}
+
+.site-footer-pro a:hover {
+  text-decoration-color: rgba(255, 221, 87, 0.75);
+}
+
+/* Top */
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.25rem 1.25rem;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 992px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.footer-logo__mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  background: rgba(255, 221, 87, 0.18);
+  border: 1px solid rgba(255, 221, 87, 0.25);
+}
+
+.footer-brand__name {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.footer-brand__tagline {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+}
+
+/* CTA */
+.footer-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (max-width: 992px) {
+  .footer-cta {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+.footer-cta__text strong {
+  display: block;
+  font-weight: 900;
+}
+
+.footer-cta__text span {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-cta__btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0b1a2a !important;
+  font-weight: 900;
+  text-decoration: none !important;
+  border: 0;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+}
+
+.footer-cta__btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Grid */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.1fr;
+  gap: 1.75rem;
+  margin-top: 2.25rem;
+}
+
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.footer-title {
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.footer-list, .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.footer-list li {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+
+.footer-micro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.footer-badge {
+  display: inline-flex;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-weight: 800;
+  font-size: 0.82rem;
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 0.85rem;
+}
+
+.footer-social__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  text-decoration: none !important;
+}
+
+.footer-social__icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  background: rgba(29, 183, 198, 0.18);
+  border: 1px solid rgba(29, 183, 198, 0.22);
+  font-weight: 900;
+}
+
+.footer-note {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Bottom */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.78);
+}
+
+@media (max-width: 992px) {
+  .footer-bottom {
+    flex-direction: column;
+  }
+}
+/* =========================
+   Seccionales Pro (Hero con foto)
+   ========================= */
+.page-section__hero {
+  position: relative;
+  padding: clamp(2.4rem, 4vw, 3.8rem) 0;
+  background: radial-gradient(1200px 420px at 10% 20%, rgba(29, 183, 198, 0.12), transparent 60%), radial-gradient(900px 380px at 85% 30%, rgba(11, 99, 182, 0.1), transparent 55%), linear-gradient(180deg, #ffffff 0%, #f6f2ea 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* Banda marca arriba */
+.page-section__hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 6px;
+  background: linear-gradient(90deg, #0077b6, #ffdd57);
+  opacity: 0.85;
+}
+
+/* Grid hero */
+.page-section__heroGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(1rem, 3vw, 2.2rem);
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .page-section__heroGrid {
+    grid-template-columns: 1fr;
+  }
+}
+.page-section__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: rgba(11, 26, 42, 0.55);
+  margin-bottom: 0.55rem;
+}
+
+.page-section__kicker::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #ffdd57;
+  box-shadow: 0 0 0 4px rgba(255, 221, 87, 0.22);
+}
+
+.page-section__title {
+  font-size: clamp(2.1rem, 3.4vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.9rem 0;
+  color: #0b1a2a;
+}
+
+.page-section__lead {
+  max-width: 62ch;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: rgba(11, 26, 42, 0.72);
+}
+
+/* Bloque imagen */
+.page-section__heroMedia {
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  min-height: 320px;
+  background: radial-gradient(600px 260px at 30% 25%, rgba(29, 183, 198, 0.18), transparent 60%), linear-gradient(135deg, #03045e, #0077b6);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Si hay imagen, la usamos como fondo */
+.page-section__heroMediaInner {
+  position: absolute;
+  inset: 0;
+  background-image: var(--section-hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+}
+
+/* Overlay para legibilidad visual */
+.page-section__heroMedia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.25));
+  pointer-events: none;
+}
+
+/* Responsive altura */
+@media (max-width: 992px) {
+  .page-section__heroMedia {
+    min-height: 220px;
+  }
+}
+/* =========================
+   Body editorial
+   ========================= */
+.page-section__body {
+  padding: clamp(2rem, 3.2vw, 3.2rem) 0;
+}
+
+.page-section__body .container {
+  max-width: 980px;
+}
+
+.page-section__body p {
+  color: rgba(11, 26, 42, 0.78);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+.page-section__body h2 {
+  margin-top: 2.2rem;
+  margin-bottom: 0.9rem;
+  font-weight: 900;
+  color: #0b1a2a;
+  font-size: 1.65rem;
+}
+
+.page-section__body h3 {
+  margin-top: 1.6rem;
+  margin-bottom: 0.7rem;
+  font-weight: 800;
+  color: #0b1a2a;
+  font-size: 1.25rem;
+}
+
+.page-section__body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 18px;
+  display: block;
+  margin: 1.2rem 0;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.1);
+}
+
+.page-section__body blockquote {
+  margin: 1.8rem 0;
+  padding: 1.1rem 1.2rem;
+  border-left: 4px solid #0077b6;
+  border-radius: 14px;
+  background: rgba(11, 99, 182, 0.06);
+  color: #0b1a2a;
+}
+
+/* =========================
+   Planes turísticos (teasers)
+   ========================= */
+.plan-card {
+  border: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(11, 26, 42, 0.1);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 46px rgba(11, 26, 42, 0.16);
+}
+
+.plan-card__media {
+  position: relative;
+  background: #e9eef5;
+}
+
+.plan-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 0.35s ease;
+}
+
+.plan-card:hover .plan-card__media img {
+  transform: scale(1.06);
+}
+
+/* Sombra/overlay suave para que el texto “no pegue” visualmente a la imagen */
+.plan-card__shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04) 0%, rgba(0, 0, 0, 0.18) 100%);
+  pointer-events: none;
+}
+
+.plan-card .card-body {
+  padding: 1.15rem 1.15rem 1.25rem;
+}
+
+.plan-card__title {
+  color: #0b1a2a;
+  text-decoration: none;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+
+.plan-card__title:hover {
+  text-decoration: underline;
+}
+
+.plan-card__text {
+  color: rgba(11, 26, 42, 0.72);
+  line-height: 1.55;
+  font-size: 0.98rem;
+  /* si tu descripción llega muy larga */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.plan-card__btn {
+  border-radius: 999px;
+  padding: 0.5rem 0.95rem;
+  font-weight: 700;
+}
+
+/* Mejor foco teclado */
+.plan-card a:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(29, 183, 198, 0.2);
+  border-radius: 12px;
+}/*# sourceMappingURL=style.css.map */

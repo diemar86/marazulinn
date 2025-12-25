@@ -1,0 +1,12 @@
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+name: 'Plan turístico'
+type: plan_turistico
+description: 'Planes turísticos ofrecidos por el Hotel Mar Azul Inn.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

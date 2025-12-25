@@ -1,0 +1,35 @@
+{# templates/content/node--page.html.twig #}
+{% set hero_url = '' %}
+{% if node.field_section_hero_image is defined and node.field_section_hero_image.entity %}
+  {% set hero_url = file_url(node.field_section_hero_image.entity.uri.value) %}
+{% endif %}
+
+<article{{ attributes.addClass('page-section') }}>
+  <header class="page-section__hero">
+    <div class="container">
+      <div class="page-section__heroGrid">
+
+        <div class="page-section__heroCopy">
+          <div class="page-section__kicker">Hotel Mar Azul Inn</div>
+          <h1 class="page-section__title">{{ label }}</h1>
+
+          {% if content.field_section_lead is defined and content.field_section_lead %}
+            <div class="page-section__lead">{{ content.field_section_lead }}</div>
+          {% endif %}
+        </div>
+
+        <div class="page-section__heroMedia"
+             {% if hero_url %}style="--section-hero-bg: url('{{ hero_url }}');"{% endif %}>
+          <div class="page-section__heroMediaInner" aria-hidden="true"></div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="page-section__body">
+    <div class="container">
+      {{ content|without('field_section_hero_image','field_section_lead') }}
+    </div>
+  </div>
+</article>

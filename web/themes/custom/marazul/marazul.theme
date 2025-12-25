@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Theme functions for marazul.
+ */
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function marazul_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $suggestions[] = 'page__front';
+  }
+}

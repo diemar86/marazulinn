@@ -1,0 +1,16 @@
+// style.scss
+// Archivo principal de Sass del tema marazul.
+// Compila este archivo a css/style.css
+
+@import 'variables';
+@import 'mixins';
+@import 'components';
+@import 'header';
+@import 'hero';
+@import 'rooms';
+@import 'section-header';
+@import 'footer';
+@import 'pages';
+@import 'plans';
+
+

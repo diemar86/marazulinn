@@ -1,0 +1,74 @@
+{{ attach_library('marazul/marazul') }}
+
+<article{{ attributes.addClass('room-detail') }}>
+
+  <div class="container py-5">
+    <div class="row g-4">
+
+      {# Columna izquierda: galería + descripción #}
+      <div class="col-lg-7">
+
+        {% if content.field_imagen_principal %}
+          <div class="room-gallery mb-3">
+            {{ content.field_imagen_principal }}
+          </div>
+        {% endif %}
+
+        {% if content.body %}
+          <div class="room-description">
+            {{ content.body }}
+          </div>
+        {% endif %}
+
+      </div>
+
+      {# Columna derecha: datos clave y CTA #}
+      <div class="col-lg-5">
+
+        <div class="room-sidebar card p-3">
+
+          <h1 class="h3 mb-3">{{ label }}</h1>
+
+          {% if content.field_descripcion_corta %}
+            <p class="text-muted mb-3">
+              {{ content.field_descripcion_corta }}
+            </p>
+          {% endif %}
+
+          {% if content.field_precio_desde %}
+            <p class="fw-bold text-primary mb-1">
+              Desde: {{ content.field_precio_desde }}
+            </p>
+          {% endif %}
+
+          {% if content.field_capacidad %}
+            <p class="mb-1">
+              👥 Capacidad: {{ content.field_capacidad }}
+            </p>
+          {% endif %}
+
+          {% if content.field_servicios %}
+            <div class="small text-muted mb-3">
+              {{ content.field_servicios }}
+            </div>
+          {% endif %}
+
+          <div class="d-grid gap-2 mt-3">
+            <a href="https://wa.me/573233074408?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20{{ label|url_encode }}"
+               class="btn btn-success"
+               target="_blank"
+               rel="noopener">
+              Consultar esta habitación por WhatsApp
+            </a>
+
+            {# Si luego quieres, acá puedes agregar un Webform de reserva #}
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</article>

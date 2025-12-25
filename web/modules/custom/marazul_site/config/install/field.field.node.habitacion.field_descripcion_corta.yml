@@ -1,0 +1,18 @@
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion_corta
+    - node.type.habitacion
+id: node.habitacion.field_descripcion_corta
+field_name: field_descripcion_corta
+entity_type: node
+bundle: habitacion
+label: 'Descripción corta'
+description: ''
+required: false
+translatable: true
+default_value: {}
+default_value_callback: ''
+settings: {}
+field_type: text_long

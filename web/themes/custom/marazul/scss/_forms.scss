@@ -1,0 +1,196 @@
+/* ====== Header del formulario ====== */
+.reservation-card__head {
+  margin-bottom: 1rem;
+}
+
+.reservation-card__title {
+  margin: 0 0 .25rem 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  color: #0b1a2a;
+}
+
+.reservation-card__subtitle {
+  margin: 0;
+  font-size: .92rem;
+  color: rgba(11, 26, 42, .65);
+  line-height: 1.35;
+}
+
+/* ====== Webform: spacing + inputs ====== */
+.reservation-card .webform-submission-form .form-item {
+  margin-bottom: .9rem;
+}
+
+.reservation-card .webform-submission-form label {
+  display: inline-block;
+  margin-bottom: .35rem;
+  font-weight: 700;
+  font-size: .86rem;
+  color: rgba(11, 26, 42, .85);
+}
+
+/* Inputs más “hotel pro” */
+.reservation-card input[type="text"],
+.reservation-card input[type="email"],
+.reservation-card input[type="tel"],
+.reservation-card input[type="number"],
+.reservation-card input[type="date"],
+.reservation-card select,
+.reservation-card textarea {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(11, 26, 42, .18);
+  padding: .78rem .9rem;
+  background: #fff;
+  transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+.reservation-card input:focus,
+.reservation-card select:focus,
+.reservation-card textarea:focus {
+  outline: none;
+  border-color: rgba(11, 99, 182, .55);
+  box-shadow: 0 0 0 4px rgba(29, 183, 198, .18);
+}
+
+/* Botón más claro y con jerarquía */
+.reservation-card .form-actions {
+  margin-top: .25rem;
+}
+
+.reservation-card .form-actions input[type="submit"],
+.reservation-card .form-actions button {
+  width: 100%;
+  border-radius: 999px;
+  padding: .95rem 1rem;
+  font-weight: 900;
+  border: 0;
+  background: linear-gradient(90deg, #ffd45a, #ffe48a);
+  color: #0b1a2a;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.reservation-card .form-actions input[type="submit"]:hover,
+.reservation-card .form-actions button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(255, 212, 90, .28);
+}
+/* =========================
+   HERO – Formulario compacto
+   ========================= */
+
+.hero .reservation-card {
+  padding: 1.1rem 1.15rem 1.2rem !important;
+  border-radius: 20px;
+}
+
+/* Header del formulario */
+.hero .reservation-card__head {
+  margin-bottom: .6rem;
+}
+
+.hero .reservation-card__title {
+  font-size: 1.05rem;
+  margin-bottom: .15rem;
+}
+
+.hero .reservation-card__subtitle {
+  font-size: .85rem;
+  line-height: 1.3;
+}
+
+/* Menos espacio entre campos */
+.hero .reservation-card .webform-submission-form .form-item {
+  margin-bottom: .6rem;
+}
+
+/* Labels más compactos */
+.hero .reservation-card label {
+  font-size: .82rem;
+  margin-bottom: .2rem;
+}
+
+/* Inputs más bajos */
+.hero .reservation-card input[type="text"],
+.hero .reservation-card input[type="email"],
+.hero .reservation-card input[type="tel"],
+.hero .reservation-card input[type="number"],
+.hero .reservation-card input[type="date"],
+.hero .reservation-card select {
+  padding: .58rem .7rem;
+  border-radius: 12px;
+  font-size: .9rem;
+}
+
+/* Quitar aire innecesario en fechas */
+.hero .reservation-card .form-item--date {
+  margin-bottom: .5rem;
+}
+
+/* Botón más compacto pero fuerte */
+.hero .reservation-card .form-actions input[type="submit"] {
+  padding: .8rem 1rem;
+  font-size: .95rem;
+  font-weight: 900;
+}
+@media (min-width: 992px) {
+  .hero .reservation-card .js-checkin,
+  .hero .reservation-card .js-checkout {
+    display: inline-block;
+    width: calc(50% - .4rem);
+    vertical-align: top;
+  }
+
+  .hero .reservation-card .js-checkin {
+    margin-right: .8rem;
+  }
+}
+@media (min-width: 992px) {
+  .hero .reservation-card .js-checkin,
+  .hero .reservation-card .js-checkout {
+    display: inline-block;
+    width: calc(50% - .4rem);
+    vertical-align: top;
+  }
+
+  .hero .reservation-card .js-checkin { margin-right: .8rem; }
+}
+@media (min-width: 992px) {
+  /* Los dos primeros campos (Llegada/Salida) en 2 columnas */
+  .hero .reservation-card .webform-submission-form .form-item:nth-of-type(1),
+  .hero .reservation-card .webform-submission-form .form-item:nth-of-type(2) {
+    display: inline-block;
+    width: calc(50% - .5rem);
+    vertical-align: top;
+  }
+
+  .hero .reservation-card .webform-submission-form .form-item:nth-of-type(1) {
+    margin-right: 1rem;
+  }
+}
+.hero .reservation-card {
+  padding: 1.05rem 1.1rem 1.15rem !important;
+}
+
+.hero .reservation-card .webform-submission-form .form-item {
+  margin-bottom: .55rem;
+}
+
+.hero .reservation-card label {
+  font-size: .82rem;
+  margin-bottom: .2rem;
+}
+
+.hero .reservation-card input,
+.hero .reservation-card select {
+  padding: .58rem .7rem;
+  border-radius: 12px;
+  font-size: .92rem;
+}
+.hero .reservation-card .form-actions input[type="submit"] {
+  padding: .78rem 1rem;
+  font-size: .95rem;
+  font-weight: 900;
+}

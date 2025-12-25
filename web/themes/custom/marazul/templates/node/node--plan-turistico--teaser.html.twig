@@ -1,0 +1,38 @@
+{#
+/**
+ * @file
+ * Teaser de Plan Turístico (Home - Views block)
+ */
+#}
+
+<article{{ attributes.addClass('plan-card', 'card', 'h-100') }}>
+
+  {# Imagen #}
+  {% if content.field_imagen %}
+    <div class="plan-card__media ratio ratio-16x9">
+      {{ content.field_imagen }}
+      <span class="plan-card__shade" aria-hidden="true"></span>
+    </div>
+  {% endif %}
+
+  <div class="card-body d-flex flex-column">
+    <h3 class="h5 card-title mb-2">
+      <a href="{{ url }}" class="plan-card__title stretched-link">
+        {{ label }}
+      </a>
+    </h3>
+
+    {% if content.field_descripcion_del_plan %}
+      <div class="plan-card__text mb-3">
+        {{ content.field_descripcion_del_plan }}
+      </div>
+    {% endif %}
+
+    <div class="mt-auto">
+      <a href="{{ url }}" class="btn btn-outline-primary btn-sm plan-card__btn">
+        Ver plan
+      </a>
+    </div>
+  </div>
+
+</article>

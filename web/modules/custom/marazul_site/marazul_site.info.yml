@@ -1,0 +1,13 @@
+name: 'Mar Azul Site'
+type: module
+description: 'Configuración base del sitio Hotel Mar Azul Inn: tipos de contenido y vistas.'
+core_version_requirement: '^10 || ^11'
+package: 'Mar Azul'
+dependencies:
+  - node
+  - views
+  - media
+  - image
+  - link
+  - text
+  - options

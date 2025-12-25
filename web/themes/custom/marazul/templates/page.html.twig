@@ -1,0 +1,27 @@
+{{ attach_library('marazul/marazul') }}
+
+<header class="site-header">
+  <div class="container d-flex align-items-center justify-content-between py-3">
+    {% if page.header %}
+      <div class="site-branding">
+        {{ page.header }}
+      </div>
+    {% endif %}
+
+    {% if page.primary_menu %}
+      <nav class="site-nav">
+        {{ page.primary_menu }}
+      </nav>
+    {% endif %}
+  </div>
+</header>
+
+<main class="page-content">
+  {{ page.content }}
+</main>
+
+{% if page.footer %}
+  <footer class="site-footer">
+    {{ page.footer }}
+  </footer>
+{% endif %}

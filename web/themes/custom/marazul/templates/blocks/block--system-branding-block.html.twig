@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Theme override for the site branding block.
+ */
+#}
+
+{% set classes = [
+  'block',
+  'block-branding',
+  'site-branding',
+  'd-flex',
+  'align-items-center',
+  'gap-3'
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+
+  {# Logo #}
+  {% if site_logo %}
+    <a href="{{ path('<front>') }}" class="site-branding__logo d-inline-flex align-items-center">
+      <img
+        src="{{ site_logo }}"
+        alt="{{ 'Home'|t }}"
+        class="img-fluid"
+        loading="lazy"
+      />
+    </a>
+  {% endif %}
+
+  <div class="site-branding__text">
+
+    {# Nombre del sitio #}
+    {% if site_name %}
+      <div class="site-branding__name fw-bold">
+        <a href="{{ path('<front>') }}" class="text-decoration-none">
+          {{ site_name }}
+        </a>
+      </div>
+    {% endif %}
+
+    {# Slogan #}
+    {% if site_slogan %}
+      <div class="site-branding__slogan text-muted small">
+        {{ site_slogan }}
+      </div>
+    {% endif %}
+
+  </div>
+
+</div>

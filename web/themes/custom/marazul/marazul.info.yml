@@ -1,0 +1,19 @@
+name: 'Hotel Mar Azul Inn'
+type: theme
+description: 'Tema Drupal para Hotel Mar Azul Inn, orientado a reservas y campañas, con Bootstrap 5 y Sass.'
+core_version_requirement: '^10 || ^11'
+base theme: stable9
+
+libraries:
+  - marazul/global-styling
+
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  hero: Hero region
+  highlighted: Highlighted
+  home_content: 'Home content'
+  content: Content
+  sidebar_first: 'Sidebar first'
+  footer: Footer

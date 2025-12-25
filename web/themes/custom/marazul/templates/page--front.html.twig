@@ -1,0 +1,71 @@
+{{ attach_library('marazul/marazul') }}
+
+<div class="page-wrapper">
+
+  <header class="site-header">
+    <div class="container d-flex align-items-center justify-content-between py-3">
+      {% if page.header %}
+        <div class="site-branding">
+          {{ page.header }}
+        </div>
+      {% endif %}
+      {% if page.primary_menu %}
+        <nav class="site-nav">
+          {{ page.primary_menu }}
+        </nav>
+      {% endif %}
+    </div>
+  </header>
+
+  <main class="site-main">
+
+    <section class="hero hero--managed" role="region" aria-label="Reserva y presentación del hotel">
+      <div class="container py-5">
+        <div class="row g-4 align-items-center">
+
+          <div class="col-lg-7">
+            {% if page.hero %}
+              {{ page.hero }}
+            {% endif %}
+          </div>
+
+          <div class="col-lg-5">
+           {% if page.highlighted %}
+              <div class="reservation-card p-3">
+                <div class="reservation-card__head">
+                  <h2 class="reservation-card__title">Cotiza tu reserva</h2>
+                  <p class="reservation-card__subtitle">Te respondemos por WhatsApp o correo en minutos.</p>
+                </div>
+
+                {{ page.highlighted }}
+              </div>
+            {% endif %}
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    {% if page.home_content %}
+      <div class="home-content-wrapper">
+        {{ page.home_content }}
+      </div>
+    {% endif %}
+
+  </main>
+
+  {% if page.footer %}
+    <footer class="site-footer">
+      {{ page.footer }}
+    </footer>
+  {% endif %}
+
+  <a href="https://wa.me/573233074408?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20el%20Hotel%20Mar%20Azul%20Inn"
+     class="wa-floating-btn"
+     target="_blank"
+     rel="noopener"
+     aria-label="Chatear por WhatsApp">
+    WhatsApp
+  </a>
+
+</div>

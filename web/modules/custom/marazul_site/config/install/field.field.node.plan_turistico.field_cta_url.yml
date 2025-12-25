@@ -1,0 +1,18 @@
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cta_url
+    - node.type.plan_turistico
+id: node.plan_turistico.field_cta_url
+field_name: field_cta_url
+entity_type: node
+bundle: plan_turistico
+label: 'Enlace del botón'
+description: ''
+required: false
+translatable: true
+default_value: {}
+default_value_callback: ''
+settings: {}
+field_type: link

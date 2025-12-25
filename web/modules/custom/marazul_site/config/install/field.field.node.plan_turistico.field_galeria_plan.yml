@@ -1,0 +1,18 @@
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_galeria_plan
+    - node.type.plan_turistico
+id: node.plan_turistico.field_galeria_plan
+field_name: field_galeria_plan
+entity_type: node
+bundle: plan_turistico
+label: 'Galería de imágenes'
+description: ''
+required: false
+translatable: true
+default_value: {}
+default_value_callback: ''
+settings: {'handler': 'default:media', 'handler_settings': {'target_bundles': {'image': 'image'}}}
+field_type: entity_reference

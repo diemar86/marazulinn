@@ -1,0 +1,5 @@
+// _mixins.scss
+@mixin card-elevated {
+  border-radius: $radius-card;
+  box-shadow: $shadow-card;
+}

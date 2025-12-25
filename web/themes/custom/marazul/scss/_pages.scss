@@ -1,0 +1,168 @@
+/* =========================
+   Seccionales Pro (Hero con foto)
+   ========================= */
+
+.page-section__hero {
+  position: relative;
+  padding: clamp(2.4rem, 4vw, 3.8rem) 0;
+  background:
+    radial-gradient(1200px 420px at 10% 20%, rgba(29,183,198,.12), transparent 60%),
+    radial-gradient(900px 380px at 85% 30%, rgba(11,99,182,.10), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #f6f2ea 100%);
+  border-bottom: 1px solid rgba(0,0,0,.05);
+  overflow: hidden;
+}
+
+/* Banda marca arriba */
+.page-section__hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 6px;
+  background: linear-gradient(90deg, $primary, $accent);
+  opacity: .85;
+}
+
+/* Grid hero */
+.page-section__heroGrid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(1rem, 3vw, 2.2rem);
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .page-section__heroGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.page-section__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: .75rem;
+  color: rgba(11,26,42,.55);
+  margin-bottom: .55rem;
+}
+
+.page-section__kicker::before {
+  content: "";
+  width: .55rem;
+  height: .55rem;
+  border-radius: 50%;
+  background: $accent;
+  box-shadow: 0 0 0 4px rgba(255,221,87,.22);
+}
+
+.page-section__title {
+  font-size: clamp(2.1rem, 3.4vw, 3.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin: 0 0 .9rem 0;
+  color: #0b1a2a;
+}
+
+.page-section__lead {
+  max-width: 62ch;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: rgba(11,26,42,.72);
+}
+
+/* Bloque imagen */
+.page-section__heroMedia {
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  min-height: 320px;
+  background:
+    radial-gradient(600px 260px at 30% 25%, rgba(29,183,198,.18), transparent 60%),
+    linear-gradient(135deg, $primary-dark, $primary);
+  box-shadow: 0 26px 60px rgba(0,0,0,.18);
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+/* Si hay imagen, la usamos como fondo */
+.page-section__heroMediaInner {
+  position: absolute;
+  inset: 0;
+  background-image: var(--section-hero-bg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+}
+
+/* Overlay para legibilidad visual */
+.page-section__heroMedia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.25));
+  pointer-events: none;
+}
+
+/* Responsive altura */
+@media (max-width: 992px) {
+  .page-section__heroMedia {
+    min-height: 220px;
+  }
+}
+
+/* =========================
+   Body editorial
+   ========================= */
+
+.page-section__body {
+  padding: clamp(2rem, 3.2vw, 3.2rem) 0;
+}
+
+.page-section__body .container {
+  max-width: 980px;
+}
+
+.page-section__body p {
+  color: rgba(11,26,42,.78);
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+.page-section__body h2 {
+  margin-top: 2.2rem;
+  margin-bottom: .9rem;
+  font-weight: 900;
+  color: #0b1a2a;
+  font-size: 1.65rem;
+}
+
+.page-section__body h3 {
+  margin-top: 1.6rem;
+  margin-bottom: .7rem;
+  font-weight: 800;
+  color: #0b1a2a;
+  font-size: 1.25rem;
+}
+
+.page-section__body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 18px;
+  display: block;
+  margin: 1.2rem 0;
+  box-shadow: 0 14px 34px rgba(0,0,0,.10);
+}
+
+.page-section__body blockquote {
+  margin: 1.8rem 0;
+  padding: 1.1rem 1.2rem;
+  border-left: 4px solid $primary;
+  border-radius: 14px;
+  background: rgba(11,99,182,.06);
+  color: #0b1a2a;
+}

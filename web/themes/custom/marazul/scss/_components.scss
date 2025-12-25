@@ -1,0 +1,833 @@
+// _components.scss
+body {
+  background-color: $bg-body;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: $text-main;
+  
+}
+
+
+
+
+.gallery img {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+.map-wrapper iframe {
+  border-radius: 0.75rem;
+}
+
+footer.site-footer {
+  background-color: $primary-dark;
+  color: #e0f4ff;
+
+  a {
+    color: $accent;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.logo-placeholder {
+  max-height: 80px;
+}
+
+.wa-floating-btn {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 1050;
+  background-color: #25D366;
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0.75rem 1.5rem rgba(0,0,0,.3);
+}
+.home-section {
+  background-color: #f8f9fb;
+  border-top: 1px solid rgba(0,0,0,0.03);
+
+  & + .home-section {
+    border-top: none;
+  }
+
+  .section-header h2 {
+    font-weight: 600;
+  }
+}
+.card img{
+  object-fit: cover;
+  width: 100%;
+  height: fit-content;
+}
+
+.card-title{
+  font-size:1.1rem;
+  font-weight:600;
+}
+
+.node--type-habitacion .card {
+  transition: all 0.25s ease;
+  border-radius: 1rem;
+}
+
+.node--type-habitacion .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,.15);
+}
+
+.node--type-habitacion .ratio {
+  overflow: hidden;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+/* Imagen uniforme en cards de habitaciones */
+.node--type-habitacion .card-img-top-wrapper img {
+  width: 100%;
+  height: 220px;   /* Puedes subir a 260–280 si la quieres más alta */
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.node--type-habitacion .card-img-top-wrapper picture,
+.node--type-habitacion .card-img-top-wrapper img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+/* Forzar todas las imágenes de la vista Habitaciones a la misma altura */
+.view-habitaciones img {
+  width: 100%;
+  height: 220px;          // prueba 220, luego ajustamos a gusto
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.view-habitaciones picture,
+.view-habitaciones img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+/* Separación entre cards de la vista Habitaciones */
+.view-habitaciones .card {
+  margin-bottom: 1.5rem;   // prueba 1.5, luego puedes subir a 2rem si quieres más aire
+}
+.view-habitacion .card {
+  margin-bottom: 1.5rem;
+}
+.view-habitaciones {
+  padding-bottom: 2.5rem;
+}
+.room-detail {
+  background-color: $bg-body;
+}
+.room-price {
+  font-weight: 900;
+  color: $primary;
+}
+.recuadro-habitaciones{
+  width:32%;
+  margin: 5px;
+
+}
+.room-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  display: block;
+}
+
+.room-sidebar.card {
+  border-radius: 1rem;
+  box-shadow: 0 .75rem 1.5rem rgba(0,0,0,.08);
+}
+
+.room-description {
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+
+.site-branding img {
+  max-height: 60px;
+  height: auto;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #003366;
+}
+
+.site-nav a:hover,
+.site-nav a.is-active {
+  color: #007bff;
+}
+/* Header global */
+.site-header {
+  background-color: #ffffff;
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,.04);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.site-branding img {
+  max-height: 55px;
+  height: auto;
+  display: block;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #003366;
+}
+
+.site-nav a:hover,
+.site-nav a.is-active {
+  color: #0d6efd;
+}
+
+/* Versión home: header transparente sobre el hero */
+.site-header--transparent {
+  background-color: transparent;
+  box-shadow: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+
+/* En páginas internas, un poco de margen arriba del contenido */
+.page-content {
+  padding-top: 1.5rem;
+}
+
+
+.recuadro-turismo{
+  width: 49%;
+  margin: 4px;
+
+}.c-aboutHero {
+  // “Identidad Mar Azul”: fondo suave + textura de ola
+  --ink: #0b1a2a;
+  --muted: #4a5a6a;
+  --brand: #0b63b6;   // azul mar
+  --aqua: #1db7c6;    // acento agua
+  --sand: #f6f2ea;    // arena muy clara
+  --card: rgba(255, 255, 255, .82);
+
+  position: relative;
+  padding: clamp(2.5rem, 4vw, 4.25rem) 0;
+  background:
+    radial-gradient(1200px 420px at 10% 20%, rgba(29,183,198,.14), transparent 60%),
+    radial-gradient(900px 380px at 85% 30%, rgba(11,99,182,.12), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, var(--sand) 100%);
+  overflow: hidden;
+}
+
+.c-aboutHero::before {
+  // Banda superior tipo “ola” muy sutil
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 10px;
+  background: linear-gradient(90deg, var(--brand), var(--aqua));
+  opacity: .85;
+}
+
+.c-aboutHero::after {
+  // “Wave dots” discreto (no imagen, puro CSS)
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 35%, rgba(11,99,182,.08) 0 2px, transparent 3px),
+    radial-gradient(circle at 75% 55%, rgba(29,183,198,.08) 0 2px, transparent 3px),
+    radial-gradient(circle at 55% 25%, rgba(11,99,182,.06) 0 2px, transparent 3px);
+  background-size: 220px 180px;
+  pointer-events: none;
+}
+
+.c-aboutHero__inner {
+  position: relative;
+  z-index: 1;
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+.c-aboutHero__title {
+  font-size: clamp(2rem, 3.2vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin: 0 0 clamp(1.25rem, 2vw, 2rem) 0;
+}
+
+.c-aboutHero__grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(1rem, 2.6vw, 2.5rem);
+  align-items: start;
+}
+
+@media (max-width: 992px) {
+  .c-aboutHero__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.c-aboutHero__lead {
+  color: var(--muted);
+  font-size: clamp(1.05rem, 1.2vw, 1.25rem);
+  line-height: 1.75;
+  margin: 0;
+  max-width: 52ch;
+
+  strong {
+    color: var(--ink);
+    font-weight: 700;
+    position: relative;
+    padding: 0 .2rem;
+    background: linear-gradient(180deg, transparent 60%, rgba(29,183,198,.18) 0);
+    border-radius: .3rem;
+  }
+}
+
+.c-aboutHero__proof {
+  background: var(--card);
+  border: 1px solid rgba(11,26,42,.08);
+  border-radius: 18px;
+  padding: clamp(1rem, 2.2vw, 1.6rem);
+  box-shadow:
+    0 10px 30px rgba(11,26,42,.10),
+    0 1px 0 rgba(255,255,255,.6) inset;
+  backdrop-filter: blur(8px);
+}
+
+.c-aboutHero__micro {
+  margin: 0 0 1rem 0;
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 1rem;
+
+  strong {
+    font-weight: 750;
+  }
+}
+
+.c-aboutHero__quote {
+  margin: 0;
+  padding: 1rem 1rem 1rem 1.1rem;
+  border-left: 4px solid var(--brand);
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(11,99,182,.10), rgba(29,183,198,.06));
+  color: var(--ink);
+
+  p {
+    margin: 0;
+    font-style: italic;
+    line-height: 1.55;
+    font-size: 1.05rem;
+  }
+}
+
+.c-aboutHero__quoteMark {
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 1;
+  opacity: .65;
+  transform: translateY(.15rem);
+}
+
+.c-aboutHero__quoteMark--end {
+  float: right;
+  transform: translateY(-.05rem);
+}
+
+.c-aboutHero__actions {
+  display: flex;
+  gap: .9rem;
+  margin-top: clamp(1.25rem, 2vw, 2rem);
+  flex-wrap: wrap;
+}
+
+.c-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  border-radius: 14px;
+  padding: .85rem 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+  outline: none;
+}
+
+.c-btn:focus-visible {
+  box-shadow: 0 0 0 4px rgba(29,183,198,.25), 0 0 0 2px rgba(11,99,182,.35);
+}
+
+.c-btn:hover {
+  transform: translateY(-1px);
+}
+
+.c-btn--ghost {
+  color: var(--brand);
+  background: rgba(255,255,255,.7);
+  border: 1px solid rgba(11,99,182,.25);
+}
+
+.c-btn--ghost:hover {
+  box-shadow: 0 10px 22px rgba(11,26,42,.10);
+}
+
+.c-btn--wa {
+  color: #fff;
+  background: linear-gradient(90deg, #1f7a47, #2aa85e);
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+.c-btn--wa:hover {
+  box-shadow: 0 12px 26px rgba(31,122,71,.20);
+}
+
+/* =========================
+   Reserva Strip con iconos
+   ========================= */
+
+.reserva-strip {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(900px 380px at 15% 20%, rgba(29,183,198,.30), transparent 60%),
+    radial-gradient(900px 420px at 85% 30%, rgba(11,99,182,.30), transparent 55%),
+    linear-gradient(135deg, $primary-dark, $primary);
+}
+
+.reserva-strip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,.10), transparent 55%);
+  pointer-events: none;
+  opacity: .7;
+}
+
+.reserva-strip .container {
+  position: relative;
+  z-index: 1;
+}
+
+.reserva-strip__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.4rem;
+  padding: 1.4rem 1.4rem;
+  border-radius: 22px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 46px rgba(0,0,0,.18);
+}
+
+.reserva-strip__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .78rem;
+  opacity: .92;
+  margin-bottom: .35rem;
+}
+
+.reserva-strip__kicker::before {
+  content: "";
+  width: .55rem;
+  height: .55rem;
+  border-radius: 50%;
+  background: $accent;
+  box-shadow: 0 0 0 4px rgba(255,221,87,.22);
+}
+
+.reserva-strip__title {
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+}
+
+.reserva-strip__payments {
+  list-style: none;
+  padding: 0;
+  margin: .85rem 0 .6rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+
+.pay-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .45rem .75rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.18);
+  color: rgba(255,255,255,.95);
+}
+
+.pay-chip__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 9px;
+  background: rgba(255,221,87,.20);
+  border: 1px solid rgba(255,221,87,.28);
+  color: #fff;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.pay-chip__label {
+  font-weight: 800;
+  font-size: .92rem;
+}
+
+.reserva-strip__note {
+  color: rgba(255,255,255,.90);
+  line-height: 1.6;
+  font-size: .98rem;
+}
+
+.reserva-strip__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .45rem;
+  min-width: 260px;
+}
+
+.reserva-strip__btn {
+  border-radius: 999px;
+  padding: .85rem 1.4rem;
+  font-weight: 900;
+  border: 0;
+  box-shadow: 0 12px 26px rgba(0,0,0,.18);
+}
+
+.reserva-strip__btn:hover {
+  transform: translateY(-1px);
+}
+
+.reserva-strip__micro {
+  color: rgba(255,255,255,.85);
+}
+
+@media (max-width: 992px) {
+  .reserva-strip__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reserva-strip__actions {
+    width: 100%;
+    align-items: stretch;
+    min-width: 0;
+  }
+
+  .reserva-strip__btn {
+    width: 100%;
+  }
+}
+/* =========================
+   Contact Strip – Estilo "Quiénes somos"
+   ========================= */
+
+.contact-strip {
+  position: relative;
+  background:
+    radial-gradient(1200px 420px at 10% 20%, rgba(29,183,198,.10), transparent 60%),
+    radial-gradient(900px 380px at 85% 30%, rgba(11,99,182,.08), transparent 55%),
+    linear-gradient(180deg, #ffffff 0%, #f6f2ea 100%);
+  padding: 0; // lo controla el container
+  border-top: 1px solid rgba(0,0,0,.04);
+}
+
+/* Banda superior sutil (igual lógica que about) */
+.contact-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 6px;
+  background: linear-gradient(90deg, $primary, $accent);
+  opacity: .85;
+}
+
+.contact-strip__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  background: #ffffff;
+  border-radius: 26px;
+  padding: clamp(1.75rem, 4vw, 2.75rem);
+  box-shadow:
+    0 18px 40px rgba(11,26,42,.10),
+    0 1px 0 rgba(255,255,255,.6) inset;
+}
+
+@media (max-width: 992px) {
+  .contact-strip__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   Mapa
+   ========================= */
+
+.contact-strip__mapFrame {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #eef2f6;
+  border: 1px solid rgba(11,26,42,.08);
+}
+
+.contact-strip__mapFrame iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .contact-strip__mapFrame iframe {
+    min-height: 260px;
+  }
+}
+
+/* =========================
+   Texto y jerarquía
+   ========================= */
+
+.contact-strip__kicker {
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-size: .75rem;
+  color: rgba(11,26,42,.55);
+  margin-bottom: .35rem;
+}
+
+.contact-strip__title {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #0b1a2a;
+  margin: 0 0 1.25rem 0;
+}
+
+/* =========================
+   Lista contacto (limpia)
+   ========================= */
+
+.contact-strip__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: grid;
+  gap: .85rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: .85rem;
+  align-items: flex-start;
+}
+
+.contact-item__icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: rgba(29,183,198,.14);
+  color: #0b1a2a;
+  font-size: 1rem;
+}
+
+.contact-item strong {
+  font-weight: 700;
+  color: #0b1a2a;
+}
+
+.contact-strip a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-strip a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   CTA
+   ========================= */
+
+.contact-strip__actions {
+  margin-top: 1.25rem;
+}
+
+.contact-strip__btn {
+  border-radius: 999px;
+  padding: .85rem 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, $primary, lighten($primary, 10%));
+  color: #fff;
+  border: 0;
+  box-shadow: 0 10px 22px rgba(11,26,42,.18);
+}
+
+.contact-strip__btn:hover {
+  transform: translateY(-1px);
+}
+
+/* =========================
+   Dining Strip – Comedor
+   ========================= */
+
+.dining-strip {
+  position: relative;
+  background:
+    radial-gradient(800px 320px at 10% 20%, rgba(255,221,87,.22), transparent 60%),
+    radial-gradient(700px 300px at 85% 30%, rgba(255,193,7,.18), transparent 55%),
+    linear-gradient(180deg, #fffaf3, #ffffff);
+  border-top: 1px solid rgba(0,0,0,.04);
+}
+
+.dining-strip__inner {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: 0 18px 40px rgba(0,0,0,.08);
+}
+
+/* Header */
+.dining-strip__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: .78rem;
+  color: rgba(11,26,42,.65);
+  margin-bottom: .4rem;
+}
+
+.dining-strip__kicker::before {
+  content: "";
+  width: .55rem;
+  height: .55rem;
+  border-radius: 50%;
+  background: #f4b400;
+  box-shadow: 0 0 0 4px rgba(244,180,0,.25);
+}
+
+.dining-strip__title {
+  margin: 0 0 1.5rem 0;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #0b1a2a;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+}
+
+/* Grid */
+.dining-strip__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(1.25rem, 3vw, 2rem);
+}
+
+@media (max-width: 992px) {
+  .dining-strip__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cards */
+.dining-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 1.4rem 1.5rem;
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+.dining-card--alt {
+  background: linear-gradient(180deg, #ffffff, #fff8ec);
+}
+
+.dining-card__title {
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  margin-bottom: .6rem;
+  color: #0b1a2a;
+}
+
+.dining-card__text {
+  color: rgba(11,26,42,.78);
+  line-height: 1.65;
+  margin-bottom: .6rem;
+}
+
+.dining-card__highlight {
+  margin-top: .75rem;
+  font-weight: 800;
+  color: #7a5b00;
+  background: rgba(255,221,87,.25);
+  padding: .55rem .75rem;
+  border-radius: 14px;
+}

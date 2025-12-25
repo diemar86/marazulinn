@@ -1,0 +1,12 @@
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+name: 'Habitación'
+type: habitacion
+description: 'Tipos de habitación del Hotel Mar Azul Inn.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

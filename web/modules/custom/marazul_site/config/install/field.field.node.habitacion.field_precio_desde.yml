@@ -1,0 +1,18 @@
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_precio_desde
+    - node.type.habitacion
+id: node.habitacion.field_precio_desde
+field_name: field_precio_desde
+entity_type: node
+bundle: habitacion
+label: 'Precio desde'
+description: ''
+required: false
+translatable: true
+default_value: {}
+default_value_callback: ''
+settings: {}
+field_type: decimal
