@@ -12,6 +12,7 @@ regions:
   primary_menu: 'Primary menu'
   secondary_menu: 'Secondary menu'
   hero: Hero region
+  notifications: Notifications
   highlighted: Highlighted
   home_content: 'Home content'
   content: Content

@@ -81,3 +81,131 @@
   box-shadow: 0 0 0 4px rgba(29,183,198,.20);
   border-radius: 12px;
 }
+.plan-hero {
+  padding: clamp(3rem, 6vw, 6rem) 0;
+  background: linear-gradient(
+    90deg,
+    #f7fbfd 0%,
+    #ffffff 55%,
+    #f4f7fa 100%
+  );
+}
+
+.plan-hero__inner {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .plan-hero__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* TEXTO */
+.plan-hero__eyebrow {
+  font-size: .75rem;
+  letter-spacing: .14em;
+  font-weight: 700;
+  color: #6b7280;
+  margin-bottom: .75rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  &::before {
+    content: "";
+    width: .65rem;
+    height: .65rem;
+    border-radius: 50%;
+    background: #ffd966;
+  }
+}
+
+.plan-hero__title {
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  color: #0b1a2a;
+  line-height: 1.05;
+  margin: 0 0 1.25rem;
+}
+
+.plan-hero__description {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #4a5a6a;
+  max-width: 52ch;
+}
+
+/* IMAGEN */
+.plan-hero__media {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.plan-hero__image {
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 4 / 3;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, #061f4a, #0b63b6);
+  box-shadow:
+    0 30px 60px rgba(11, 26, 42, .25);
+
+  img,
+  picture,
+  source {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.plan-body {
+  padding: clamp(2rem, 4vw, 3.5rem) 0;
+  background: #ffffff;
+}
+
+.plan-body__inner {
+  width: min(900px, 92%);
+  margin: 0 auto;
+}
+
+.plan-body__long {
+  color: #0b1a2a;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* Estilos pro para el contenido WYSIWYG */
+.plan-body__long h2,
+.plan-body__long h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.plan-body__long p {
+  margin: 0 0 1rem;
+  color: #4a5a6a;
+}
+
+.plan-body__long ul,
+.plan-body__long ol {
+  padding-left: 1.25rem;
+  margin: 0 0 1rem;
+  color: #4a5a6a;
+}
+
+.plan-body__long a {
+  color: #0b63b6;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

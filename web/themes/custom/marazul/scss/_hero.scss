@@ -107,7 +107,7 @@
 
 /* Si algún título viene como enlace */
 .hero.hero--managed a {
-  color: #fff;
+  color: $primary-dark;
   text-decoration: none;
 }
 .hero.hero--managed a:hover { text-decoration: underline; }

@@ -831,3 +831,63 @@ footer.site-footer {
   padding: .55rem .75rem;
   border-radius: 14px;
 }
+
+
+/* ==============================
+   Drupal Local Tasks (Tabs)
+   ============================== */
+
+/* Tabs primarios: Ver / Editar / Eliminar / Revisiones */
+.tabs.primary {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.tabs.primary li {
+  margin: 0;
+  padding: 0;
+}
+
+.tabs.primary li a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #475569;
+  text-decoration: none;
+  background: transparent;
+  border-radius: 0.5rem 0.5rem 0 0;
+  transition: all 0.2s ease;
+}
+
+.tabs.primary li a:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Activo */
+.tabs.primary li.is-active a {
+  background: #ffffff;
+  color: #0f172a;
+  border: 2px solid #e5e7eb;
+  border-bottom-color: #ffffff;
+  position: relative;
+  top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .tabs.primary {
+    flex-wrap: wrap;
+  }
+
+  .tabs.primary li a {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+  }
+}

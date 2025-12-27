@@ -194,3 +194,52 @@
   font-size: .95rem;
   font-weight: 900;
 }
+
+/* Webform confirmation (global, sin depender del card) */
+.page-wrapper .webform-confirmation {
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  background: linear-gradient(135deg, #e8f8f0, #f5fffa);
+  border: 1px solid rgba(47, 191, 113, 0.28);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  color: #145c3a;
+}
+
+.page-wrapper .webform-confirmation__message {
+  font-weight: 650;
+  color: #145c3a;
+  line-height: 1.4;
+}
+
+.page-wrapper .webform-confirmation__message::before {
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  margin-right: .6rem;
+  background: #2fbf71;
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: .9rem;
+  transform: translateY(-1px);
+}
+
+.page-wrapper .webform-confirmation__back {
+  margin-top: .75rem;
+}
+
+.page-wrapper .webform-confirmation__back a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .6rem .9rem;
+  border-radius: 999px;
+  font-weight: 750;
+  text-decoration: none;
+  background: rgba(20, 92, 58, 0.10);
+  color: #145c3a;
+  border: 1px solid rgba(20, 92, 58, 0.20);
+}

@@ -1,16 +1,28 @@
 {{ attach_library('marazul/marazul') }}
+{{ attach_library('marazul/room_lightbox') }}
 
 <article{{ attributes.addClass('room-detail') }}>
 
   <div class="container py-5">
     <div class="row g-4">
 
-      {# Columna izquierda: galería + descripción #}
+      {# Columna izquierda: imagen principal + galería + descripción #}
       <div class="col-lg-7">
 
         {% if content.field_imagen_principal %}
-          <div class="room-gallery mb-3">
+          <div class="room-gallery room-gallery--main mb-3" data-room-main>
             {{ content.field_imagen_principal }}
+          </div>
+        {% endif %}
+
+        {% if content.field_galeria_de_imagenes %}
+          <div class="room-gallery room-gallery--thumbs mb-4" data-room-thumbs>
+            <h2 class="h5 mb-3">Más fotos</h2>
+
+            {# OJO: este render debe venir con "Enlace: Archivo" #}
+            <div class="room-thumbs-grid">
+              {{ content.field_galeria_de_imagenes }}
+            </div>
           </div>
         {% endif %}
 
@@ -60,14 +72,41 @@
                rel="noopener">
               Consultar esta habitación por WhatsApp
             </a>
-
-            {# Si luego quieres, acá puedes agregar un Webform de reserva #}
           </div>
 
         </div>
 
       </div>
 
+    </div>
+  </div>
+
+  {# Modal Bootstrap 5 para Lightbox #}
+  <div class="modal fade room-lightbox" id="roomLightbox" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+
+        <button type="button" class="btn-close room-lightbox__close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+
+        <div class="modal-body p-0">
+          <div id="roomLightboxCarousel" class="carousel slide" data-bs-ride="false" data-bs-interval="false">
+            <div class="carousel-inner" data-room-lightbox-inner>
+              {# El JS inserta aquí los items #}
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#roomLightboxCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#roomLightboxCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 

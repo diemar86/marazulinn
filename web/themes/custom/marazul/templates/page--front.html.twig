@@ -16,7 +16,11 @@
       {% endif %}
     </div>
   </header>
-
+{% if page.notifications %}
+  <div class="site-notifications">
+    {{ page.notifications }}
+  </div>
+{% endif %}
   <main class="site-main">
 
     <section class="hero hero--managed" role="region" aria-label="Reserva y presentación del hotel">

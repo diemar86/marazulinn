@@ -1,0 +1,52 @@
+{#
+/**
+ * Nodo Plan Turístico – Hero + contenido
+ */
+#}
+
+<article{{ attributes.addClass('plan-hero') }}>
+
+  <div class="plan-hero__inner">
+
+    <!-- COLUMNA TEXTO -->
+    <div class="plan-hero__content">
+
+      <div class="plan-hero__eyebrow">
+        HOTEL MAR AZUL INN
+      </div>
+
+      <h1 class="plan-hero__title">
+        {{ label }}
+      </h1>
+
+      {% if content.field_descripcion_del_plan %}
+        <div class="plan-hero__description">
+          {{ content.field_descripcion_del_plan }}
+        </div>
+      {% endif %}
+
+    </div>
+
+    <!-- COLUMNA IMAGEN -->
+    <div class="plan-hero__media">
+      {% if content.field_imagen %}
+        <div class="plan-hero__image">
+          {{ content.field_imagen }}
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+
+  {# CONTENIDO LARGO (debajo del hero) #}
+  {% if content.field_descripcion_larga %}
+    <section class="plan-body">
+      <div class="plan-body__inner">
+        <div class="plan-body__long">
+          {{ content.field_descripcion_larga }}
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+</article>

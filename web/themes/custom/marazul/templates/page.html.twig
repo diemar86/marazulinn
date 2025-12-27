@@ -15,6 +15,11 @@
     {% endif %}
   </div>
 </header>
+{% if page.notifications %}
+  <div class="site-notifications">
+    {{ page.notifications }}
+  </div>
+{% endif %}
 
 <main class="page-content">
   {{ page.content }}

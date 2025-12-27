@@ -8,3 +8,11 @@ global-styling:
     js/hero-bg.js: {}
   dependencies:
     - core/drupal
+
+room_lightbox:
+  js:
+    js/marazul-room-gallery.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - core/jquery

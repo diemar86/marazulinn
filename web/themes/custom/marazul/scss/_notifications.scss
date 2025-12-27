@@ -1,0 +1,58 @@
+.site-notifications {
+  position: relative;
+  z-index: 1050;
+  padding: 0.75rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .messages {
+    border-radius: 0.75rem;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.08);
+
+    a {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  }
+
+  /* ✅ NOTIFICACIÓN / ÉXITO (verde) */
+  .messages--status {
+    background-color: #e6f6ec;
+    color: #1d6b3a;
+    border-left: 5px solid #2fbf71;
+
+    a {
+      color: #1d6b3a;
+    }
+  }
+
+  /* ⚠️ ADVERTENCIA (amarillo) */
+  .messages--warning {
+    background-color: #fff6e0;
+    color: #7a5c00;
+    border-left: 5px solid #f5b400;
+
+    a {
+      color: #7a5c00;
+    }
+  }
+
+  /* ❌ ERROR (rojo) */
+  .messages--error {
+    background-color: #fdecea;
+    color: #8a1f17;
+    border-left: 5px solid #e5533d;
+
+    a {
+      color: #8a1f17;
+    }
+  }
+}
+
