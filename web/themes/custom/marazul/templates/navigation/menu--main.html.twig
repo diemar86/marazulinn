@@ -1,0 +1,20 @@
+{#
+  Template para el menú principal "Main navigation"
+#}
+
+{% set ul_classes = [
+  'navbar-nav',
+  'ms-auto',
+  'align-items-lg-center'
+] %}
+
+<ul{{ attributes.addClass(ul_classes) }}>
+  {% for item in items %}
+    <li class="nav-item">
+      <a href="{{ item.url }}"
+         class="nav-link{% if item.in_active_trail %} active{% endif %}">
+        {{ item.title }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

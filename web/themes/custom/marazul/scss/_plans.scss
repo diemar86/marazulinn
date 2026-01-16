@@ -209,3 +209,87 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+/* =========================
+   Planes - grid responsive
+   ========================= */
+
+.plans-grid {
+  display: grid;
+  gap: 1.25rem;
+
+  /* Mobile: 1 columna, ancho completo */
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 576px) {
+  .plans-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .plans-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+/* Tarjeta: que no se “encojan” ni se deformen */
+.plans-grid .plan-card,
+.plans-grid .views-row,
+.plans-grid article {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Imagen superior “cover” */
+.plans-grid .plan-card__media,
+.plans-grid .field--name-field-imagen-principal,
+.plans-grid .field--name-field-image {
+  overflow: hidden;
+  border-radius: 1.25rem 1.25rem 0 0;
+}
+
+.plans-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Texto: evitar saltos raros */
+.plans-grid .plan-card__title,
+.plans-grid h2,
+.plans-grid h3 {
+  margin: 0 0 .75rem 0;
+  line-height: 1.15;
+}
+
+/* Botón dentro de card: alineado bonito */
+.plans-grid .plan-card__cta,
+.plans-grid a.btn,
+.plans-grid .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+@media (max-width: 576px) {
+  .page-wrapper,
+  .site-main {
+    padding-bottom: 6rem; /* espacio para el botón flotante */
+  }
+}
+/* Grid forzado para cualquier vista de planes */
+.view .view-content {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 1.25rem !important;
+}
+
+
+@media (max-width:992px){
+  .recuadro-turismo{
+    width: 100%;
+  }
+}
+

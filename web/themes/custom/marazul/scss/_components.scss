@@ -705,9 +705,13 @@ footer.site-footer {
 }
 
 .contact-strip a {
-  color: white;
-  font-weight: 600;
+  color:white;
   text-decoration: none;
+}
+.contact-item{
+  span{
+    color: #0b1a2a;
+  }
 }
 
 .contact-strip a:hover {
@@ -890,5 +894,32 @@ footer.site-footer {
   .tabs.primary li a {
     padding: 0.4rem 0.75rem;
     font-size: 0.85rem;
+  }
+}
+.site-nav.navbar {
+  background: #fff;
+
+  .nav-link {
+    padding: .75rem 1rem;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    padding-top: .75rem;
+  }
+}.navbar-light .navbar-toggler {
+  border-color: rgba(0,0,0,.2);
+}
+
+.navbar-light .navbar-toggler-icon {
+  filter: none;
+}
+@media (min-width: 992px) {
+  #mainMenu .navbar-nav {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 1.25rem; // separa bonito sin que se rompa
   }
 }

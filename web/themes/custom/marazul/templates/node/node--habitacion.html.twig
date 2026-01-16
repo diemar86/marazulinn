@@ -66,12 +66,22 @@
           {% endif %}
 
           <div class="d-grid gap-2 mt-3">
-            <a href="https://wa.me/573233074408?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20{{ label|url_encode }}"
-               class="btn btn-success"
-               target="_blank"
-               rel="noopener">
-              Consultar esta habitación por WhatsApp
-            </a>
+           {# Título de la habitación #}
+{% set room_title = node.label %}
+
+{# Mensaje para WhatsApp #}
+{% set wa_text = 'Hola, quiero información sobre la habitación: ' ~ room_title %}
+
+{# Link WhatsApp (encode para caracteres especiales) #}
+{% set wa_link = 'https://wa.me/573233074408?text=' ~ wa_text|url_encode %}
+
+<a class="btn btn-success"
+   href="{{ wa_link }}"
+   target="_blank"
+   rel="noopener">
+  Reservar por WhatsApp
+</a>
+
           </div>
 
         </div>

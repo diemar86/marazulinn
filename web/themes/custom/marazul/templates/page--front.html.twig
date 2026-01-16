@@ -2,20 +2,41 @@
 
 <div class="page-wrapper">
 
-  <header class="site-header">
-    <div class="container d-flex align-items-center justify-content-between py-3">
+<header class="site-header navbar navbar-expand-lg navbar-light bg-white">
+  <div class="container py-3">
+
+    <div class="d-flex align-items-center justify-content-between w-100">
       {% if page.header %}
         <div class="site-branding">
           {{ page.header }}
         </div>
       {% endif %}
+
+      {# Botón hamburguesa #}
       {% if page.primary_menu %}
-        <nav class="site-nav">
-          {{ page.primary_menu }}
-        </nav>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainMenu"
+          aria-controls="mainMenu"
+          aria-expanded="false"
+          aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
       {% endif %}
     </div>
-  </header>
+
+    {# Menú colapsable #}
+    {% if page.primary_menu %}
+      <div class="collapse navbar-collapse" id="mainMenu">
+        {{ page.primary_menu }}
+      </div>
+    {% endif %}
+
+  </div>
+</header>
+
 {% if page.notifications %}
   <div class="site-notifications">
     {{ page.notifications }}

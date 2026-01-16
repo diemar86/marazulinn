@@ -334,6 +334,7 @@ article.card a:focus-visible {
 /* Caso B: cuando imprime .views-row sueltos (unformatted) */
 .home-section--habitaciones .views-row {
   margin: 0;
+  
 }
 
 @media (max-width: 992px) {
@@ -342,6 +343,12 @@ article.card a:focus-visible {
   }
 }
 
+@media (max-width: 992px) {
+  .recuadro-habitaciones {
+    width: 100%;
+  }
+
+}
 /* =========================
    Card look hotelero
    ========================= */

@@ -676,8 +676,11 @@ footer.site-footer a:hover {
 
 .contact-strip a {
   color: white;
-  font-weight: 600;
   text-decoration: none;
+}
+
+.contact-item span {
+  color: #0b1a2a;
 }
 
 .contact-strip a:hover {
@@ -851,6 +854,34 @@ footer.site-footer a:hover {
   .tabs.primary li a {
     padding: 0.4rem 0.75rem;
     font-size: 0.85rem;
+  }
+}
+.site-nav.navbar {
+  background: #fff;
+}
+.site-nav.navbar .nav-link {
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    padding-top: 0.75rem;
+  }
+}
+.navbar-light .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.navbar-light .navbar-toggler-icon {
+  filter: none;
+}
+
+@media (min-width: 992px) {
+  #mainMenu .navbar-nav {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 1.25rem;
   }
 }
 /* ===============================
@@ -1474,6 +1505,11 @@ article.card a:focus-visible {
 @media (max-width: 992px) {
   .home-section--habitaciones .view-content {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 992px) {
+  .recuadro-habitaciones {
+    width: 100%;
   }
 }
 /* =========================
@@ -2444,6 +2480,85 @@ article.card a:focus-visible {
   text-underline-offset: 3px;
 }
 
+/* =========================
+   Planes - grid responsive
+   ========================= */
+.plans-grid {
+  display: grid;
+  gap: 1.25rem;
+  /* Mobile: 1 columna, ancho completo */
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 576px) {
+  .plans-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 992px) {
+  .plans-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+/* Tarjeta: que no se “encojan” ni se deformen */
+.plans-grid .plan-card,
+.plans-grid .views-row,
+.plans-grid article {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Imagen superior “cover” */
+.plans-grid .plan-card__media,
+.plans-grid .field--name-field-imagen-principal,
+.plans-grid .field--name-field-image {
+  overflow: hidden;
+  border-radius: 1.25rem 1.25rem 0 0;
+}
+
+.plans-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Texto: evitar saltos raros */
+.plans-grid .plan-card__title,
+.plans-grid h2,
+.plans-grid h3 {
+  margin: 0 0 0.75rem 0;
+  line-height: 1.15;
+}
+
+/* Botón dentro de card: alineado bonito */
+.plans-grid .plan-card__cta,
+.plans-grid a.btn,
+.plans-grid .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 576px) {
+  .page-wrapper,
+  .site-main {
+    padding-bottom: 6rem; /* espacio para el botón flotante */
+  }
+}
+/* Grid forzado para cualquier vista de planes */
+.view .view-content {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 1.25rem !important;
+}
+
+@media (max-width: 992px) {
+  .recuadro-turismo {
+    width: 100%;
+  }
+}
 .site-notifications {
   /* ✅ NOTIFICACIÓN / ÉXITO (verde) */
   /* ⚠️ ADVERTENCIA (amarillo) */
