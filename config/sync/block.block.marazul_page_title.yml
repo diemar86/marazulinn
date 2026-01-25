@@ -1,0 +1,20 @@
+uuid: 317d51b2-9137-49fc-a9dc-b628282a9353
+langcode: es
+status: false
+dependencies:
+  theme:
+    - marazul
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: marazul_page_title
+theme: marazul
+region: content
+weight: -7
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Título de la página'
+  label_display: '0'
+  provider: core
+visibility: {  }

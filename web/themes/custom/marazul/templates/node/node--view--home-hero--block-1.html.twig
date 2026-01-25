@@ -1,25 +1,26 @@
-{# node--home--hero.html.twig #}
+{#
+  Hero Home - item de la vista home_hero
+  Usa field_hero_image como imagen de fondo (File o Media)
+#}
 
-{% set hero_url = '' %}
-{% if node.field_hero_image is not empty and node.field_hero_image.entity %}
-  {% set hero_url = file_url(node.field_hero_image.entity.uri.value) %}
+{# 1 Intento: si el campo es MEDIA con imagen (lo más común) #}
+{% set hero_bg = '' %}
+
+{% if node.field_hero_image is defined and node.field_hero_image.entity %}
+  {# Caso A: Media #}
+  {% if node.field_hero_image.entity.field_media_image is defined
+        and node.field_hero_image.entity.field_media_image.entity %}
+    {% set hero_bg = file_url(node.field_hero_image.entity.field_media_image.entity.uri.value) %}
+
+  {# Caso B: File directo (imagen clásica) #}
+  {% elseif node.field_hero_image.entity.uri is defined %}
+    {% set hero_bg = file_url(node.field_hero_image.entity.uri.value) %}
+  {% endif %}
 {% endif %}
-<div class="hero-copy"{% if hero_url %} data-hero-bg="{{ hero_url }}"{% endif %}>
-  {% if content.field_hero_badge %}
-    <span class="badge-custom d-inline-block mb-2">{{ content.field_hero_badge }}</span>
-  {% endif %}
 
-  <h1 class="mb-3">{{ label }}</h1>
-
-  {% if content.field_hero_lead %}
-    <div class="mb-3">{{ content.field_hero_lead }}</div>
-  {% endif %}
-
-  {% if content.field_hero_address %}
-    <p class="address mb-3">{{ content.field_hero_address }}</p>
-  {% endif %}
-
-  {% if content.field_hero_bullets %}
-    <div class="hero-bullets">{{ content.field_hero_bullets }}</div>
-  {% endif %}
+<div class="hero-copy"
+  {% if hero_bg %}
+    style="background-image:url('{{ hero_bg }}');"
+  {% endif %}>
+  
 </div>

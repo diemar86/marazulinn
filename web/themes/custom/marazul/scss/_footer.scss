@@ -1,7 +1,9 @@
 /* =========================
    Footer Pro
    ========================= */
-
+footer{
+  padding: 10px 0;
+}
 .site-footer-pro {
   position: relative;
   color: rgba(255,255,255,.92);
@@ -10,6 +12,7 @@
     radial-gradient(900px 420px at 85% 25%, rgba(11,99,182,.22), transparent 55%),
     linear-gradient(135deg, $primary-dark, $primary);
   border-top: 1px solid rgba(255,255,255,.10);
+
 }
 
 .site-footer-pro a {

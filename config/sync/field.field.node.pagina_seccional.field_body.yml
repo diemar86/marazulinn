@@ -1,0 +1,22 @@
+uuid: 001e87a3-4c7f-42a9-94b7-5a4f98d6843b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body
+    - node.type.pagina_seccional
+  module:
+    - text
+id: node.pagina_seccional.field_body
+field_name: field_body
+entity_type: node
+bundle: pagina_seccional
+label: Cuerpo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

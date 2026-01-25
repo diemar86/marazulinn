@@ -1,0 +1,11 @@
+uuid: 2bb87e84-5513-4900-933a-f5bf8fba69c3
+langcode: es
+status: true
+dependencies: {  }
+name: Habitación
+type: habitacion
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

@@ -1,0 +1,25 @@
+uuid: eef6cae7-ec94-4426-a1be-7afdadfa75b3
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0a6e2cc3-f968-4aa2-b857-2d455e7640dc'
+  module:
+    - block_content
+  theme:
+    - marazul
+id: marazul_reservas
+theme: marazul
+region: home_content
+weight: -7
+provider: null
+plugin: 'block_content:0a6e2cc3-f968-4aa2-b857-2d455e7640dc'
+settings:
+  id: 'block_content:0a6e2cc3-f968-4aa2-b857-2d455e7640dc'
+  label: Reservas
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+  attributes:
+    class: ''
+visibility: {  }

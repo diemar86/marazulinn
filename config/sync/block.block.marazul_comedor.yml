@@ -1,0 +1,25 @@
+uuid: 084d0dc4-afc8-4f0b-9b29-d2e36a0016b6
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:36b65425-74b1-4d11-8238-8df3d8a37a15'
+  module:
+    - block_content
+  theme:
+    - marazul
+id: marazul_comedor
+theme: marazul
+region: home_content
+weight: -5
+provider: null
+plugin: 'block_content:36b65425-74b1-4d11-8238-8df3d8a37a15'
+settings:
+  id: 'block_content:36b65425-74b1-4d11-8238-8df3d8a37a15'
+  label: Comedor
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+  attributes:
+    class: ''
+visibility: {  }

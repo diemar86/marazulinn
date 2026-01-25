@@ -1,0 +1,30 @@
+uuid: d215143f-0ca4-40ef-8834-c783d88847b7
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.planes_turisticos
+  module:
+    - block_class
+    - views
+  theme:
+    - stark
+third_party_settings:
+  block_class:
+    replaced_id: planes
+id: stark_views_block__planes_turisticos_block_1
+theme: stark
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'views_block:planes_turisticos-block_1'
+settings:
+  id: 'views_block:planes_turisticos-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: null
+  attributes:
+    class: ''
+visibility: {  }

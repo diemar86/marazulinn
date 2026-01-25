@@ -166,3 +166,28 @@
   background: rgba(11,99,182,.06);
   color: #0b1a2a;
 }
+
+.hero-decameron__content{
+  position: relative;
+  z-index: 4;
+  padding-top: 10rem; // ajusta según tu header
+  color: #fff;
+
+  .hero-kicker{
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    font-size: .8rem;
+    text-transform: uppercase;
+    opacity: .9;
+  }
+
+  .hero-title{
+    margin-top: .6rem;
+    font-weight: 800;
+    line-height: 1.05;
+    font-size: clamp(2rem, 4vw, 3.6rem);
+  }
+}

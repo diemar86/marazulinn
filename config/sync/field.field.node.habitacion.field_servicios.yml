@@ -1,0 +1,22 @@
+uuid: b8f602ff-a22e-4e79-b5e5-990c00f1832e
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_servicios
+    - node.type.habitacion
+  module:
+    - text
+id: node.habitacion.field_servicios
+field_name: field_servicios
+entity_type: node
+bundle: habitacion
+label: Servicios
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

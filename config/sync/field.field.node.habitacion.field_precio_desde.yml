@@ -1,0 +1,23 @@
+uuid: 81d60c74-65c8-411f-bbc5-5d6836df3062
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_precio_desde
+    - node.type.habitacion
+id: node.habitacion.field_precio_desde
+field_name: field_precio_desde
+entity_type: node
+bundle: habitacion
+label: Precio
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

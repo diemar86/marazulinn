@@ -1,0 +1,25 @@
+uuid: 15b9464e-81a5-41b1-a5bc-5546159e4555
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:64730850-7dcf-4fcd-bae8-5b334511db00'
+  module:
+    - block_content
+  theme:
+    - stark
+id: stark_mapayredes
+theme: stark
+region: sidebar_first
+weight: -4
+provider: null
+plugin: 'block_content:64730850-7dcf-4fcd-bae8-5b334511db00'
+settings:
+  id: 'block_content:64730850-7dcf-4fcd-bae8-5b334511db00'
+  label: 'Mapa y redes'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+  attributes:
+    class: ''
+visibility: {  }

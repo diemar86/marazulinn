@@ -1,0 +1,69 @@
+uuid: c39168ec-a2f7-4eed-be8e-c6a575748a01
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.destacado_hero_home.field_hero_address
+    - field.field.node.destacado_hero_home.field_hero_badge
+    - field.field.node.destacado_hero_home.field_hero_bullets
+    - field.field.node.destacado_hero_home.field_hero_image
+    - field.field.node.destacado_hero_home.field_hero_lead
+    - node.type.destacado_hero_home
+  module:
+    - image
+    - text
+    - user
+id: node.destacado_hero_home.default
+targetEntityType: node
+bundle: destacado_hero_home
+mode: default
+content:
+  field_hero_address:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_hero_badge:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_hero_bullets:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_hero_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_hero_lead:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

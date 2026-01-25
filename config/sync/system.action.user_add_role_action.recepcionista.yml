@@ -1,0 +1,14 @@
+uuid: ed6c1b0c-1a2f-43da-8ff7-57669c44ded5
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.recepcionista
+  module:
+    - user
+id: user_add_role_action.recepcionista
+label: 'Añade el rol Recepcionista al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: recepcionista

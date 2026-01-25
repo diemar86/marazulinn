@@ -1,0 +1,25 @@
+uuid: 934d9d77-64be-4d2f-a5fb-4134084988b6
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:58912cdd-caf1-43b8-bfc2-92ce50a8e421'
+  module:
+    - block_content
+  theme:
+    - stark
+id: stark_footer
+theme: stark
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:58912cdd-caf1-43b8-bfc2-92ce50a8e421'
+settings:
+  id: 'block_content:58912cdd-caf1-43b8-bfc2-92ce50a8e421'
+  label: Footer
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+  attributes:
+    class: ''
+visibility: {  }

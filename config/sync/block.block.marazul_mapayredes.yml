@@ -1,0 +1,29 @@
+uuid: ff3d9525-dc1b-4353-b2ff-8ac646758ef0
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:64730850-7dcf-4fcd-bae8-5b334511db00'
+  module:
+    - block_class
+    - block_content
+  theme:
+    - marazul
+third_party_settings:
+  block_class:
+    replaced_id: como-llegar
+id: marazul_mapayredes
+theme: marazul
+region: home_content
+weight: -4
+provider: null
+plugin: 'block_content:64730850-7dcf-4fcd-bae8-5b334511db00'
+settings:
+  id: 'block_content:64730850-7dcf-4fcd-bae8-5b334511db00'
+  label: 'Mapa y redes'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+  attributes:
+    class: ''
+visibility: {  }

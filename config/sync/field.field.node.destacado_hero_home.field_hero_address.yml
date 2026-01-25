@@ -1,0 +1,19 @@
+uuid: 0ade0919-4395-4bab-9546-d8202ba4fe9a
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_address
+    - node.type.destacado_hero_home
+id: node.destacado_hero_home.field_hero_address
+field_name: field_hero_address
+entity_type: node
+bundle: destacado_hero_home
+label: Dirección
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

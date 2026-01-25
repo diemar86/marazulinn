@@ -1,0 +1,30 @@
+uuid: 01de6466-5e62-47f3-ad24-65ef5dc3c19f
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.planes_turisticos
+  module:
+    - block_class
+    - views
+  theme:
+    - marazul
+third_party_settings:
+  block_class:
+    replaced_id: planes
+id: marazul_views_block__planes_turisticos_block_1
+theme: marazul
+region: home_content
+weight: -6
+provider: null
+plugin: 'views_block:planes_turisticos-block_1'
+settings:
+  id: 'views_block:planes_turisticos-block_1'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: null
+  attributes:
+    class: ''
+visibility: {  }

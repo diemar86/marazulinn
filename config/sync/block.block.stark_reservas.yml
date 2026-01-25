@@ -1,0 +1,25 @@
+uuid: 93511613-f8ea-4020-a9a2-4e5ae7182366
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0a6e2cc3-f968-4aa2-b857-2d455e7640dc'
+  module:
+    - block_content
+  theme:
+    - stark
+id: stark_reservas
+theme: stark
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'block_content:0a6e2cc3-f968-4aa2-b857-2d455e7640dc'
+settings:
+  id: 'block_content:0a6e2cc3-f968-4aa2-b857-2d455e7640dc'
+  label: Reservas
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+  attributes:
+    class: ''
+visibility: {  }

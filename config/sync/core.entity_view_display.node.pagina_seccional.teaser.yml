@@ -1,0 +1,36 @@
+uuid: b6662551-90ab-4491-997f-b7ca1d4bb8bf
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.pagina_seccional.field_body
+    - field.field.node.pagina_seccional.field_hero_foto
+    - node.type.pagina_seccional
+  module:
+    - image
+    - user
+id: node.pagina_seccional.teaser
+targetEntityType: node
+bundle: pagina_seccional
+mode: teaser
+content:
+  field_hero_foto:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_body: true
+  langcode: true

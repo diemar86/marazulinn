@@ -14,3 +14,33 @@
     }
   };
 })(Drupal);
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".hero-copy[data-hero-bg]").forEach(el => {
+    const bg = el.dataset.heroBg;
+    if (bg) {
+      el.style.backgroundImage = `url('${bg}')`;
+    }
+  });
+});
+
+(function () {
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('[data-booking-submit]');
+    if (!btn) return;
+
+    const wrap = btn.closest('.booking-bar');
+    if (!wrap) return;
+
+    const form = wrap.querySelector('form.webform-submission-form');
+    if (!form) return;
+
+    // dispara el submit real
+    const realSubmit = form.querySelector('input[type="submit"], button[type="submit"]');
+    if (realSubmit) {
+      realSubmit.click();
+    } else {
+      form.requestSubmit ? form.requestSubmit() : form.submit();
+    }
+  });
+})();

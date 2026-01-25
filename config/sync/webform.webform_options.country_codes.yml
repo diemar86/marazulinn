@@ -1,0 +1,14 @@
+uuid: 88b19e27-784c-4d92-aa79-91437615b657
+langcode: es
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: adQ16YGDPk7QfUKrfrC35o2sKdHEozdNtdpiH7CftQQ
+id: country_codes
+label: 'Country codes'
+category: Geográfico
+likert: false
+options: ''

@@ -1,0 +1,31 @@
+uuid: c92f4265-3ce3-42e5-8ff5-22d07e1e9377
+langcode: es
+status: true
+dependencies:
+  config:
+    - webform.webform.pre_reserva_rapida
+  module:
+    - system
+    - webform
+  theme:
+    - stark
+id: stark_webform
+theme: stark
+region: highlighted
+weight: -3
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  label_display: '0'
+  provider: webform
+  webform_id: pre_reserva_rapida
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

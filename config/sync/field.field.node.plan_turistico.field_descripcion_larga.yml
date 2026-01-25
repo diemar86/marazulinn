@@ -1,0 +1,22 @@
+uuid: b6da4477-6294-49a6-bb11-3f4ffb87b5e9
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion_larga
+    - node.type.plan_turistico
+  module:
+    - text
+id: node.plan_turistico.field_descripcion_larga
+field_name: field_descripcion_larga
+entity_type: node
+bundle: plan_turistico
+label: 'Descripción larga'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

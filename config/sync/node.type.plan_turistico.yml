@@ -1,0 +1,11 @@
+uuid: 3f798ea0-223f-4ac0-b27e-4ce805a1d5da
+langcode: es
+status: true
+dependencies: {  }
+name: 'Plan turístico'
+type: plan_turistico
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

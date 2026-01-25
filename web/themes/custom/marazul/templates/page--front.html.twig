@@ -2,81 +2,61 @@
 
 <div class="page-wrapper">
 
-<header class="site-header navbar navbar-expand-lg navbar-light bg-white">
-  <div class="container py-3">
+<section class="hero-decameron" role="region" aria-label="Banner principal">
 
-    <div class="d-flex align-items-center justify-content-between w-100">
-      {% if page.header %}
-        <div class="site-branding">
-          {{ page.header }}
-        </div>
-      {% endif %}
+  <div class="hero-decameron__bg" aria-hidden="true">
+    {{ page.hero }} {# aquí cae Home hero (Views) #}
+  </div>
 
-      {# Botón hamburguesa #}
+  <div class="hero-decameron__overlay" aria-hidden="true"></div>
+
+  <header class="hero-header navbar navbar-expand-lg">
+    <div class="container hero-header__inner">
+      <div class="hero-header__brand">
+        {{ page.header }}
+      </div>
+
       {% if page.primary_menu %}
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#mainMenu"
-          aria-controls="mainMenu"
-          aria-expanded="false"
-          aria-label="Abrir menú">
+        <button class="navbar-toggler hero-header__toggler" type="button"
+          data-bs-toggle="collapse" data-bs-target="#mainMenu"
+          aria-controls="mainMenu" aria-expanded="false" aria-label="Abrir menú">
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <div class="collapse navbar-collapse hero-header__menu" id="mainMenu">
+          <div class="hero-header__menu-inner">
+            {{ page.primary_menu }}
+          </div>
+        </div>
       {% endif %}
     </div>
+  </header>
 
-    {# Menú colapsable #}
-    {% if page.primary_menu %}
-      <div class="collapse navbar-collapse" id="mainMenu">
-        {{ page.primary_menu }}
-      </div>
-    {% endif %}
+  <div class="hero-decameron__booking container">
+     <div class="home-hero__booking">
+  {% include '@marazul/components/booking-bar.html.twig' with { action_url: '/form/reservas' } %}
+    </div>
 
   </div>
-</header>
 
-{% if page.notifications %}
-  <div class="site-notifications">
-    {{ page.notifications }}
-  </div>
-{% endif %}
+</section>
+
+
+
+  
+
+  {% if page.notifications %}
+    <div class="site-notifications">
+      {{ page.notifications }}
+    </div>
+  {% endif %}
+
   <main class="site-main">
-
-    <section class="hero hero--managed" role="region" aria-label="Reserva y presentación del hotel">
-      <div class="container py-5">
-        <div class="row g-4 align-items-center">
-
-          <div class="col-lg-7">
-            {% if page.hero %}
-              {{ page.hero }}
-            {% endif %}
-          </div>
-
-          <div class="col-lg-5">
-           {% if page.highlighted %}
-              <div class="reservation-card p-3">
-                <div class="reservation-card__head">
-                  <h2 class="reservation-card__title">Cotiza tu reserva</h2>
-                  <p class="reservation-card__subtitle">Te respondemos por WhatsApp o correo en minutos.</p>
-                </div>
-
-                {{ page.highlighted }}
-              </div>
-            {% endif %}
-          </div>
-
-        </div>
-      </div>
-    </section>
-
     {% if page.home_content %}
       <div class="home-content-wrapper">
         {{ page.home_content }}
       </div>
     {% endif %}
-
   </main>
 
   {% if page.footer %}

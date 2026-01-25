@@ -1,247 +1,99 @@
 /* =========================
-   HERO (Home) - Mar Azul
+   HERO DECAMERON (HOME)
    ========================= */
 
-.hero.hero--managed {
+.hero-decameron{
   position: relative;
+  min-height: 80vh;
   overflow: hidden;
-  min-height: clamp(560px, 82vh, 820px);
-  display: flex;
-  align-items: center;
-  color: #fff;
+  background: #000; /* fallback si no hay imagen */
+}
 
-  /* Fondo (se setea por CSS var desde Drupal/JS). Fallback por si no hay imagen */
-  background-image: var(--hero-bg, linear-gradient(135deg, #003366, #001b33));
+/* Contenedor donde imprimes {{ page.hero }} */
+.hero-decameron__bg{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* IMPORTANTÍSIMO: que los wrappers de Drupal tengan alto */
+.hero-decameron__bg .region,
+.hero-decameron__bg .block,
+.hero-decameron__bg .views-element-container,
+.hero-decameron__bg [data-block="hero"],
+.hero-decameron__bg .view,
+.hero-decameron__bg .view-content,
+.hero-decameron__bg .views-row{
+  height: 100%;
+}
+
+/* El div que trae el background-image inline */
+.hero-decameron__bg .hero-copy{
+  position: absolute; /* clave: lo “pega” a todo el hero */
+  inset: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* Overlays: legibilidad + acento marca */
-.hero.hero--managed::before,
-.hero.hero--managed::after {
-  content: "";
+/* Overlay encima de la imagen */
+.hero-decameron__overlay{
   position: absolute;
   inset: 0;
+  z-index: 1;
   pointer-events: none;
-}
-
-.hero.hero--managed::before {
   background: linear-gradient(
-    90deg,
-    rgba(3, 20, 45, 0.88) 0%,
-    rgba(3, 40, 90, 0.72) 55%,
-    rgba(3, 40, 90, 0.22) 100%
+    to bottom,
+    rgba(0,0,0,.20),
+    rgba(0,0,0,.55)
   );
 }
 
-.hero.hero--managed::after {
-  background:
-    radial-gradient(900px 380px at 12% 20%, rgba(29,183,198,.16), transparent 60%),
-    radial-gradient(700px 320px at 78% 24%, rgba(11,99,182,.16), transparent 55%);
-  opacity: .95;
-}
-
-.hero.hero--managed > .container {
+/* Header flotante encima */
+.hero-header{
   position: relative;
   z-index: 2;
 }
 
-/* Badge */
-.hero.hero--managed .badge-custom {
-  padding: .45rem .85rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, .14);
-  border: 1px solid rgba(255, 255, 255, .18);
-  backdrop-filter: blur(10px);
-  font-weight: 700;
-  letter-spacing: .2px;
+/* Booking bar encima */
+.hero-decameron__booking{
+  position: relative;
+  z-index: 3;
+  padding-top: 20rem;
 }
 
-/* Tipografía lado izquierdo */
-.hero.hero--managed h1 {
-  font-size: clamp(2.1rem, 3.6vw, 3.35rem);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-  text-wrap: balance;
+/* Booking bar encima (anclado abajo del hero) */
+.hero-decameron__booking{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 28px;
+  z-index: 3;
+
+  /* aire lateral para que no toque bordes */
+  padding: 0 24px;
 }
 
-.hero.hero--managed p {
-  color: rgba(255, 255, 255, .92);
-  font-size: 1.06rem;
-  line-height: 1.7;
-  max-width: 60ch;
+/* Cuando JS active sticky */
+.hero-decameron__booking.is-sticky{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  top: -10px;
+  z-index: 10000;
+  padding: 10px 0px;
 }
 
-.hero.hero--managed .address {
-  opacity: .92;
-  font-size: 1rem;
-}
-
-/* Lista bullets dorados */
-.hero.hero--managed .hero-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  li {
-    position: relative;
-    padding-left: 1.35rem;
-    margin-bottom: .52rem;
-    color: rgba(255,255,255,.92);
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: .55rem;
-      width: .45rem;
-      height: .45rem;
-      border-radius: 50%;
-      background: #ffd966;
-      box-shadow: 0 0 0 3px rgba(255, 217, 102, .18);
-    }
+@media (max-width: 991.98px){
+  .hero-decameron{
+    min-height: 90vh;
+  }
+  .hero-decameron__booking{
+    bottom: 16px;
+    padding: 0 14px;
   }
 }
 
-/* Si algún título viene como enlace */
-.hero.hero--managed a {
-  color: $primary-dark;
-  text-decoration: none;
-}
-.hero.hero--managed a:hover { text-decoration: underline; }
-
-/* =========================
-   RESERVATION CARD (Webform)
-   ========================= */
-
-.hero.hero--managed .reservation-card {
-  background: rgba(255, 255, 255, .96);
-  border-radius: 22px;
-  box-shadow: 0 26px 70px rgba(0,0,0,.34);
-  border: 1px solid rgba(11, 26, 42, .08);
-  padding: 1.05rem 1.1rem 1.15rem !important; /* compact */
-}
-
-/* Header del formulario (lo agregaste en Twig) */
-.hero.hero--managed .reservation-card__head {
-  margin-bottom: .6rem;
-}
-
-.hero.hero--managed .reservation-card__title {
-  margin: 0 0 .15rem 0;
-  font-size: 1.05rem;
-  font-weight: 900;
-  letter-spacing: -.01em;
-  color: #0b1a2a;
-}
-
-.hero.hero--managed .reservation-card__subtitle {
-  margin: 0;
-  font-size: .85rem;
-  color: rgba(11, 26, 42, .65);
-  line-height: 1.3;
-}
-
-/* Webform spacing */
-.hero.hero--managed .reservation-card .webform-submission-form {
-  margin: 0;
-}
-
-.hero.hero--managed .reservation-card .webform-submission-form .form-item {
-  margin-bottom: .55rem;
-}
-
-.hero.hero--managed .reservation-card label {
-  display: inline-block;
-  margin-bottom: .2rem;
-  font-weight: 800;
-  font-size: .82rem;
-  color: rgba(11, 26, 42, .85);
-}
-
-/* Inputs */
-.hero.hero--managed .reservation-card input[type="text"],
-.hero.hero--managed .reservation-card input[type="email"],
-.hero.hero--managed .reservation-card input[type="tel"],
-.hero.hero--managed .reservation-card input[type="number"],
-.hero.hero--managed .reservation-card input[type="date"],
-.hero.hero--managed .reservation-card select,
-.hero.hero--managed .reservation-card textarea {
-  width: 100%;
-  border-radius: 12px;
-  border: 1px solid rgba(11, 26, 42, .18);
-  padding: .58rem .7rem;
-  background: #fff;
-  font-size: .92rem;
-  transition: box-shadow .15s ease, border-color .15s ease;
-}
-
-.hero.hero--managed .reservation-card input:focus,
-.hero.hero--managed .reservation-card select:focus,
-.hero.hero--managed .reservation-card textarea:focus {
-  outline: none;
-  border-color: rgba(11, 99, 182, .55);
-  box-shadow: 0 0 0 4px rgba(29, 183, 198, .18);
-}
-
-/* Botón */
-.hero.hero--managed .reservation-card .form-actions {
-  margin-top: .25rem;
-}
-
-.hero.hero--managed .reservation-card .form-actions input[type="submit"],
-.hero.hero--managed .reservation-card .form-actions button {
-  width: 100%;
-  border-radius: 999px;
-  padding: .78rem 1rem;
-  font-weight: 900;
-  border: 0;
-  background: linear-gradient(90deg, #ffd45a, #ffe48a);
-  color: #0b1a2a;
-  transition: transform .12s ease, box-shadow .12s ease;
-}
-
-.hero.hero--managed .reservation-card .form-actions input[type="submit"]:hover,
-.hero.hero--managed .reservation-card .form-actions button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(255, 212, 90, .28);
-}
-
-/* Focus accesible para links/botones dentro */
-.hero.hero--managed .reservation-card a:focus-visible,
-.hero.hero--managed .reservation-card button:focus-visible,
-.hero.hero--managed .reservation-card input:focus-visible,
-.hero.hero--managed .reservation-card select:focus-visible {
-  outline: none;
-}
-
-/* =========================
-   FECHAS EN 2 COLUMNAS (Desktop)
-   - usando nth-of-type porque no puedes poner classes fácilmente
-   ========================= */
-
-@media (min-width: 992px) {
-  /* Asume que los 2 primeros .form-item del webform son Llegada y Salida */
-  .hero.hero--managed .reservation-card .webform-submission-form .form-item:nth-of-type(1),
-  .hero.hero--managed .reservation-card .webform-submission-form .form-item:nth-of-type(2) {
-    display: inline-block;
-    width: calc(50% - .5rem);
-    vertical-align: top;
-  }
-
-  .hero.hero--managed .reservation-card .webform-submission-form .form-item:nth-of-type(1) {
-    margin-right: 1rem;
-  }
-}
-
-/* =========================
-   Responsive tweaks
-   ========================= */
-
-@media (max-width: 992px) {
-  .hero.hero--managed {
-    min-height: auto;
-  }
-}

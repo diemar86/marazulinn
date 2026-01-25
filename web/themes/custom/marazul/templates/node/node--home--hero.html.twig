@@ -4,22 +4,8 @@
 {% if node.field_hero_image is not empty and node.field_hero_image.entity %}
   {% set hero_url = file_url(node.field_hero_image.entity.uri.value) %}
 {% endif %}
-<div class="hero-copy"{% if hero_url %} data-hero-bg="{{ hero_url }}"{% endif %}>
-  {% if content.field_hero_badge %}
-    <span class="badge-custom d-inline-block mb-2">{{ content.field_hero_badge }}</span>
-  {% endif %}
 
-  <h1 class="mb-3">{{ label }}</h1>
 
-  {% if content.field_hero_lead %}
-    <div class="mb-3">{{ content.field_hero_lead }}</div>
-  {% endif %}
-
-  {% if content.field_hero_address %}
-    <p class="address mb-3">{{ content.field_hero_address }}</p>
-  {% endif %}
-
-  {% if content.field_hero_bullets %}
-    <div class="hero-bullets">{{ content.field_hero_bullets }}</div>
-  {% endif %}
-</div>
+  {% include '@marazul/components/booking-bar.html.twig' with {
+    action_url: '/reserva'
+  } %}

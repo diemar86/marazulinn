@@ -1,0 +1,25 @@
+uuid: d1eb47de-bfda-4210-8ed4-c3adfa9079cb
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:58912cdd-caf1-43b8-bfc2-92ce50a8e421'
+  module:
+    - block_content
+  theme:
+    - marazul
+id: marazul_footer
+theme: marazul
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:58912cdd-caf1-43b8-bfc2-92ce50a8e421'
+settings:
+  id: 'block_content:58912cdd-caf1-43b8-bfc2-92ce50a8e421'
+  label: Footer
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+  attributes:
+    class: ''
+visibility: {  }

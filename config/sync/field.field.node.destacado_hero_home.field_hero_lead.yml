@@ -1,0 +1,22 @@
+uuid: 51d8b406-6385-4482-8f09-8bf69d128587
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_lead
+    - node.type.destacado_hero_home
+  module:
+    - text
+id: node.destacado_hero_home.field_hero_lead
+field_name: field_hero_lead
+entity_type: node
+bundle: destacado_hero_home
+label: Descripción
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

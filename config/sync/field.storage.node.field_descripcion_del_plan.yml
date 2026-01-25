@@ -1,0 +1,20 @@
+uuid: c3d3a593-aaaf-4c4b-94af-dbe25996a715
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_descripcion_del_plan
+field_name: field_descripcion_del_plan
+entity_type: node
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

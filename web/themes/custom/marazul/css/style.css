@@ -882,6 +882,8 @@ footer.site-footer a:hover {
     flex-wrap: nowrap;
     white-space: nowrap;
     gap: 1.25rem;
+    background-color: #ffffff;
+    border-radius: 10px;
   }
 }
 /* ===============================
@@ -935,238 +937,100 @@ footer.site-footer a:hover {
   display: none;
 }
 
+.hero-header__menu {
+  justify-content: center;
+}
+
 /* =========================
-   HERO (Home) - Mar Azul
+   HERO DECAMERON (HOME)
    ========================= */
-.hero.hero--managed {
+.hero-decameron {
   position: relative;
+  min-height: 80vh;
   overflow: hidden;
-  min-height: clamp(560px, 82vh, 820px);
-  display: flex;
-  align-items: center;
-  color: #fff;
-  /* Fondo (se setea por CSS var desde Drupal/JS). Fallback por si no hay imagen */
-  background-image: var(--hero-bg, linear-gradient(135deg, #003366, #001b33));
+  background: #000; /* fallback si no hay imagen */
+}
+
+/* Contenedor donde imprimes {{ page.hero }} */
+.hero-decameron__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* IMPORTANTÍSIMO: que los wrappers de Drupal tengan alto */
+.hero-decameron__bg .region,
+.hero-decameron__bg .block,
+.hero-decameron__bg .views-element-container,
+.hero-decameron__bg [data-block=hero],
+.hero-decameron__bg .view,
+.hero-decameron__bg .view-content,
+.hero-decameron__bg .views-row {
+  height: 100%;
+}
+
+/* El div que trae el background-image inline */
+.hero-decameron__bg .hero-copy {
+  position: absolute; /* clave: lo “pega” a todo el hero */
+  inset: 0;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-/* Overlays: legibilidad + acento marca */
-.hero.hero--managed::before,
-.hero.hero--managed::after {
-  content: "";
+/* Overlay encima de la imagen */
+.hero-decameron__overlay {
   position: absolute;
   inset: 0;
+  z-index: 1;
   pointer-events: none;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.55));
 }
 
-.hero.hero--managed::before {
-  background: linear-gradient(90deg, rgba(3, 20, 45, 0.88) 0%, rgba(3, 40, 90, 0.72) 55%, rgba(3, 40, 90, 0.22) 100%);
-}
-
-.hero.hero--managed::after {
-  background: radial-gradient(900px 380px at 12% 20%, rgba(29, 183, 198, 0.16), transparent 60%), radial-gradient(700px 320px at 78% 24%, rgba(11, 99, 182, 0.16), transparent 55%);
-  opacity: 0.95;
-}
-
-.hero.hero--managed > .container {
+/* Header flotante encima */
+.hero-header {
   position: relative;
   z-index: 2;
 }
 
-/* Badge */
-.hero.hero--managed .badge-custom {
-  padding: 0.45rem 0.85rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(10px);
-  font-weight: 700;
-  letter-spacing: 0.2px;
-}
-
-/* Tipografía lado izquierdo */
-.hero.hero--managed h1 {
-  font-size: clamp(2.1rem, 3.6vw, 3.35rem);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  margin-bottom: 1rem;
-  text-wrap: balance;
-}
-
-.hero.hero--managed p {
-  color: rgba(255, 255, 255, 0.92);
-  font-size: 1.06rem;
-  line-height: 1.7;
-  max-width: 60ch;
-}
-
-.hero.hero--managed .address {
-  opacity: 0.92;
-  font-size: 1rem;
-}
-
-/* Lista bullets dorados */
-.hero.hero--managed .hero-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.hero.hero--managed .hero-list li {
+/* Booking bar encima */
+.hero-decameron__booking {
   position: relative;
-  padding-left: 1.35rem;
-  margin-bottom: 0.52rem;
-  color: rgba(255, 255, 255, 0.92);
+  z-index: 3;
+  padding-top: 20rem;
 }
-.hero.hero--managed .hero-list li::before {
-  content: "";
+
+/* Booking bar encima (anclado abajo del hero) */
+.hero-decameron__booking {
   position: absolute;
   left: 0;
-  top: 0.55rem;
-  width: 0.45rem;
-  height: 0.45rem;
-  border-radius: 50%;
-  background: #ffd966;
-  box-shadow: 0 0 0 3px rgba(255, 217, 102, 0.18);
+  right: 0;
+  bottom: 28px;
+  z-index: 3;
+  /* aire lateral para que no toque bordes */
+  padding: 0 24px;
 }
 
-/* Si algún título viene como enlace */
-.hero.hero--managed a {
-  color: #03045e;
-  text-decoration: none;
+/* Cuando JS active sticky */
+.hero-decameron__booking.is-sticky {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  top: -10px;
+  z-index: 10000;
+  padding: 10px 0px;
 }
 
-.hero.hero--managed a:hover {
-  text-decoration: underline;
-}
-
-/* =========================
-   RESERVATION CARD (Webform)
-   ========================= */
-.hero.hero--managed .reservation-card {
-  background: rgba(255, 255, 255, 0.96);
-  border-radius: 22px;
-  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.34);
-  border: 1px solid rgba(11, 26, 42, 0.08);
-  padding: 1.05rem 1.1rem 1.15rem !important; /* compact */
-}
-
-/* Header del formulario (lo agregaste en Twig) */
-.hero.hero--managed .reservation-card__head {
-  margin-bottom: 0.6rem;
-}
-
-.hero.hero--managed .reservation-card__title {
-  margin: 0 0 0.15rem 0;
-  font-size: 1.05rem;
-  font-weight: 900;
-  letter-spacing: -0.01em;
-  color: #0b1a2a;
-}
-
-.hero.hero--managed .reservation-card__subtitle {
-  margin: 0;
-  font-size: 0.85rem;
-  color: rgba(11, 26, 42, 0.65);
-  line-height: 1.3;
-}
-
-/* Webform spacing */
-.hero.hero--managed .reservation-card .webform-submission-form {
-  margin: 0;
-}
-
-.hero.hero--managed .reservation-card .webform-submission-form .form-item {
-  margin-bottom: 0.55rem;
-}
-
-.hero.hero--managed .reservation-card label {
-  display: inline-block;
-  margin-bottom: 0.2rem;
-  font-weight: 800;
-  font-size: 0.82rem;
-  color: rgba(11, 26, 42, 0.85);
-}
-
-/* Inputs */
-.hero.hero--managed .reservation-card input[type=text],
-.hero.hero--managed .reservation-card input[type=email],
-.hero.hero--managed .reservation-card input[type=tel],
-.hero.hero--managed .reservation-card input[type=number],
-.hero.hero--managed .reservation-card input[type=date],
-.hero.hero--managed .reservation-card select,
-.hero.hero--managed .reservation-card textarea {
-  width: 100%;
-  border-radius: 12px;
-  border: 1px solid rgba(11, 26, 42, 0.18);
-  padding: 0.58rem 0.7rem;
-  background: #fff;
-  font-size: 0.92rem;
-  transition: box-shadow 0.15s ease, border-color 0.15s ease;
-}
-
-.hero.hero--managed .reservation-card input:focus,
-.hero.hero--managed .reservation-card select:focus,
-.hero.hero--managed .reservation-card textarea:focus {
-  outline: none;
-  border-color: rgba(11, 99, 182, 0.55);
-  box-shadow: 0 0 0 4px rgba(29, 183, 198, 0.18);
-}
-
-/* Botón */
-.hero.hero--managed .reservation-card .form-actions {
-  margin-top: 0.25rem;
-}
-
-.hero.hero--managed .reservation-card .form-actions input[type=submit],
-.hero.hero--managed .reservation-card .form-actions button {
-  width: 100%;
-  border-radius: 999px;
-  padding: 0.78rem 1rem;
-  font-weight: 900;
-  border: 0;
-  background: linear-gradient(90deg, #ffd45a, #ffe48a);
-  color: #0b1a2a;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
-}
-
-.hero.hero--managed .reservation-card .form-actions input[type=submit]:hover,
-.hero.hero--managed .reservation-card .form-actions button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(255, 212, 90, 0.28);
-}
-
-/* Focus accesible para links/botones dentro */
-.hero.hero--managed .reservation-card a:focus-visible,
-.hero.hero--managed .reservation-card button:focus-visible,
-.hero.hero--managed .reservation-card input:focus-visible,
-.hero.hero--managed .reservation-card select:focus-visible {
-  outline: none;
-}
-
-/* =========================
-   FECHAS EN 2 COLUMNAS (Desktop)
-   - usando nth-of-type porque no puedes poner classes fácilmente
-   ========================= */
-@media (min-width: 992px) {
-  /* Asume que los 2 primeros .form-item del webform son Llegada y Salida */
-  .hero.hero--managed .reservation-card .webform-submission-form .form-item:nth-of-type(1),
-  .hero.hero--managed .reservation-card .webform-submission-form .form-item:nth-of-type(2) {
-    display: inline-block;
-    width: calc(50% - 0.5rem);
-    vertical-align: top;
+@media (max-width: 991.98px) {
+  .hero-decameron {
+    min-height: 90vh;
   }
-  .hero.hero--managed .reservation-card .webform-submission-form .form-item:nth-of-type(1) {
-    margin-right: 1rem;
-  }
-}
-/* =========================
-   Responsive tweaks
-   ========================= */
-@media (max-width: 992px) {
-  .hero.hero--managed {
-    min-height: auto;
+  .hero-decameron__booking {
+    bottom: 16px;
+    padding: 0 14px;
   }
 }
 /* =========================
@@ -1908,6 +1772,10 @@ article.card a:focus-visible {
 /* =========================
    Footer Pro
    ========================= */
+footer {
+  padding: 10px 0;
+}
+
 .site-footer-pro {
   position: relative;
   color: rgba(255, 255, 255, 0.92);
@@ -2278,6 +2146,29 @@ article.card a:focus-visible {
   color: #0b1a2a;
 }
 
+.hero-decameron__content {
+  position: relative;
+  z-index: 4;
+  padding-top: 10rem;
+  color: #fff;
+}
+.hero-decameron__content .hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+.hero-decameron__content .hero-title {
+  margin-top: 0.6rem;
+  font-weight: 800;
+  line-height: 1.05;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+}
+
 /* =========================
    Planes turísticos (teasers)
    ========================= */
@@ -2601,4 +2492,380 @@ article.card a:focus-visible {
 }
 .site-notifications .messages--error a {
   color: #8a1f17;
+}
+
+#block-marazul-webform form.webform-submission-form {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0px 5px;
+  align-items: center;
+  margin: 0;
+}
+@media (max-width: 992px) {
+  #block-marazul-webform form.webform-submission-form {
+    border-radius: 24px;
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+}
+#block-marazul-webform form.webform-submission-form * {
+  min-width: 0;
+}
+#block-marazul-webform .webform-flexbox {
+  display: contents !important;
+}
+#block-marazul-webform .webform-flexbox > .webform-flex {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+#block-marazul-webform form.webform-submission-form > .form-item,
+#block-marazul-webform form.webform-submission-form > .form-actions,
+#block-marazul-webform form.webform-submission-form > .js-form-wrapper,
+#block-marazul-webform .webform-flexbox > .webform-flex {
+  display: flex;
+  align-items: center;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+#block-marazul-webform .form-item > label,
+#block-marazul-webform .webform-element-description {
+  display: none;
+}
+#block-marazul-webform input.form-control,
+#block-marazul-webform select.form-select {
+  width: 100%;
+  height: 56px;
+  border-radius: 18px;
+  padding: 14px 16px 14px 52px;
+  font-weight: 650;
+  color: #153646;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+#block-marazul-webform input::placeholder {
+  color: rgba(21, 54, 70, 0.55);
+  font-weight: 650;
+}
+#block-marazul-webform .form-item-llegada input,
+#block-marazul-webform .form-item-salida input {
+  letter-spacing: 0.2px;
+  font-variant-numeric: tabular-nums;
+}
+#block-marazul-webform .form-item-terms-of-service {
+  height: 56px;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.65);
+}
+#block-marazul-webform .form-item-terms-of-service .form-check {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+}
+#block-marazul-webform .form-item-terms-of-service label {
+  display: inline !important;
+  margin: 0 !important;
+  font-weight: 650;
+  color: rgba(21, 54, 70, 0.85);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+#block-marazul-webform .form-actions input[type=submit],
+#block-marazul-webform .form-actions button[type=submit] {
+  width: 100%;
+  height: 56px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 850;
+  border: 0;
+}
+#block-marazul-webform .form-item-llegada input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23153646' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2'/%3E%3Cpath d='M16 2v4M8 2v4'/%3E%3Cpath d='M3 10h18'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 18px center;
+  background-size: 20px 20px;
+  cursor: pointer;
+}
+#block-marazul-webform .form-item-salida input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23153646' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2'/%3E%3Cpath d='M16 2v4M8 2v4'/%3E%3Cpath d='M3 10h18'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 18px center;
+  background-size: 20px 20px;
+  cursor: pointer;
+}
+#block-marazul-webform .form-item-numero-de-personas input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23153646' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 18px center;
+  background-size: 20px 20px;
+}
+#block-marazul-webform .form-item-nombres-y-apellidos input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23153646' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 18px center;
+  background-size: 20px 20px;
+}
+#block-marazul-webform .form-item-telefono-whatsapp input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23153646' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.11 5.18 2 2 0 0 1 5.06 3h3a2 2 0 0 1 2 1.72c.12.81.3 1.6.54 2.36a2 2 0 0 1-.45 2.11L9.09 10.91a16 16 0 0 0 6 6l1.72-1.06a2 2 0 0 1 2.11-.45c.76.24 1.55.42 2.36.54A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 18px center;
+  background-size: 20px 20px;
+}
+#block-marazul-webform .form-item-correo-electronico input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23153646' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16v16H4z'/%3E%3Cpath d='m22 6-10 7L2 6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 18px center;
+  background-size: 20px 20px;
+}
+#block-marazul-webform .form-item-llegada input,
+#block-marazul-webform .form-item-salida input {
+  min-width: 190px;
+}
+@media (max-width: 992px) {
+  #block-marazul-webform .form-item-llegada input,
+  #block-marazul-webform .form-item-salida input {
+    min-width: 0;
+  }
+}
+
+.booking-bar-form {
+  background: #fff;
+  border-radius: 999px;
+  padding: 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  display: grid;
+  grid-template-columns: 120px 120px 1fr 1.3fr 1.3fr 160px;
+  gap: 14px;
+  align-items: center;
+}
+@media (max-width: 1100px) {
+  .booking-bar-form {
+    grid-template-columns: 1fr;
+    border-radius: 24px;
+  }
+}
+
+/* Campos */
+.booking-field {
+  position: relative;
+  min-width: 0;
+}
+
+.booking-field input {
+  width: 100%;
+  height: 56px;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 14px 16px 14px 46px;
+  font-weight: 600;
+  background: #fff;
+  font-size: 16px;
+}
+
+/* Iconos */
+.booking-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* Fechas más compactas */
+#checkin,
+#checkout {
+  text-align: center;
+  padding-left: 42px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Placeholder general */
+.booking-field input::placeholder {
+  color: rgba(21, 54, 70, 0.55);
+}
+
+/* Botón */
+.booking-action button {
+  width: 100%;
+  height: 56px;
+  border-radius: 999px;
+  border: none;
+  background: #1170ff;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.booking-action button:hover {
+  background: #0d5fe0;
+}
+
+/* ============================
+   Booking Bar (MarAzul)
+   ============================ */
+/* Ajustes base */
+.booking-bar {
+  position: relative;
+  z-index: 5;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Layout del formulario */
+.booking-bar__form {
+  background: #fff;
+  padding: 10px;
+  display: grid;
+  gap: 14px;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  grid-template-columns: 124px 124px 1fr 1.25fr 1.25fr 170px;
+}
+@media (max-width: 1100px) {
+  .booking-bar__form {
+    grid-template-columns: 1fr;
+    border-radius: 24px;
+  }
+}
+
+/* Campos */
+.booking-field {
+  position: relative;
+  min-width: 0;
+}
+.booking-field input {
+  width: 100%;
+  height: 56px;
+  min-width: 0;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 14px 16px 14px 50px;
+  font-weight: 650;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #153646;
+}
+.booking-field input::placeholder {
+  color: rgba(21, 54, 70, 0.55);
+  font-weight: 650;
+}
+.booking-field--date input {
+  text-align: center;
+  padding-left: 44px;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+/* Ícono dentro del input */
+.booking-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  opacity: 0.9;
+  pointer-events: none;
+}
+.booking-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: none;
+  stroke: #153646;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Botón */
+.booking-btn {
+  width: 100%;
+  height: 56px;
+  border-radius: 999px;
+  border: 0;
+  background: #1170ff;
+  color: #fff;
+  font-weight: 850;
+  font-size: 18px;
+  cursor: pointer;
+}
+.booking-btn:hover {
+  background: #0d5fe0;
+}
+
+/* ============================
+   Booking en Hero + Sticky
+   ============================ */
+.hero-decameron__booking {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 28px;
+  z-index: 3;
+  padding: 0 24px;
+  /* cuando está dentro del hero, el bar se centra */
+}
+.hero-decameron__booking .booking-bar {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hero-decameron__booking.is-sticky {
+  position: fixed;
+  top: var(--marazul-sticky-top, 0px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  /* FULL WIDTH real del viewport */
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 10px 24px;
+  /* si algún ancestor tiene overflow hidden, esto ayuda */
+  pointer-events: none;
+  /* el contenido sí recibe clicks */
+  /* El contenedor del bar se estira al 100% del sticky */
+  /* FORM centrado (si quieres) */
+}
+.hero-decameron__booking.is-sticky .booking-bar {
+  pointer-events: auto;
+}
+.hero-decameron__booking.is-sticky .booking-bar {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+.hero-decameron__booking.is-sticky .booking-bar__form {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+}
+
+/* Evita recortes si algún wrapper del hero limita */
+.hero-decameron,
+.home-hero {
+  overflow: visible;
+}
+
+.hero-decameron__booking.is-sticky .booking-bar__form {
+  max-width: none;
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,11 @@
+uuid: 780eb1af-1cc4-4066-84c9-7122978ebf6d
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.destacado_hero_home
+id: node.destacado_hero_home
+target_entity_type_id: node
+target_bundle: destacado_hero_home
+default_langcode: site_default
+language_alterable: false

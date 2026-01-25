@@ -1,0 +1,31 @@
+uuid: fc7fa9fe-8131-47e2-a73f-fc0b9c1f78cb
+langcode: es
+status: false
+dependencies:
+  config:
+    - webform.webform.pre_reserva_rapida
+  module:
+    - system
+    - webform
+  theme:
+    - marazul
+id: marazul_webform
+theme: marazul
+region: hero_booking
+weight: -9
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  label_display: '0'
+  provider: webform
+  webform_id: pre_reserva_rapida
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

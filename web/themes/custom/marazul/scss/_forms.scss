@@ -1,245 +1,252 @@
-/* ====== Header del formulario ====== */
-.reservation-card__head {
-  margin-bottom: 1rem;
+#block-marazul-webform {
+  $text: #153646;
+  $line: rgba(0,0,0,.10);
+
+  // ----------------------------
+  // Contenedor principal
+  // ----------------------------
+  form.webform-submission-form {
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); // 4 columnas fijas
+    gap: 0px 5px;
+    align-items: center;
+
+    margin: 0;
+
+    @media (max-width: 992px) {
+      border-radius: 24px;
+      grid-template-columns: 1fr;
+      padding: 18px;
+    }
+  }
+
+  // Evita desbordes en grid
+  form.webform-submission-form * { min-width: 0; }
+
+  // ----------------------------
+  // Aplanar el contenedor de fechas (para que cuenten como 2 celdas)
+  // ----------------------------
+  .webform-flexbox {
+    display: contents !important;
+  }
+
+  // Si por alguna razón Webform mete un wrapper adicional dentro del flexbox:
+  .webform-flexbox > .webform-flex {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+  }
+
+  // Cada celda del grid (items y actions)
+  form.webform-submission-form > .form-item,
+  form.webform-submission-form > .form-actions,
+  form.webform-submission-form > .js-form-wrapper,
+  .webform-flexbox > .webform-flex {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+
+  // ----------------------------
+  // Inputs: consistentes y entendibles
+  // ----------------------------
+  .form-item > label,
+  .webform-element-description { display: none; }
+
+  input.form-control,
+  select.form-select {
+    width: 100%;
+    height: 56px;
+    border-radius: 18px;
+    padding: 14px 16px 14px 52px; // espacio icono
+    font-weight: 650;
+    color: $text;
+    border: 1px solid $line;
+  }
+
+  input::placeholder {
+    color: rgba(21,54,70,.55);
+    font-weight: 650;
+  }
+
+  // Asegura que el placeholder de fecha no se corte
+  .form-item-llegada input,
+  .form-item-salida input {
+    letter-spacing: .2px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  // ----------------------------
+  // Checkbox como "campo" compacto (celda completa)
+  // ----------------------------
+  .form-item-terms-of-service {
+    height: 56px;
+    border-radius: 18px;
+    border: 1px solid $line;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,.65);
+
+    .form-check {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      min-width: 0;
+    }
+
+    label {
+      display: inline !important;
+      margin: 0 !important;
+      font-weight: 650;
+      color: rgba(21,54,70,.85);
+      line-height: 1.2;
+
+      // elipsis limpio
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+    }
+  }
+
+  // ----------------------------
+  // Botón: celda final y consistente
+  // ----------------------------
+  .form-actions {
+    input[type="submit"],
+    button[type="submit"] {
+      width: 100%;
+      height: 56px;
+      border-radius: 999px;
+      font-size: 18px;
+      font-weight: 850;
+      border: 0;
+    }
+  }
+
+  // ----------------------------
+  // Iconos SVG embebidos (alineados a la izquierda)
+  // ----------------------------
+  @mixin icon($svg) {
+    background-image: url("data:image/svg+xml,#{$svg}");
+    background-repeat: no-repeat;
+    background-position: 18px center;
+    background-size: 20px 20px;
+  }
+
+  $c: "%23153646";
+  $svg-calendar: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#{$c}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2'/%3E%3Cpath d='M16 2v4M8 2v4'/%3E%3Cpath d='M3 10h18'/%3E%3C/svg%3E";
+  $svg-users: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#{$c}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E";
+  $svg-user: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#{$c}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E";
+  $svg-phone: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#{$c}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.11 5.18 2 2 0 0 1 5.06 3h3a2 2 0 0 1 2 1.72c.12.81.3 1.6.54 2.36a2 2 0 0 1-.45 2.11L9.09 10.91a16 16 0 0 0 6 6l1.72-1.06a2 2 0 0 1 2.11-.45c.76.24 1.55.42 2.36.54A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E";
+  $svg-mail: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='#{$c}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 4h16v16H4z'/%3E%3Cpath d='m22 6-10 7L2 6'/%3E%3C/svg%3E";
+
+  .form-item-llegada input { @include icon($svg-calendar); cursor: pointer; }
+  .form-item-salida input  { @include icon($svg-calendar); cursor: pointer; }
+  .form-item-numero-de-personas input { @include icon($svg-users); }
+  .form-item-nombres-y-apellidos input { @include icon($svg-user); }
+  .form-item-telefono-whatsapp input { @include icon($svg-phone); }
+  .form-item-correo-electronico input { @include icon($svg-mail); }
+
+  // ----------------------------
+  // Ajuste fino: si el input de fecha se ve muy corto por el navegador,
+  // garantizamos que tenga espacio para dd/mm/aaaa
+  // ----------------------------
+  .form-item-llegada input,
+  .form-item-salida input {
+    min-width: 190px;
+
+    @media (max-width: 992px) {
+      min-width: 0;
+    }
+  }
 }
 
-.reservation-card__title {
-  margin: 0 0 .25rem 0;
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: -.01em;
-  color: #0b1a2a;
-}
-
-.reservation-card__subtitle {
-  margin: 0;
-  font-size: .92rem;
-  color: rgba(11, 26, 42, .65);
-  line-height: 1.35;
-}
-
-/* ====== Webform: spacing + inputs ====== */
-.reservation-card .webform-submission-form .form-item {
-  margin-bottom: .9rem;
-}
-
-.reservation-card .webform-submission-form label {
-  display: inline-block;
-  margin-bottom: .35rem;
-  font-weight: 700;
-  font-size: .86rem;
-  color: rgba(11, 26, 42, .85);
-}
-
-/* Inputs más “hotel pro” */
-.reservation-card input[type="text"],
-.reservation-card input[type="email"],
-.reservation-card input[type="tel"],
-.reservation-card input[type="number"],
-.reservation-card input[type="date"],
-.reservation-card select,
-.reservation-card textarea {
-  width: 100%;
-  border-radius: 12px;
-  border: 1px solid rgba(11, 26, 42, .18);
-  padding: .78rem .9rem;
+.booking-bar-form {
   background: #fff;
-  transition: box-shadow .15s ease, border-color .15s ease;
+  border-radius: 999px;
+  padding: 22px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+
+  display: grid;
+  grid-template-columns: 
+    120px   // ingreso
+    120px   // salida
+    1fr     // huéspedes
+    1.3fr   // nombre
+    1.3fr   // correo
+    160px;  // botón
+  gap: 14px;
+  align-items: center;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+    border-radius: 24px;
+  }
 }
 
-.reservation-card input:focus,
-.reservation-card select:focus,
-.reservation-card textarea:focus {
-  outline: none;
-  border-color: rgba(11, 99, 182, .55);
-  box-shadow: 0 0 0 4px rgba(29, 183, 198, .18);
+/* Campos */
+.booking-field {
+  position: relative;
+  min-width: 0;
 }
 
-/* Botón más claro y con jerarquía */
-.reservation-card .form-actions {
-  margin-top: .25rem;
-}
-
-.reservation-card .form-actions input[type="submit"],
-.reservation-card .form-actions button {
+.booking-field input {
   width: 100%;
+  height: 56px;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,.12);
+  padding: 14px 16px 14px 46px;
+  font-weight: 600;
+  background: #fff;
+  font-size: 16px;
+}
+
+/* Iconos */
+.booking-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  opacity: .85;
+  pointer-events: none;
+}
+
+/* Fechas más compactas */
+#checkin,
+#checkout {
+  text-align: center;
+  padding-left: 42px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Placeholder general */
+.booking-field input::placeholder {
+  color: rgba(21,54,70,.55);
+}
+
+/* Botón */
+.booking-action button {
+  width: 100%;
+  height: 56px;
   border-radius: 999px;
-  padding: .95rem 1rem;
-  font-weight: 900;
-  border: 0;
-  background: linear-gradient(90deg, #ffd45a, #ffe48a);
-  color: #0b1a2a;
-  transition: transform .12s ease, box-shadow .12s ease;
-}
-
-.reservation-card .form-actions input[type="submit"]:hover,
-.reservation-card .form-actions button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 14px 30px rgba(255, 212, 90, .28);
-}
-/* =========================
-   HERO – Formulario compacto
-   ========================= */
-
-.hero .reservation-card {
-  padding: 1.1rem 1.15rem 1.2rem !important;
-  border-radius: 20px;
-}
-
-/* Header del formulario */
-.hero .reservation-card__head {
-  margin-bottom: .6rem;
-}
-
-.hero .reservation-card__title {
-  font-size: 1.05rem;
-  margin-bottom: .15rem;
-}
-
-.hero .reservation-card__subtitle {
-  font-size: .85rem;
-  line-height: 1.3;
-}
-
-/* Menos espacio entre campos */
-.hero .reservation-card .webform-submission-form .form-item {
-  margin-bottom: .6rem;
-}
-
-/* Labels más compactos */
-.hero .reservation-card label {
-  font-size: .82rem;
-  margin-bottom: .2rem;
-}
-
-/* Inputs más bajos */
-.hero .reservation-card input[type="text"],
-.hero .reservation-card input[type="email"],
-.hero .reservation-card input[type="tel"],
-.hero .reservation-card input[type="number"],
-.hero .reservation-card input[type="date"],
-.hero .reservation-card select {
-  padding: .58rem .7rem;
-  border-radius: 12px;
-  font-size: .9rem;
-}
-
-/* Quitar aire innecesario en fechas */
-.hero .reservation-card .form-item--date {
-  margin-bottom: .5rem;
-}
-
-/* Botón más compacto pero fuerte */
-.hero .reservation-card .form-actions input[type="submit"] {
-  padding: .8rem 1rem;
-  font-size: .95rem;
-  font-weight: 900;
-}
-@media (min-width: 992px) {
-  .hero .reservation-card .js-checkin,
-  .hero .reservation-card .js-checkout {
-    display: inline-block;
-    width: calc(50% - .4rem);
-    vertical-align: top;
-  }
-
-  .hero .reservation-card .js-checkin {
-    margin-right: .8rem;
-  }
-}
-@media (min-width: 992px) {
-  .hero .reservation-card .js-checkin,
-  .hero .reservation-card .js-checkout {
-    display: inline-block;
-    width: calc(50% - .4rem);
-    vertical-align: top;
-  }
-
-  .hero .reservation-card .js-checkin { margin-right: .8rem; }
-}
-@media (min-width: 992px) {
-  /* Los dos primeros campos (Llegada/Salida) en 2 columnas */
-  .hero .reservation-card .webform-submission-form .form-item:nth-of-type(1),
-  .hero .reservation-card .webform-submission-form .form-item:nth-of-type(2) {
-    display: inline-block;
-    width: calc(50% - .5rem);
-    vertical-align: top;
-  }
-
-  .hero .reservation-card .webform-submission-form .form-item:nth-of-type(1) {
-    margin-right: 1rem;
-  }
-}
-.hero .reservation-card {
-  padding: 1.05rem 1.1rem 1.15rem !important;
-}
-
-.hero .reservation-card .webform-submission-form .form-item {
-  margin-bottom: .55rem;
-}
-
-.hero .reservation-card label {
-  font-size: .82rem;
-  margin-bottom: .2rem;
-}
-
-.hero .reservation-card input,
-.hero .reservation-card select {
-  padding: .58rem .7rem;
-  border-radius: 12px;
-  font-size: .92rem;
-}
-.hero .reservation-card .form-actions input[type="submit"] {
-  padding: .78rem 1rem;
-  font-size: .95rem;
-  font-weight: 900;
-}
-
-/* Webform confirmation (global, sin depender del card) */
-.page-wrapper .webform-confirmation {
-  border-radius: 16px;
-  padding: 1rem 1.1rem;
-  background: linear-gradient(135deg, #e8f8f0, #f5fffa);
-  border: 1px solid rgba(47, 191, 113, 0.28);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-  color: #145c3a;
-}
-
-.page-wrapper .webform-confirmation__message {
-  font-weight: 650;
-  color: #145c3a;
-  line-height: 1.4;
-}
-
-.page-wrapper .webform-confirmation__message::before {
-  content: "✓";
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
-  margin-right: .6rem;
-  background: #2fbf71;
+  border: none;
+  background: #1170ff;
   color: #fff;
-  border-radius: 999px;
+  font-size: 18px;
   font-weight: 800;
-  font-size: .9rem;
-  transform: translateY(-1px);
+  cursor: pointer;
 }
 
-.page-wrapper .webform-confirmation__back {
-  margin-top: .75rem;
-}
-
-.page-wrapper .webform-confirmation__back a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: .6rem .9rem;
-  border-radius: 999px;
-  font-weight: 750;
-  text-decoration: none;
-  background: rgba(20, 92, 58, 0.10);
-  color: #145c3a;
-  border: 1px solid rgba(20, 92, 58, 0.20);
+.booking-action button:hover {
+  background: #0d5fe0;
 }

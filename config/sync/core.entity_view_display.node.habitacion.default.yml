@@ -1,0 +1,97 @@
+uuid: 994217da-4832-47cf-a2af-9496a7c034f9
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.habitacion.field_capacidad
+    - field.field.node.habitacion.field_descripcion_corta
+    - field.field.node.habitacion.field_galeria_de_imagenes
+    - field.field.node.habitacion.field_hero_foto
+    - field.field.node.habitacion.field_imagen_principal
+    - field.field.node.habitacion.field_precio_desde
+    - field.field.node.habitacion.field_servicios
+    - node.type.habitacion
+  module:
+    - image
+    - text
+    - user
+id: node.habitacion.default
+targetEntityType: node
+bundle: habitacion
+mode: default
+content:
+  field_capacidad:
+    type: number_integer
+    label: hidden
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_descripcion_corta:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_galeria_de_imagenes:
+    type: image
+    label: hidden
+    settings:
+      image_link: file
+      image_style: media_library
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_hero_foto:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_imagen_principal:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_precio_desde:
+    type: number_decimal
+    label: hidden
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 0
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_servicios:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

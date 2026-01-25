@@ -1,0 +1,170 @@
+/* ============================
+   Booking Bar (MarAzul)
+   ============================ */
+
+/* Ajustes base */
+.booking-bar {
+  position: relative;
+  z-index: 5;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Layout del formulario */
+.booking-bar__form {
+  background: #fff;
+  padding: 10px;
+  display: grid;
+  gap: 14px;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+  transition: box-shadow .2s ease, transform .2s ease;
+
+  grid-template-columns:
+    124px   // checkin
+    124px   // checkout
+    1fr     // guests
+    1.25fr  // fullname
+    1.25fr  // email
+    170px;  // button
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+    border-radius: 24px;
+  }
+}
+
+/* Campos */
+.booking-field {
+  position: relative;
+  min-width: 0;
+
+  input {
+    width: 100%;
+    height: 56px;
+    min-width: 0;
+    border-radius: 18px;
+    border: 1px solid rgba(0,0,0,.12);
+    padding: 14px 16px 14px 50px;
+    font-weight: 650;
+    font-size: 16px;
+    background: rgba(255,255,255,.95);
+    color: #153646;
+
+    &::placeholder {
+      color: rgba(21,54,70,.55);
+      font-weight: 650;
+    }
+  }
+
+  &--date input {
+    text-align: center;
+    padding-left: 44px;
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+  }
+}
+
+/* Ícono dentro del input */
+.booking-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  opacity: .9;
+  pointer-events: none;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: none;
+    stroke: #153646;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+/* Botón */
+.booking-btn {
+  width: 100%;
+  height: 56px;
+  border-radius: 999px;
+  border: 0;
+  background: #1170ff;
+  color: #fff;
+  font-weight: 850;
+  font-size: 18px;
+  cursor: pointer;
+
+  &:hover { background: #0d5fe0; }
+}
+
+/* ============================
+   Booking en Hero + Sticky
+   ============================ */
+
+.hero-decameron__booking {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 28px;
+  z-index: 3;
+  padding: 0 24px;
+
+  /* cuando está dentro del hero, el bar se centra */
+  .booking-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &.is-sticky {
+    position: fixed;
+    top: var(--marazul-sticky-top, 0px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+
+    /* FULL WIDTH real del viewport */
+    width: 100vw;
+    max-width: none;
+    margin: 0;
+    padding: 10px 24px;
+
+    /* si algún ancestor tiene overflow hidden, esto ayuda */
+    pointer-events: none;
+
+    /* el contenido sí recibe clicks */
+    .booking-bar { pointer-events: auto; }
+
+    /* El contenedor del bar se estira al 100% del sticky */
+    .booking-bar {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+    }
+
+    /* FORM centrado (si quieres) */
+    .booking-bar__form {
+      width: 100%;
+      max-width: 1320px;   // ajusta o quítalo si lo quieres 100% real
+      margin: 0 auto;
+      box-shadow: 0 14px 34px rgba(0,0,0,.18);
+    }
+  }
+}
+
+/* Evita recortes si algún wrapper del hero limita */
+.hero-decameron,
+.home-hero {
+  overflow: visible;
+}
+
+.hero-decameron__booking.is-sticky .booking-bar__form {
+  max-width: none;
+  margin: 0;
+}

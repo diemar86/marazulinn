@@ -1,0 +1,18 @@
+uuid: d68824c4-0685-49db-9561-07d40d78b8f8
+langcode: es
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Destacado hero home'
+type: destacado_hero_home
+description: null
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

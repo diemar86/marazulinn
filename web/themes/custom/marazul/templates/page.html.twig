@@ -1,37 +1,61 @@
 {{ attach_library('marazul/marazul') }}
 
-<header class="site-header navbar navbar-expand-lg navbar-light bg-white">
-  <div class="container py-3">
+<section class="hero-decameron" role="region" aria-label="Banner principal">
 
-    <div class="d-flex align-items-center justify-content-between w-100">
-      {% if page.header %}
-        <div class="site-branding">
-          {{ page.header }}
+  <div class="hero-decameron__bg" aria-hidden="true">
+    {# HOME: el fondo lo da Views en la región hero #}
+    {% if is_front %}
+      {{ page.hero }}
+    {% else %}
+      {# INTERNAS: el fondo lo da el nodo con field_hero_foto #}
+      {% include '@marazul/components/hero-bg-node.html.twig' %}
+    {% endif %}
+  </div>
+   {% if node is defined and node and node.label and not is_front %}
+   
+
+{% endif %}
+  <div class="hero-decameron__overlay" aria-hidden="true"></div>
+
+  <header class="hero-header navbar navbar-expand-lg">
+    <div class="container hero-header__inner">
+      <div class="hero-header__brand">
+        {{ page.header }}
+      </div>
+
+      {% if page.primary_menu %}
+        <button class="navbar-toggler hero-header__toggler" type="button"
+          data-bs-toggle="collapse" data-bs-target="#mainMenu"
+          aria-controls="mainMenu" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse hero-header__menu" id="mainMenu">
+          <div class="hero-header__menu-inner">
+            {{ page.primary_menu }}
+          </div>
         </div>
       {% endif %}
-
-      {# Botón hamburguesa (solo necesario en móvil, pero puede quedar siempre) #}
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainMenu"
-        aria-controls="mainMenu"
-        aria-expanded="false"
-        aria-label="Abrir menú">
-        <span class="navbar-toggler-icon"></span>
-      </button>
     </div>
+  
+  </header>
 
-    {# Menú colapsable #}
-    {% if page.primary_menu %}
-      <div class="collapse navbar-collapse" id="mainMenu">
-        {{ page.primary_menu }}
-      </div>
-    {% endif %}
-
+  {% if node is defined and node and node.label and not is_front %}
+  <div class="hero-decameron__content">
+    <div class="container">
+      <div class="hero-kicker">HOTEL MAR AZUL INN</div>
+      <h1 class="hero-title">{{ node.label }}</h1>
+    </div>
   </div>
-</header>
+{% endif %}
+
+
+  {# BOOKING BAR (si lo quieres siempre) #}
+  <div class="hero-decameron__booking">
+    {% include '@marazul/components/booking-bar.html.twig' with { action_url: '/form/reservas' } %}
+  </div>
+
+</section>
 
 {% if page.notifications %}
   <div class="site-notifications">

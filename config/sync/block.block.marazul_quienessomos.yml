@@ -1,0 +1,25 @@
+uuid: 11cc3aab-c0b3-493f-939f-def13af3edcc
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:4e272ac5-1190-4062-afd5-e43137575db3'
+  module:
+    - block_content
+  theme:
+    - marazul
+id: marazul_quienessomos
+theme: marazul
+region: home_content
+weight: -8
+provider: null
+plugin: 'block_content:4e272ac5-1190-4062-afd5-e43137575db3'
+settings:
+  id: 'block_content:4e272ac5-1190-4062-afd5-e43137575db3'
+  label: 'Quienes somos'
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+  attributes:
+    class: ''
+visibility: {  }

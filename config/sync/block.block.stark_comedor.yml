@@ -1,0 +1,25 @@
+uuid: dd466f9e-56d1-4263-ae91-c39c5f4f2a6f
+langcode: es
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:36b65425-74b1-4d11-8238-8df3d8a37a15'
+  module:
+    - block_content
+  theme:
+    - stark
+id: stark_comedor
+theme: stark
+region: sidebar_first
+weight: -5
+provider: null
+plugin: 'block_content:36b65425-74b1-4d11-8238-8df3d8a37a15'
+settings:
+  id: 'block_content:36b65425-74b1-4d11-8238-8df3d8a37a15'
+  label: Comedor
+  label_display: '0'
+  provider: block_content
+  view_mode: full
+  attributes:
+    class: ''
+visibility: {  }

@@ -1,0 +1,13 @@
+uuid: b7ff9866-fbe2-40df-913a-0aeaf03c4661
+langcode: es
+status: true
+dependencies:
+  module:
+    - webform_node
+id: recepcionista
+label: Recepcionista
+weight: 4
+is_admin: false
+permissions:
+  - 'view webform submissions any node'
+  - 'view webform submissions own node'

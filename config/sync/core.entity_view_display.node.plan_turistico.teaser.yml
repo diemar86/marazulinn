@@ -1,0 +1,58 @@
+uuid: 189eba0a-1701-4c26-8939-9d3407199ead
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.plan_turistico.field_descripcion_del_plan
+    - field.field.node.plan_turistico.field_descripcion_larga
+    - field.field.node.plan_turistico.field_hero_foto
+    - field.field.node.plan_turistico.field_imagen
+    - node.type.plan_turistico
+  module:
+    - image
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.plan_turistico.teaser
+targetEntityType: node
+bundle: plan_turistico
+mode: teaser
+content:
+  field_descripcion_del_plan:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_descripcion_larga:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_imagen:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_hero_foto: true
+  langcode: true

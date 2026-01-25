@@ -1,0 +1,20 @@
+uuid: b907f514-d0fc-450a-abd5-790a8797d01a
+langcode: es
+status: true
+dependencies:
+  theme:
+    - marazul
+_core:
+  default_config_hash: Q9_2whdOj1YIomfvsIfopROW4FT_X5pY0DjdOiOaQ5U
+id: marazul_primary_admin_actions
+theme: marazul
+region: highlighted
+weight: -9
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Acciones principales de administración'
+  label_display: '0'
+  provider: core
+visibility: {  }

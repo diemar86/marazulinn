@@ -1,0 +1,15 @@
+uuid: b4cdb4bc-89b9-4c42-a767-26906b89fa3a
+langcode: es
+status: true
+dependencies: {  }
+name: hero_bg_2400
+label: hero_bg_2400
+effects:
+  386d2831-4150-4442-abff-562c8f451d57:
+    uuid: 386d2831-4150-4442-abff-562c8f451d57
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 2400
+      height: 1200
+      anchor: center-top

@@ -1,0 +1,11 @@
+uuid: dc8c72fe-aa72-4a2c-8c58-30b70694f173
+langcode: es
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.token
+label: Comodín
+description: null
+targetEntityType: contact_message
+cache: true

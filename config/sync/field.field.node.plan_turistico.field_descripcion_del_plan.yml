@@ -1,0 +1,22 @@
+uuid: caf6c624-4009-4299-b7af-aaa5cab0429b
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion_del_plan
+    - node.type.plan_turistico
+  module:
+    - text
+id: node.plan_turistico.field_descripcion_del_plan
+field_name: field_descripcion_del_plan
+entity_type: node
+bundle: plan_turistico
+label: 'Descripción del plan'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text

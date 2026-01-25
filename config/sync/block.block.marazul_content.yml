@@ -1,0 +1,22 @@
+uuid: 236826c8-acc5-4f06-a061-c38ba0109925
+langcode: es
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - marazul
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: marazul_content
+theme: marazul
+region: content
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Contenido principal de la página'
+  label_display: '0'
+  provider: system
+visibility: {  }

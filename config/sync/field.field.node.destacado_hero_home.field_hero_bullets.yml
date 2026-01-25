@@ -1,0 +1,19 @@
+uuid: edbb02cf-cd6e-47cd-ac27-20bf96bb3428
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_bullets
+    - node.type.destacado_hero_home
+id: node.destacado_hero_home.field_hero_bullets
+field_name: field_hero_bullets
+entity_type: node
+bundle: destacado_hero_home
+label: Bullets
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

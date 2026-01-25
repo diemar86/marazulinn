@@ -1,0 +1,23 @@
+uuid: 1426251e-d474-43e7-9b17-c366196f1992
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_capacidad
+    - node.type.habitacion
+id: node.habitacion.field_capacidad
+field_name: field_capacidad
+entity_type: node
+bundle: habitacion
+label: 'Capacidad de personas'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

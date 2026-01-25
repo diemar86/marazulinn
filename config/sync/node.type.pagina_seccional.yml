@@ -1,0 +1,11 @@
+uuid: bfdb10c6-79dd-4278-b5aa-0e4f0177d3e9
+langcode: es
+status: true
+dependencies: {  }
+name: 'Página seccional'
+type: pagina_seccional
+description: null
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

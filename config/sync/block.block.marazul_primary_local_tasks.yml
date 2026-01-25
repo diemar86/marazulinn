@@ -1,0 +1,22 @@
+uuid: 8b1cacc5-54c2-4dd9-a9af-2d82df8dd704
+langcode: es
+status: true
+dependencies:
+  theme:
+    - marazul
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: marazul_primary_local_tasks
+theme: marazul
+region: notifications
+weight: -8
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Solapas principales'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

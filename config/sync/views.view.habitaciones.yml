@@ -1,0 +1,133 @@
+uuid: 72128c68-73bb-48ab-a224-fa790e8782eb
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.habitacion
+  module:
+    - node
+    - user
+id: habitaciones
+label: Habitaciones
+module: views
+description: 'Listado de habitaciones del hotel'
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: Default
+    display_plugin: default
+    position: 0
+    display_options:
+      pager:
+        type: full
+        options:
+          items_per_page: 12
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          value: '1'
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          plugin_id: bundle
+          value:
+            habitacion: habitacion
+      style:
+        type: grid
+        options:
+          uses_fields: false
+          columns: 3
+          automatic_width: false
+          alignment: horizontal
+          row_class_custom: ''
+          row_class_default: true
+          col_class_custom: recuadro-habitaciones
+          col_class_default: true
+      row:
+        type: 'entity:node'
+        options:
+          view_mode: teaser
+      query:
+        type: views_query
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_1:
+    id: block_1
+    display_title: destacado_home
+    display_plugin: block
+    position: 2
+    display_options:
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 3
+      defaults:
+        pager: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        link_display: false
+        link_url: false
+        footer: false
+      display_description: ''
+      use_more: true
+      use_more_always: true
+      use_more_text: 'Ver todas las habitaciones'
+      link_display: page_1
+      link_url: ''
+      footer:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text_custom
+          empty: false
+          content: "<div class=\"view-footer-cta text-center mt-5\">\r\n  <a href=\"/habitaciones\" class=\"btn btn-outline-primary btn-lg px-5\">\r\n    Ver todas las habitaciones\r\n  </a>\r\n</div>\r\n"
+          tokenize: true
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page_1:
+    id: page_1
+    display_title: Página
+    display_plugin: page
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: habitaciones
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

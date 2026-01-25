@@ -1,0 +1,19 @@
+uuid: 5b3148e9-1c14-4cd8-ba99-a29523b60936
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_descripcion_larga
+field_name: field_descripcion_larga
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

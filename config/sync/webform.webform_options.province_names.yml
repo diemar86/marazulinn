@@ -1,0 +1,27 @@
+uuid: d44b6c38-8d2d-486f-9644-09b347bb2542
+langcode: es
+status: true
+dependencies:
+  enforced:
+    module:
+      - webform
+_core:
+  default_config_hash: aaEeYBWoWETLKX2ivmZBpUAd3uPe2iPNydaxBuLPXKc
+id: province_names
+label: 'Province names'
+category: Geográfico
+likert: false
+options: |
+  Alberta: Alberta
+  'British Columbia': 'British Columbia'
+  Manitoba: Manitoba
+  'New Brunswick': 'New Brunswick'
+  'Newfoundland and Labrador': 'Newfoundland and Labrador'
+  'Nova Scotia': 'Nova Scotia'
+  'Northwest Territories': 'Northwest Territories'
+  Nunavut: Nunavut
+  Ontario: Ontario
+  'Prince Edward Island': 'Prince Edward Island'
+  Quebec: Quebec
+  Saskatchewan: Saskatchewan
+  Yukon: Yukon

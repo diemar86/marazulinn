@@ -1,0 +1,14 @@
+uuid: 91e2f173-ed8a-43f3-af06-86470d61cbae
+langcode: es
+status: true
+dependencies:
+  config:
+    - user.role.recepcionista
+  module:
+    - user
+id: user_remove_role_action.recepcionista
+label: 'Elimina el rol Recepcionista al(los) usuario(s) seleccionado(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: recepcionista

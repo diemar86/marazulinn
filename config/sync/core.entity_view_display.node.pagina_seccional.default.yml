@@ -1,0 +1,31 @@
+uuid: 606e04b7-a04f-4a6e-aa30-cb013d9eb9ad
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.pagina_seccional.field_body
+    - field.field.node.pagina_seccional.field_hero_foto
+    - node.type.pagina_seccional
+  module:
+    - text
+    - user
+id: node.pagina_seccional.default
+targetEntityType: node
+bundle: pagina_seccional
+mode: default
+content:
+  field_body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_hero_foto: true
+  langcode: true

@@ -1,0 +1,11 @@
+uuid: 7ae12b8a-3223-4c4b-bb07-386acede54d0
+langcode: es
+status: true
+dependencies:
+  module:
+    - path_alias
+id: path_alias.token
+label: Comodín
+description: null
+targetEntityType: path_alias
+cache: true
