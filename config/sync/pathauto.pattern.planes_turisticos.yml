@@ -1,0 +1,22 @@
+uuid: eee8413c-f6f2-48ee-b7ae-6d5ccb146c6b
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: planes_turisticos
+label: 'Planes turísticos'
+type: 'canonical_entities:node'
+pattern: '/planes/[node:title]'
+selection_criteria:
+  d647c1b0-4729-4ef1-9f01-9905455b8c39:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: d647c1b0-4729-4ef1-9f01-9905455b8c39
+    context_mapping:
+      node: node
+    bundles:
+      plan_turistico: plan_turistico
+selection_logic: and
+weight: -5
+relationships: {  }

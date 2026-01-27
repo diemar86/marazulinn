@@ -11,13 +11,17 @@ global-styling:
     js/dec-booking.js: {}
     js/flatpickr.min.js: {}
     js/booking-bar.js: {}
+    js/marazul-carousel.js: {}
+
   dependencies:
     - core/drupal
     - core/once
 
+
 room_lightbox:
   js:
-  js/marazul-room-gallery.js: {}
+    js/marazul-room-gallery.js: {}
+
   dependencies:
     - core/drupal
     - core/once

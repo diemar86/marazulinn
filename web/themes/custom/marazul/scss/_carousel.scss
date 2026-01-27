@@ -1,0 +1,32 @@
+.marazul-carousel__container{
+  position: relative;
+}
+
+.marazul-carousel__header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:16px;
+}
+
+.marazul-carousel__title{
+  margin:0;
+}
+
+.marazul-carousel__controls{
+  display:flex;
+  gap:10px;
+}
+
+.marazul-carousel__track{
+  display:flex;
+  gap:16px;
+  overflow:hidden;          /* clave */
+  scroll-behavior:smooth;
+}
+
+.marazul-carousel__item{
+  flex: 0 0 auto;
+  width: 320px;            /* ajusta a tu gusto */
+}

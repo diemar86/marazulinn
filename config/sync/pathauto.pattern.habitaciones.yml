@@ -1,0 +1,22 @@
+uuid: 2b009817-c779-4993-b61e-696adaa4e161
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: habitaciones
+label: Habitaciones
+type: 'canonical_entities:node'
+pattern: '/habitacion/[node:title]'
+selection_criteria:
+  2e9fd57e-9d3f-4400-8f76-d031f6ed36bc:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 2e9fd57e-9d3f-4400-8f76-d031f6ed36bc
+    context_mapping:
+      node: node
+    bundles:
+      habitacion: habitacion
+selection_logic: and
+weight: -5
+relationships: {  }

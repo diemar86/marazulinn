@@ -1,0 +1,42 @@
+uuid: a6b0372d-540e-486a-a152-5254dc0f6ad1
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.field.node.zonas_sociales.field_descripcion_larga
+    - field.field.node.zonas_sociales.field_hero_foto
+    - node.type.zonas_sociales
+  module:
+    - image
+    - text
+    - user
+id: node.zonas_sociales.default
+targetEntityType: node
+bundle: zonas_sociales
+mode: default
+content:
+  field_descripcion_larga:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_hero_foto:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

@@ -1,0 +1,15 @@
+{#
+  Mini card para carrusel: SOLO imagen + título + link
+#}
+
+<article{{ attributes.addClass('mz-mini-card') }}>
+  <a href="{{ url }}" class="mz-mini-card__link" aria-label="{{ label }}">
+    {% if content.field_imagen_principal %}
+      <div class="mz-mini-card__media">
+        {{ content.field_imagen_principal }}
+      </div>
+    {% endif %}
+
+    <h3 class="mz-mini-card__title">{{ label }}</h3>
+  </a>
+</article>

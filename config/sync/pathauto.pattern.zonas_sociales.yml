@@ -1,0 +1,22 @@
+uuid: 54e56d74-0bd5-404f-8a04-82759e1ad68c
+langcode: es
+status: true
+dependencies:
+  module:
+    - node
+id: zonas_sociales
+label: 'Zonas Sociales'
+type: 'canonical_entities:node'
+pattern: '/zonas/[node:title]'
+selection_criteria:
+  6ad6b399-d049-425c-ac5d-59df0b7002bc:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 6ad6b399-d049-425c-ac5d-59df0b7002bc
+    context_mapping:
+      node: node
+    bundles:
+      zonas_sociales: zonas_sociales
+selection_logic: and
+weight: -5
+relationships: {  }

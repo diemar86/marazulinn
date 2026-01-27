@@ -97,3 +97,27 @@
   }
 }
 
+.hero-copy--img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+
+  /* A veces Drupal mete wrappers alrededor del img */
+  picture,
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+/* Si tu hero tiene overlay arriba, asegúrate del stacking */
+.hero-decameron__overlay { position: absolute; inset: 0; z-index: 1; }
+.hero-header { position: relative; z-index: 2; }
+.hero-decameron__booking { position: relative; z-index: 3; }

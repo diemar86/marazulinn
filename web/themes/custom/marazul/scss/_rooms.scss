@@ -490,6 +490,7 @@ article.card a:focus-visible {
     font-weight: 700;
     padding: .9rem 2.8rem;
     transition: all .2s ease;
+    width: 100%;
   }
 
   .btn:hover {
@@ -703,4 +704,18 @@ article.card a:focus-visible {
   .carousel-control-next {
     width: 12%;
   }
+}
+.mini-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.mini-card__media img {
+  object-fit: cover;
+}
+
+.mini-card__title {
+  font-weight: 700;
+  color: #153646;
 }

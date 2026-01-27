@@ -1,0 +1,22 @@
+uuid: ca86ce00-2358-4493-8ca2-0058dcc4d888
+langcode: es
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_descripcion_larga
+    - node.type.zonas_sociales
+  module:
+    - text
+id: node.zonas_sociales.field_descripcion_larga
+field_name: field_descripcion_larga
+entity_type: node
+bundle: zonas_sociales
+label: Descripción
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

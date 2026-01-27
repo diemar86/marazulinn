@@ -1,0 +1,31 @@
+uuid: cb1046bd-c14a-45f8-8cf3-01f34c1a4edc
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.habitaciones
+  module:
+    - system
+    - views
+  theme:
+    - marazul
+id: marazul_views_block__habitaciones_block_2
+theme: marazul
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:habitaciones-block_2'
+settings:
+  id: 'views_block:habitaciones-block_2'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: null
+  attributes:
+    class: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/habitacion/*'

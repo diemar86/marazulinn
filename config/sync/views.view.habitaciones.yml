@@ -3,6 +3,7 @@ langcode: es
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.mini
     - core.entity_view_mode.node.teaser
     - node.type.habitacion
   module:
@@ -112,6 +113,38 @@ display:
       max-age: -1
       contexts:
         - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  block_2:
+    id: block_2
+    display_title: 'Otras habitaciones'
+    display_plugin: block
+    position: 3
+    display_options:
+      title: 'Otras habitaciones'
+      style:
+        type: default
+        options:
+          row_class: ''
+          default_row_class: true
+          uses_fields: false
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: mini
+      defaults:
+        title: false
+        style: false
+        row: false
+      display_description: ''
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

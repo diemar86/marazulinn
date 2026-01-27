@@ -1,0 +1,31 @@
+uuid: 85345c5a-8e61-451d-8528-904af295013b
+langcode: es
+status: true
+dependencies:
+  config:
+    - views.view.planes_turisticos
+  module:
+    - system
+    - views
+  theme:
+    - marazul
+id: marazul_views_block__planes_turisticos_block_2
+theme: marazul
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:planes_turisticos-block_2'
+settings:
+  id: 'views_block:planes_turisticos-block_2'
+  label: 'Otros planes recomendados'
+  label_display: visible
+  provider: views
+  views_label: 'Otros planes recomendados'
+  items_per_page: null
+  attributes:
+    class: ''
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/planes/*'

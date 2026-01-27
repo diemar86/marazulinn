@@ -1033,6 +1033,41 @@ footer.site-footer a:hover {
     padding: 0 14px;
   }
 }
+.hero-copy--img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  /* A veces Drupal mete wrappers alrededor del img */
+}
+.hero-copy--img picture,
+.hero-copy--img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.hero-copy--img img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Si tu hero tiene overlay arriba, asegúrate del stacking */
+.hero-decameron__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-header {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-decameron__booking {
+  position: relative;
+  z-index: 3;
+}
+
 /* =========================
    HABITACIONES (View)
    ========================= */
@@ -1514,6 +1549,7 @@ article.card a:focus-visible {
   font-weight: 700;
   padding: 0.9rem 2.8rem;
   transition: all 0.2s ease;
+  width: 100%;
 }
 .view-footer-cta .btn:hover {
   transform: translateY(-2px);
@@ -1696,6 +1732,21 @@ article.card a:focus-visible {
 .room-lightbox .carousel-control-prev,
 .room-lightbox .carousel-control-next {
   width: 12%;
+}
+
+.mini-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.mini-card__media img {
+  object-fit: cover;
+}
+
+.mini-card__title {
+  font-weight: 700;
+  color: #153646;
 }
 
 /* =========================
@@ -2868,4 +2919,37 @@ footer {
 .hero-decameron__booking.is-sticky .booking-bar__form {
   max-width: none;
   margin: 0;
+}
+
+.marazul-carousel__container {
+  position: relative;
+}
+
+.marazul-carousel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.marazul-carousel__title {
+  margin: 0;
+}
+
+.marazul-carousel__controls {
+  display: flex;
+  gap: 10px;
+}
+
+.marazul-carousel__track {
+  display: flex;
+  gap: 16px;
+  overflow: hidden; /* clave */
+  scroll-behavior: smooth;
+}
+
+.marazul-carousel__item {
+  flex: 0 0 auto;
+  width: 320px; /* ajusta a tu gusto */
 }/*# sourceMappingURL=style.css.map */

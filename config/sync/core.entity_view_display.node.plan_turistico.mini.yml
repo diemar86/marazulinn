@@ -1,0 +1,64 @@
+uuid: ffede27b-0db5-4932-86d7-98a0c4dca09d
+langcode: es
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.mini
+    - field.field.node.plan_turistico.field_descripcion_del_plan
+    - field.field.node.plan_turistico.field_descripcion_larga
+    - field.field.node.plan_turistico.field_hero_foto
+    - field.field.node.plan_turistico.field_imagen
+    - node.type.plan_turistico
+  module:
+    - image
+    - layout_builder
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.plan_turistico.mini
+targetEntityType: node
+bundle: plan_turistico
+mode: mini
+content:
+  field_descripcion_del_plan:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_descripcion_larga:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_hero_foto:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_imagen:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  links: true

@@ -1,0 +1,11 @@
+uuid: 663947e8-efb7-49d1-9b0a-d684d4483f03
+langcode: es
+status: true
+dependencies:
+  config:
+    - node.type.zonas_sociales
+id: node.zonas_sociales
+target_entity_type_id: node
+target_bundle: zonas_sociales
+default_langcode: site_default
+language_alterable: false
