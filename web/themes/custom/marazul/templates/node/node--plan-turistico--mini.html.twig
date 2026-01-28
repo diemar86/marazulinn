@@ -9,8 +9,8 @@
 {% set img_alt = title %}
 
 {# Primer item del campo imagen #}
-{% if node is defined and node and node.field_imagen_principal is defined and node.field_imagen_principal|length > 0 %}
-  {% set item = node.field_imagen_principal.0 %}
+{% if node is defined and node and node.field_imagen is defined and node.field_imagen|length > 0 %}
+  {% set item = node.field_imagen.0 %}
 
   {% if item.entity is not empty and item.entity.uri is not empty %}
     {% set img_url = file_url(item.entity.uri.value) %}
