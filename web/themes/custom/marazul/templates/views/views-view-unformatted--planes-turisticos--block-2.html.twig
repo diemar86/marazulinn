@@ -1,0 +1,43 @@
+{#
+  Carrusel - Otras habitaciones (block_2)
+  NO afecta el home
+#}
+
+<section class="marazul-carousel marazul-carousel--habitaciones"
+         data-mz-carousel="habitaciones">
+
+  <div class="container py-4">
+
+    <header class="d-flex justify-content-between align-items-center mb-4">
+      {% if title %}
+        <h2 class="m-0">{{ title }}</h2>
+      {% endif %}
+
+      <div class="marazul-carousel__controls d-flex gap-2">
+        <button class="btn btn-light btn-sm"
+                type="button"
+                data-mz-prev
+                aria-label="Anterior">‹</button>
+
+        <button class="btn btn-light btn-sm"
+                type="button"
+                data-mz-next
+                aria-label="Siguiente">›</button>
+      </div>
+    </header>
+
+    <div class="marazul-carousel__track"
+         data-mz-track
+         tabindex="0"
+         aria-label="Carrusel de habitaciones">
+
+      {% for row in rows %}
+        <div class="marazul-carousel__item">
+          {{ row.content }}
+        </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
