@@ -1,16 +1,13 @@
-{# Fondo del hero para páginas internas: usa field_hero_foto (Image directo) #}
+{# Hero BG desde field_hero_foto (imagen directa) #}
 {% set hero_bg = '' %}
 
-{% if node is defined and node and node.field_hero_foto is defined and node.field_hero_foto.entity %}
-  {% set hero_bg = file_url(content.field_hero_foto) %}
+{% if node is defined and node and node.field_hero_foto is defined and not node.field_hero_foto.isEmpty() %}
+  {% set hero_bg = file_url(node.field_hero_foto.entity.fileuri) %}
 {% endif %}
 
-<div class="hero-copy"
-  {% if marazul_hero_bg %}
-    style="background-image:url('{{ marazul_hero_bg }}');"
-  {% endif %}
-></div>
-
+{# Fallback opcional #}
+{% if not hero_bg %}
+  {% set hero_bg = directory ~ '/images/hero-default.jpg' %}
+{% endif %}
 
 <div class="hero-copy" style="background-image:url('{{ hero_bg }}');"></div>
-

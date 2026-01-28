@@ -2,7 +2,6 @@
    Booking Bar (MarAzul)
    ============================ */
 
-/* Ajustes base */
 .booking-bar {
   position: relative;
   z-index: 5;
@@ -10,8 +9,9 @@
   margin: 0 auto;
 }
 
-/* Layout del formulario */
-.booking-bar__form {
+/* Form (grid) */
+.booking-bar__form,
+.booking-bar-form { /* alias por si aún existe el viejo selector */
   background: #fff;
   padding: 10px;
   display: grid;
@@ -22,12 +22,12 @@
   transition: box-shadow .2s ease, transform .2s ease;
 
   grid-template-columns:
-    124px   // checkin
-    124px   // checkout
-    1fr     // guests
-    1.25fr  // fullname
-    1.25fr  // email
-    170px;  // button
+    124px   /* checkin */
+    124px   /* checkout */
+    1fr     /* guests */
+    1.25fr  /* fullname */
+    1.25fr  /* email */
+    170px;  /* button */
 
   @media (max-width: 1100px) {
     grid-template-columns: 1fr;
@@ -35,7 +35,10 @@
   }
 }
 
-/* Campos */
+/* ============================
+   Campos
+   ============================ */
+
 .booking-field {
   position: relative;
   min-width: 0;
@@ -66,6 +69,14 @@
   }
 }
 
+/* Fechas si se usan IDs */
+#checkin,
+#checkout {
+  text-align: center;
+  padding-left: 42px;
+  font-variant-numeric: tabular-nums;
+}
+
 /* Ícono dentro del input */
 .booking-icon {
   position: absolute;
@@ -89,8 +100,13 @@
   }
 }
 
-/* Botón */
-.booking-btn {
+/* Acción / Botón */
+.booking-action button,
+.booking-btn,
+.booking-bar__form button,
+.booking-bar-form button,
+.booking-bar__form input[type="submit"],
+.booking-bar-form input[type="submit"] {
   width: 100%;
   height: 56px;
   border-radius: 999px;
@@ -105,7 +121,7 @@
 }
 
 /* ============================
-   Booking en Hero + Sticky
+   Hero Booking (posición en hero)
    ============================ */
 
 .hero-decameron__booking {
@@ -115,56 +131,186 @@
   bottom: 28px;
   z-index: 3;
   padding: 0 24px;
-
-  /* cuando está dentro del hero, el bar se centra */
-  .booking-bar {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  &.is-sticky {
-    position: fixed;
-    top: var(--marazul-sticky-top, 0px);
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10000;
-
-    /* FULL WIDTH real del viewport */
-    width: 100vw;
-    max-width: none;
-    margin: 0;
-    padding: 10px 24px;
-
-    /* si algún ancestor tiene overflow hidden, esto ayuda */
-    pointer-events: none;
-
-    /* el contenido sí recibe clicks */
-    .booking-bar { pointer-events: auto; }
-
-    /* El contenedor del bar se estira al 100% del sticky */
-    .booking-bar {
-      width: 100%;
-      max-width: none;
-      margin: 0;
-    }
-
-    /* FORM centrado (si quieres) */
-    .booking-bar__form {
-      width: 100%;
-      max-width: 1320px;   // ajusta o quítalo si lo quieres 100% real
-      margin: 0 auto;
-      box-shadow: 0 14px 34px rgba(0,0,0,.18);
-    }
-  }
 }
 
-/* Evita recortes si algún wrapper del hero limita */
+/* Evita recortes */
 .hero-decameron,
 .home-hero {
   overflow: visible;
 }
 
-.hero-decameron__booking.is-sticky .booking-bar__form {
+/* ============================
+   Sticky: Home
+   - Estado normal: dentro de hero (card centrada)
+   - Estado sticky: fixed full width
+   ============================ */
+
+.home-hero__booking {
+  position: relative;
+  z-index: 100;
+  padding: 0 24px 18px;
+
+  .booking-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.home-hero__booking.is-sticky {
+  position: fixed;
+  top: var(--marazul-sticky-top, 0px);
+  left: 0;
+  right: 0;
+
+  width: 100vw;
   max-width: none;
   margin: 0;
+  z-index: 10000;
+  padding: 10px 24px;
+
+  .booking-bar {
+    width: 100%;
+    max-width: 1320px; /* contenido centrado dentro del sticky */
+    margin: 0 auto;
+  }
+
+  /* si un container mete límites */
+  .container {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* ============================
+   Sticky: Páginas internas (hero-decameron__booking)
+   ============================ */
+
+.hero-decameron__booking.is-sticky {
+  position: fixed;
+  top: var(--marazul-sticky-top, 0px);
+  left: 0;
+  right: 0;
+
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  z-index: 10000;
+  padding: 10px 24px;
+
+  /* Evita problemas si algún wrapper intercepta */
+  pointer-events: none;
+
+  .booking-bar { pointer-events: auto; }
+
+  .booking-bar {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .booking-bar__form,
+  .booking-bar-form {
+    width: 100%;
+    max-width: 1320px;  /* si lo quieres full full, quita este max-width */
+    margin: 0 auto;
+    box-shadow: 0 14px 34px rgba(0,0,0,.18);
+  }
+}
+
+/* ============================
+   Mobile: solo botón (<=768px)
+   ============================ */
+@media (max-width: 768px) {
+
+  /* contenedores donde aparece el booking */
+  .booking-bar,
+  .home-hero__booking,
+  .hero-decameron__booking {
+
+    /* el form se vuelve “solo botón” */
+    form.booking-bar__form,
+    form.booking-bar__form.booking-bar__form, /* por si Drupal duplica clases */
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form,
+    form.booking-bar__form {
+      /* Limpia “pastilla” */
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* OJO: aquí está la clave: NO ocultes booking-action */
+    form.booking-bar__form > :not(.booking-action) {
+      display: none !important;
+    }
+
+    /* el contenedor del botón */
+    .booking-action {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin: 0 !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+
+    /* el botón */
+    .booking-action .booking-btn,
+    .booking-action button[type="submit"],
+    .booking-btn {
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+
+      width: 100% !important;
+      max-width: 320px;
+      height: 56px;
+
+      border-radius: 999px;
+      padding: 0 28px;
+      box-shadow: 0 12px 24px rgba(0,0,0,.22);
+    }
+  }
 }

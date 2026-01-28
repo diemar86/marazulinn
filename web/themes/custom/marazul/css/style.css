@@ -2492,7 +2492,6 @@ footer {
 /* Grid forzado para cualquier vista de planes */
 .view .view-content {
   display: grid !important;
-  grid-template-columns: 1fr !important;
   gap: 1.25rem !important;
 }
 
@@ -2691,85 +2690,9 @@ footer {
   }
 }
 
-.booking-bar-form {
-  background: #fff;
-  border-radius: 999px;
-  padding: 22px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  display: grid;
-  grid-template-columns: 120px 120px 1fr 1.3fr 1.3fr 160px;
-  gap: 14px;
-  align-items: center;
-}
-@media (max-width: 1100px) {
-  .booking-bar-form {
-    grid-template-columns: 1fr;
-    border-radius: 24px;
-  }
-}
-
-/* Campos */
-.booking-field {
-  position: relative;
-  min-width: 0;
-}
-
-.booking-field input {
-  width: 100%;
-  height: 56px;
-  border-radius: 18px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  padding: 14px 16px 14px 46px;
-  font-weight: 600;
-  background: #fff;
-  font-size: 16px;
-}
-
-/* Iconos */
-.booking-icon {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;
-  opacity: 0.85;
-  pointer-events: none;
-}
-
-/* Fechas más compactas */
-#checkin,
-#checkout {
-  text-align: center;
-  padding-left: 42px;
-  font-variant-numeric: tabular-nums;
-}
-
-/* Placeholder general */
-.booking-field input::placeholder {
-  color: rgba(21, 54, 70, 0.55);
-}
-
-/* Botón */
-.booking-action button {
-  width: 100%;
-  height: 56px;
-  border-radius: 999px;
-  border: none;
-  background: #1170ff;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.booking-action button:hover {
-  background: #0d5fe0;
-}
-
 /* ============================
    Booking Bar (MarAzul)
    ============================ */
-/* Ajustes base */
 .booking-bar {
   position: relative;
   z-index: 5;
@@ -2777,8 +2700,9 @@ footer {
   margin: 0 auto;
 }
 
-/* Layout del formulario */
-.booking-bar__form {
+/* Form (grid) */
+.booking-bar__form,
+.booking-bar-form { /* alias por si aún existe el viejo selector */
   background: #fff;
   padding: 10px;
   display: grid;
@@ -2787,16 +2711,19 @@ footer {
   border-radius: 10px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
-  grid-template-columns: 124px 124px 1fr 1.25fr 1.25fr 170px;
+  grid-template-columns: 124px 124px 1fr 1.25fr 1.25fr 170px; /* button */
 }
 @media (max-width: 1100px) {
-  .booking-bar__form {
+  .booking-bar__form,
+  .booking-bar-form {
     grid-template-columns: 1fr;
     border-radius: 24px;
   }
 }
 
-/* Campos */
+/* ============================
+   Campos
+   ============================ */
 .booking-field {
   position: relative;
   min-width: 0;
@@ -2824,6 +2751,14 @@ footer {
   cursor: pointer;
 }
 
+/* Fechas si se usan IDs */
+#checkin,
+#checkout {
+  text-align: center;
+  padding-left: 42px;
+  font-variant-numeric: tabular-nums;
+}
+
 /* Ícono dentro del input */
 .booking-icon {
   position: absolute;
@@ -2846,8 +2781,13 @@ footer {
   stroke-linejoin: round;
 }
 
-/* Botón */
-.booking-btn {
+/* Acción / Botón */
+.booking-action button,
+.booking-btn,
+.booking-bar__form button,
+.booking-bar-form button,
+.booking-bar__form input[type=submit],
+.booking-bar-form input[type=submit] {
   width: 100%;
   height: 56px;
   border-radius: 999px;
@@ -2858,12 +2798,17 @@ footer {
   font-size: 18px;
   cursor: pointer;
 }
-.booking-btn:hover {
+.booking-action button:hover,
+.booking-btn:hover,
+.booking-bar__form button:hover,
+.booking-bar-form button:hover,
+.booking-bar__form input[type=submit]:hover,
+.booking-bar-form input[type=submit]:hover {
   background: #0d5fe0;
 }
 
 /* ============================
-   Booking en Hero + Sticky
+   Hero Booking (posición en hero)
    ============================ */
 .hero-decameron__booking {
   position: absolute;
@@ -2872,28 +2817,67 @@ footer {
   bottom: 28px;
   z-index: 3;
   padding: 0 24px;
-  /* cuando está dentro del hero, el bar se centra */
 }
-.hero-decameron__booking .booking-bar {
+
+/* Evita recortes */
+.hero-decameron,
+.home-hero {
+  overflow: visible;
+}
+
+/* ============================
+   Sticky: Home
+   - Estado normal: dentro de hero (card centrada)
+   - Estado sticky: fixed full width
+   ============================ */
+.home-hero__booking {
+  position: relative;
+  z-index: 100;
+  padding: 0 24px 18px;
+}
+.home-hero__booking .booking-bar {
   max-width: 1200px;
   margin: 0 auto;
 }
-.hero-decameron__booking.is-sticky {
+
+.home-hero__booking.is-sticky {
   position: fixed;
   top: var(--marazul-sticky-top, 0px);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10000;
-  /* FULL WIDTH real del viewport */
+  left: 0;
+  right: 0;
   width: 100vw;
   max-width: none;
   margin: 0;
+  z-index: 10000;
   padding: 10px 24px;
-  /* si algún ancestor tiene overflow hidden, esto ayuda */
+  /* si un container mete límites */
+}
+.home-hero__booking.is-sticky .booking-bar {
+  width: 100%;
+  max-width: 1320px; /* contenido centrado dentro del sticky */
+  margin: 0 auto;
+}
+.home-hero__booking.is-sticky .container {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ============================
+   Sticky: Páginas internas (hero-decameron__booking)
+   ============================ */
+.hero-decameron__booking.is-sticky {
+  position: fixed;
+  top: var(--marazul-sticky-top, 0px);
+  left: 0;
+  right: 0;
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  z-index: 10000;
+  padding: 10px 24px;
+  /* Evita problemas si algún wrapper intercepta */
   pointer-events: none;
-  /* el contenido sí recibe clicks */
-  /* El contenedor del bar se estira al 100% del sticky */
-  /* FORM centrado (si quieres) */
 }
 .hero-decameron__booking.is-sticky .booking-bar {
   pointer-events: auto;
@@ -2903,24 +2887,186 @@ footer {
   max-width: none;
   margin: 0;
 }
-.hero-decameron__booking.is-sticky .booking-bar__form {
+.hero-decameron__booking.is-sticky .booking-bar__form,
+.hero-decameron__booking.is-sticky .booking-bar-form {
   width: 100%;
-  max-width: 1320px;
+  max-width: 1320px; /* si lo quieres full full, quita este max-width */
   margin: 0 auto;
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
 }
 
-/* Evita recortes si algún wrapper del hero limita */
-.hero-decameron,
-.home-hero {
-  overflow: visible;
+/* ============================
+   Mobile: solo botón (<=768px)
+   ============================ */
+@media (max-width: 768px) {
+  /* contenedores donde aparece el booking */
+  .booking-bar,
+  .home-hero__booking,
+  .hero-decameron__booking {
+    /* el form se vuelve “solo botón” */
+    /* OJO: aquí está la clave: NO ocultes booking-action */
+    /* el contenedor del botón */
+    /* el botón */
+  }
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .booking-bar form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .home-hero__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form,
+  .hero-decameron__booking form.booking-bar__form {
+    /* Limpia “pastilla” */
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .booking-bar form.booking-bar__form > :not(.booking-action),
+  .home-hero__booking form.booking-bar__form > :not(.booking-action),
+  .hero-decameron__booking form.booking-bar__form > :not(.booking-action) {
+    display: none !important;
+  }
+  .booking-bar .booking-action,
+  .home-hero__booking .booking-action,
+  .hero-decameron__booking .booking-action {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+  .booking-bar .booking-action .booking-btn,
+  .booking-bar .booking-action button[type=submit],
+  .booking-bar .booking-btn,
+  .home-hero__booking .booking-action .booking-btn,
+  .home-hero__booking .booking-action button[type=submit],
+  .home-hero__booking .booking-btn,
+  .hero-decameron__booking .booking-action .booking-btn,
+  .hero-decameron__booking .booking-action button[type=submit],
+  .hero-decameron__booking .booking-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+    max-width: 320px;
+    height: 56px;
+    border-radius: 999px;
+    padding: 0 28px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+  }
 }
-
-.hero-decameron__booking.is-sticky .booking-bar__form {
-  max-width: none;
-  margin: 0;
-}
-
 .marazul-carousel__container {
   position: relative;
 }
@@ -2998,4 +3144,91 @@ footer {
 .mz-mini-card__media + a,
 .mz-mini-card a:not(.mz-mini-card__link) {
   display: none !important;
+}
+
+/* ==================================
+   Zonas sociales – 2 columnas
+   View: zonas_sociales | block_1
+   ================================== */
+.view.view-zonas-sociales {
+  /* GRID → siempre 2 columnas */
+  /* Card */
+  /* Imagen */
+  /* Título */
+  /* Descripción */
+}
+.view.view-zonas-sociales.card {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
+.view.view-zonas-sociales .view-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+@media (max-width: 576px) {
+  .view.view-zonas-sociales .view-content {
+    grid-template-columns: 1fr;
+  }
+}
+.view.view-zonas-sociales .views-row {
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.view.view-zonas-sociales .views-row:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+.view.view-zonas-sociales .views-field-field-hero-foto {
+  position: relative;
+}
+.view.view-zonas-sociales .views-field-field-hero-foto img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+.view.view-zonas-sociales .views-field-field-hero-foto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.12) 100%);
+  pointer-events: none;
+}
+.view.view-zonas-sociales .views-field-title {
+  padding: 18px 18px 6px;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.15;
+  color: #153646;
+}
+.view.view-zonas-sociales .views-field-title a {
+  color: inherit;
+  text-decoration: none;
+}
+.view.view-zonas-sociales .views-field-title a:hover {
+  text-decoration: underline;
+}
+.view.view-zonas-sociales .views-field-field-descripcion-larga {
+  padding: 0 18px 18px;
+  font-size: 15px;
+  color: rgba(21, 54, 70, 0.75);
+}
+
+.view.view-zonas-sociales .view-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
+}
+@media (max-width: 576px) {
+  .view.view-zonas-sociales .view-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }/*# sourceMappingURL=style.css.map */

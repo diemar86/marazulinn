@@ -1,27 +1,16 @@
 (function (Drupal, once) {
-  Drupal.behaviors.marazulCarousel = {
+  Drupal.behaviors.marazulStickyBooking = {
     attach(context) {
-      once('marazulCarousel', '[data-mz-carousel]', context).forEach((root) => {
-        const track = root.querySelector('[data-mz-track]');
-        if (!track) return;
+      once('marazulStickyBooking', '[data-mz-sticky-booking]', context).forEach((el) => {
+        const offset = 140; // px: cuando quieres que se “pegue”
 
-        const btnPrev = root.querySelector('[data-mz-prev]');
-        const btnNext = root.querySelector('[data-mz-next]');
-
-        const items = Array.from(track.querySelectorAll('.marazul-carousel__item'));
-        if (!items.length) return;
-
-        let index = 0;
-
-        const scrollToIndex = (i) => {
-          index = Math.max(0, Math.min(i, items.length - 1));
-          const el = items[index];
-          if (!el) return;
-          el.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+        const onScroll = () => {
+          if (window.scrollY > offset) el.classList.add('is-sticky');
+          else el.classList.remove('is-sticky');
         };
 
-        btnPrev?.addEventListener('click', () => scrollToIndex(index - 1));
-        btnNext?.addEventListener('click', () => scrollToIndex(index + 1));
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
       });
     }
   };

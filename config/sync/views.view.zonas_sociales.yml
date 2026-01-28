@@ -319,6 +319,42 @@ display:
       tags:
         - 'config:field.storage.node.field_descripcion_larga'
         - 'config:field.storage.node.field_hero_foto'
+  block_1:
+    id: block_1
+    display_title: Bloque
+    display_plugin: block
+    position: 2
+    display_options:
+      style:
+        type: default
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      defaults:
+        css_class: false
+        style: false
+        row: false
+      css_class: card
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_descripcion_larga'
+        - 'config:field.storage.node.field_hero_foto'
   page_1:
     id: page_1
     display_title: Page
@@ -326,7 +362,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: zonas-sociales
+      path: zonas-sociales-view
     cache_metadata:
       max-age: -1
       contexts:

@@ -48,14 +48,14 @@
     </div>
   </div>
 {% endif %}
-
-
-  {# BOOKING BAR (si lo quieres siempre) #}
-  <div class="hero-decameron__booking">
-    {% include '@marazul/components/booking-bar.html.twig' with { action_url: '/form/reservas' } %}
-  </div>
-
+<div class="hero-decameron__booking">
+ {# BOOKING BAR (si lo quieres siempre) #}
+ <div class="home-hero__booking" data-mz-sticky-booking>
+  {% include '@marazul/components/booking-bar.html.twig' with { action_url: '/form/reservas' } %}
+</div>
+</div>
 </section>
+
 
 {% if page.notifications %}
   <div class="site-notifications">
