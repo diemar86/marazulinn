@@ -488,6 +488,9 @@ footer.site-footer a:hover {
   gap: 0.55rem;
 }
 
+/* =========================
+   Payment Chips
+   ========================= */
 .pay-chip {
   display: inline-flex;
   align-items: center;
@@ -499,24 +502,82 @@ footer.site-footer a:hover {
   color: rgba(255, 255, 255, 0.95);
 }
 
-.pay-chip__icon {
-  display: inline-grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 9px;
-  background: rgba(255, 221, 87, 0.2);
-  border: 1px solid rgba(255, 221, 87, 0.28);
-  color: #fff;
-  font-weight: 900;
-  line-height: 1;
-}
-
+/* =========================
+   Label
+   ========================= */
 .pay-chip__label {
   font-weight: 800;
   font-size: 0.92rem;
+  white-space: nowrap;
 }
 
+/* =========================
+   Icon wrapper
+   ========================= */
+.pay-chip__icon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* =========================
+   SVG Icons (cash, QR)
+   ========================= */
+.pay-icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Rellenos sólidos (QR, detalles) */
+.pay-icon__fill {
+  fill: rgba(255, 255, 255, 0.95);
+  stroke: none;
+}
+
+/* Capa frontal del billete */
+.pay-icon__front {
+  opacity: 0.92;
+}
+
+/* =========================
+   Image icons (Nequi)
+   ========================= */
+.pay-icon-img {
+  width: 26px;
+  height: 26px;
+  display: block;
+  object-fit: contain;
+}
+
+.pay-chip {
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.pay-chip:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.28);
+}
+
+@media (max-width: 576px) {
+  .pay-chip__icon {
+    width: 40px;
+    height: 40px;
+  }
+  .pay-icon,
+  .pay-icon-img {
+    width: 24px;
+    height: 24px;
+  }
+}
 .reserva-strip__note {
   color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
@@ -2148,10 +2209,6 @@ footer {
 /* =========================
    Body editorial
    ========================= */
-.page-section__body {
-  padding: clamp(2rem, 3.2vw, 3.2rem) 0;
-}
-
 .page-section__body .container {
   max-width: 980px;
 }
